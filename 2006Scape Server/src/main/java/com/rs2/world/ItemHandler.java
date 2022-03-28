@@ -28,7 +28,7 @@ import java.util.Scanner;
 public class ItemHandler {
 
     public              List<GroundItem> items      = new ArrayList<GroundItem>();
-    public static final int              HIDE_TICKS = 100;
+    public static final int              HIDE_TICKS = 180;
 
     public ItemHandler() {
         for (int i = 0; i < GameConstants.ITEM_LIMIT; i++) {
@@ -142,17 +142,10 @@ public class ItemHandler {
                 }
                 if (i.hideTicks == 1) { // item can now be seen by others
                     i.hideTicks = 0;
-                    createGlobalItem(i);
+                    toRemove.add(i);
+                    //createGlobalItem(i);
                     i.removeTicks = HIDE_TICKS;
                 }
-                if (i.removeTicks > 0) {
-                    i.removeTicks--;
-                }
-                if (i.removeTicks == 1) {
-                    i.removeTicks = 0;
-                    toRemove.add(i);
-                }
-
             }
 
         }
