@@ -142,9 +142,15 @@ public class ItemHandler {
                 }
                 if (i.hideTicks == 1) { // item can now be seen by others
                     i.hideTicks = 0;
-                    toRemove.add(i);
-                    //createGlobalItem(i);
-                    i.removeTicks = HIDE_TICKS;
+                    createGlobalItem(i);
+                    i.removeTicks = HIDE_TICKS - 18;
+                }
+                if (i.removeTicks > 0) {
+                    i.removeTicks--;
+                }
+                if (i.removeTicks == 1) { //item can now be removed
+                    i.removeTicks = 0;
+                    toRemove.add(i); //removes item
                 }
             }
 
