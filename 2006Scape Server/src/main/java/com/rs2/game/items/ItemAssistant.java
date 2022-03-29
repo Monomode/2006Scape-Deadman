@@ -689,20 +689,20 @@ public class ItemAssistant {
 		if (itemName.contains("blue d'hide")) {
 			player.rangeLevelReq = 50;
 			if (itemName.contains("body")) {
-				player.defenceLevelReq = 40;
+				player.defenceLevelReq = 50;
 			}
 			return;
 		}
 		if (itemName.contains("red d'hide")) {
 			player.rangeLevelReq = 60;
 			if (itemName.contains("body")) {
-				player.defenceLevelReq = 40;
+				player.defenceLevelReq = 60;
 			}
 			return;
 		}
 		if (itemName.contains("black d'hide")) {
 			if (itemName.contains("body")) {
-				player.defenceLevelReq = 40;
+				player.defenceLevelReq = 70;
 			}
 			player.rangeLevelReq = 70;
 		}
@@ -796,6 +796,18 @@ public class ItemAssistant {
 				player.rangeLevelReq = 70;
 				player.defenceLevelReq = 70;
 			}
+		}
+		if (itemId == 837) { //crossbow "dorgeshuun crossbow"
+				player.rangeLevelReq = 28;
+			//quest completed rune mysteries runeMist
+			//13 agility
+			//13 thieving
+			//17 mining
+			}
+		if (itemId == 767) { //phoenix crossbow "rune crossbow"
+			player.rangeLevelReq = 61;
+			//player.fletchingLevelReq = 69;
+			//player.woodcuttingLevelReq = 60;
 		}
 		if (itemName.contains("godsword")) {
 			player.attackLevelReq = 75;
@@ -937,19 +949,13 @@ public class ItemAssistant {
 			case 8850:
 				player.defenceLevelReq = 40;
 				break;
-
 			case 7460:
 				player.defenceLevelReq = 40;
-				break;
-
-			case 837:
-				player.rangeLevelReq = 61;
 				break;
 
 			case 4151: // if you don't want to use names
 				player.attackLevelReq = 70;
 				return;
-
 			case 6724: // seercull
 				player.rangeLevelReq = 60; // idk if that is correct
 				return;
@@ -1392,6 +1398,12 @@ public class ItemAssistant {
 							canWearItem = false;
 						}
 					}
+					if (player.fletchingLevelReq > 0) {
+						if (player.getPlayerAssistant().getLevelForXP(player.playerXP[GameConstants.FLETCHING]) < player.fletchingLevelReq) {
+							player.getPacketSender().sendMessage("You need a fletching level of " + player.fletchingLevelReq + " to wield this weapon.");
+							canWearItem = false;
+						}
+					}
 					if (player.magicLevelReq > 0) {
 						if (player.getPlayerAssistant().getLevelForXP(player.playerXP[GameConstants.MAGIC]) < player.magicLevelReq) {
 							player.getPacketSender().sendMessage("You need a magic level of " + player.magicLevelReq + " to wield this weapon.");
@@ -1406,6 +1418,7 @@ public class ItemAssistant {
 				return false;
 			}
 			switch (wearID) {
+				case 877: targetSlot = 13;
 				// Dragon daggers/sword
 				case 1215:
 				case 1231:
