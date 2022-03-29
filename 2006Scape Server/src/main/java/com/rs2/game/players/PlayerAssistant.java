@@ -885,7 +885,7 @@ public class PlayerAssistant {
 			return;
 		if (!player.killedJad) {
 			if (player.waveId > 1) {
-				player.getItemAssistant().addItem(6529, ((int)((player.waveId*player.waveId)+(((double)player.waveId/2.0)+0.5))));
+				//player.getItemAssistant().addItem(6529, ((int)((player.waveId*player.waveId)+(((double)player.waveId/2.0)+0.5))));
 				player.getDialogueHandler().sendDialogues(104, 2617);
 			}
 		}
@@ -900,7 +900,7 @@ public class PlayerAssistant {
 	public void enterCaves() {
 		player.getDialogueHandler().sendDialogues(101, 2617);
 		player.getPlayerAssistant().movePlayer(2413, 5117, player.playerId * 4);
-		player.waveId = 0;
+		player.waveId = 62; //default 1
 		player.tzhaarToKill = -1;
 		player.tzhaarKilled = -1;
 		   CycleEventHandler.getSingleton().addEvent(player, new CycleEvent() {
