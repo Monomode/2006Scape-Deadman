@@ -209,7 +209,22 @@ public class ItemData {
 			while ((c = dataIn.read()) != -1) {
 				if (c == 0) {
 					itemStackable[counter] = false;
-					itemStackable[291] = true;
+					itemStackable[291] = true; //notes
+					// itemStackable[] = true; //
+					itemStackable[199] = true; //grimy guam
+					itemStackable[249] = true; //clean guam
+					itemStackable[201] = true; //grimy marrentil
+					itemStackable[251] = true; //clean marrentil
+					itemStackable[203] = true; //grimy tarromin
+					itemStackable[253] = true; //clean tarromin
+					itemStackable[205] = true; //grimy harralander
+					itemStackable[255] = true; //clean harralander
+					itemStackable[207] = true; //grimy ranarr
+					itemStackable[257] = true; //clean ranarr
+					itemStackable[209] = true; //grimy irit
+					itemStackable[259] = true; //clean irit
+					itemStackable[227] = true; //vial of water
+					itemStackable[231] = true; //snape grass
 				} else {
 					itemStackable[counter] = true;
 				}
