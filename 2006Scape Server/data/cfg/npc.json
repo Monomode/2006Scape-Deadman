@@ -7602,7 +7602,7 @@
     "id": 1264
   },
   {
-    "hitpoints": 50,
+    "hitpoints": 1,
     "name": "Rock Crab",
     "combat": 13,
     "id": 1265
@@ -7614,7 +7614,7 @@
     "id": 1266
   },
   {
-    "hitpoints": 50,
+    "hitpoints": 1,
     "name": "Rock Crab",
     "combat": 13,
     "id": 1267
@@ -14724,7 +14724,7 @@
     "id": 2451
   },
   {
-    "hitpoints": 0,
+    "hitpoints": 180,
     "name": "Giant Rock Crab",
     "combat": 137,
     "id": 2452
