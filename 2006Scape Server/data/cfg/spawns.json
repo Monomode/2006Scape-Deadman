@@ -21130,6 +21130,16 @@
     "height": 0
   },
   {
+    "maxHit": 0,
+    "strength": 0,
+    "attack": 0,
+    "x": 2825,
+    "y": 3555,
+    "id": 1071,
+    "walk": 0,
+    "height": 0
+  },
+  {
     "maxHit": 7,
     "strength": 50,
     "attack": 50,
