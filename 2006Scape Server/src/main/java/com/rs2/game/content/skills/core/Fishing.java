@@ -15,7 +15,7 @@ import com.rs2.util.Misc;
 public class Fishing extends SkillHandler {
 	
 	public static void randomEvents(Player client) {
-		if (Misc.random(350) == 5) {
+		if (Misc.random(70) == 1) { //default 350 == 5
 			RiverTroll.spawnRiverTroll(client);
 		}
 		if (RiverTroll.hasRiverTroll == false) {
@@ -41,7 +41,7 @@ public class Fishing extends SkillHandler {
 			{ 7, 35, 311, -1, 359, 80, 618, 371, 50, 100 }, // TUNA + SWORDIE
 			{ 8, 40, 301, -1, 377, 90, 619, -1, -1, -1 }, // LOBSTER
 			{ 9, 62, 303, -1, 7944, 120, 621, -1, -1, -1 }, // Monkfish
-			{ 10, 76, 311, -1, 383, 110, 618, -1, -1, -1 } // Shark
+			{ 10, 76, 311, -1, 383, 110, 618, 395, 91, 148 } // Shark
 	};
 
 	private static String[][] messages = { { "You cast out your net." }, // SHRIMP

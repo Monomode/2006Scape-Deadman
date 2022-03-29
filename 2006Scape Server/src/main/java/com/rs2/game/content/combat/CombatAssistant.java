@@ -418,6 +418,7 @@ public class CombatAssistant {
 					|| !player.goodDistance(player.getX(), player.getY(), NpcHandler.npcs[i].getX(), NpcHandler.npcs[i].getY(), 4) && player.usingRangeWeapon && !player.usingBow && !player.usingMagic
 					|| !player.goodDistance(player.getX(), player.getY(), NpcHandler.npcs[i].getX(), NpcHandler.npcs[i].getY(), 1) && !player.usingRangeWeapon && !RangeData.usingHally(player) && !player.usingBow && !player.usingMagic
 					|| !player.goodDistance(player.getX(), player.getY(), NpcHandler.npcs[i].getX(), NpcHandler.npcs[i].getY(), 7) && (player.usingBow || player.usingMagic)) {
+				//player.mageFollow = true;
 				return;
 			} else {
 				player.stopMovement();
@@ -451,6 +452,7 @@ public class CombatAssistant {
 					|| !player.goodDistance(player.getX(), player.getY(), PlayerHandler.players[i].getX(), PlayerHandler.players[i].getY(), 2) && !player.usingRangeWeapon 	&& RangeData.usingHally(player) && !player.usingBow && !player.usingMagic
 					|| !player.goodDistance(player.getX(), player.getY(), PlayerHandler.players[i].getX(), PlayerHandler.players[i].getY(), getRequiredDistance()) && !player.usingRangeWeapon && !RangeData.usingHally(player) 	&& !player.usingBow && !player.usingMagic
 					|| !player.goodDistance(player.getX(), player.getY(), PlayerHandler.players[i].getX(), PlayerHandler.players[i].getY(), 10) && (player.usingBow || player.usingMagic)) {
+				//player.mageFollow = true;
 				return;
 			} else {
 				player.stopMovement();
