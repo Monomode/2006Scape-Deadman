@@ -886,7 +886,7 @@ public class PlayerAssistant {
 		if (!player.killedJad) {
 			if (player.waveId > 1) {
 				//player.getItemAssistant().addItem(6529, ((int)((player.waveId*player.waveId)+(((double)player.waveId/2.0)+0.5))));
-				player.getDialogueHandler().sendDialogues(104, 2617);
+				//player.getDialogueHandler().sendDialogues(104, 2617);
 			}
 		}
 		player.killedJad = false;
