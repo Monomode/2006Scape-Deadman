@@ -2597,12 +2597,12 @@ public class ObjectsActions {
             case 2879:
                 player.getPlayerAssistant().movePlayer(2538, 4716, 0);
                 break;
-            case 2878:
+            case 2878: //sparkling pool mage bank
                 if (player.inWild()) {
-                    player.getPacketSender().sendMessage(
-                            "You can't use this in the wilderness.");
-                    return;
-                } else {
+                    //player.getPacketSender().sendMessage(
+                            //"You can't use this in the wilderness.");
+                    //return;
+               // } else {
                     player.getPlayerAssistant().movePlayer(2509, 4689, 0);
                 }
                 break;
