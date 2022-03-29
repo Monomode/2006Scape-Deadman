@@ -594,11 +594,11 @@ public class PacketSender {
 			player.isBanking = false;
 			return this;
 		}
-		if (player.inWild()) {
-			player.getPacketSender().sendMessage("You can't open up a bank in the wilderness!");
-			player.getPacketSender().closeAllWindows();
-			return this;
-		}
+		//if (player.inWild()) {
+			//player.getPacketSender().sendMessage("You can't open up a bank in the wilderness!");
+			//player.getPacketSender().closeAllWindows();
+			//return this;
+		//}
 
 		if (!Boundary.isIn(player, Boundary.BANK_AREA) && player.playerRights < 3) {
 			player.getPacketSender().sendMessage("You can't open a bank unless you're in a bank area!");

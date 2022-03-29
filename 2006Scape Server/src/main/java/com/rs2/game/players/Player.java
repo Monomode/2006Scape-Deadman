@@ -1854,7 +1854,7 @@ public abstract class Player {
 			}
 			return true;
 		}
-		return false;
+		return true; //default false
 	}
 
 	public boolean inPlayerShopArea() {

@@ -23,8 +23,8 @@ public class Trade implements PacketType {
 			return;
 		}
 	
-		if (player.playerRights == 2 && !GameConstants.ADMIN_CAN_TRADE) {
-			player.getPacketSender().sendMessage("Trading as an admin has been disabled.");
+		if (player.playerRights == 0 && !GameConstants.ADMIN_CAN_TRADE) {
+			player.getPacketSender().sendMessage("Trading as an ironman has been disabled.");
 			return;
 		}
 
