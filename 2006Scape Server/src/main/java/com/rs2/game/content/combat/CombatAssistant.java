@@ -574,8 +574,10 @@ public class CombatAssistant {
 						|| !player.goodDistance(player.getX(), player.getY(), NpcHandler.npcs[i].getX(), NpcHandler.npcs[i].getY(), 4) && player.usingRangeWeapon && !player.usingBow && !player.usingMagic
 						|| !player.goodDistance(player.getX(), player.getY(), NpcHandler.npcs[i].getX(), NpcHandler.npcs[i].getY(), 1) && !player.usingRangeWeapon && !RangeData.usingHally(player) && !player.usingBow && !player.usingMagic
 						|| !player.goodDistance(player.getX(), player.getY(), NpcHandler.npcs[i].getX(), NpcHandler.npcs[i].getY(), 8) && (player.usingBow || player.usingMagic)) {
+					//player.mageFollow = true; //farcast
 					return;
 				} else {
+					//player.mageFollow = false; //farcast
 					player.stopMovement();
 				}
 
