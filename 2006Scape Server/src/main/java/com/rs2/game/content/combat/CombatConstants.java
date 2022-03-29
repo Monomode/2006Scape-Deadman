@@ -8,11 +8,11 @@ package com.rs2.game.content.combat;
 
 public class CombatConstants {
 	
-	public final static int MELEE_EXP_RATE = 4; 
+	public final static int MELEE_EXP_RATE = 2;
 	
-	public final static int RANGE_EXP_RATE = 4;
+	public final static int RANGE_EXP_RATE = 2;
 	
-	public final static int MAGIC_EXP_RATE = 4;
+	public final static int MAGIC_EXP_RATE = 2;
 	
 	public final static int INCREASE_SPECIAL_AMOUNT = 17500;
 	
@@ -28,7 +28,7 @@ public class CombatConstants {
 	
 	public final static boolean SINGLE_AND_MULTI_ZONES = true;
 	
-	public final static boolean COMBAT_LEVEL_DIFFERENCE = true;
+	public final static boolean COMBAT_LEVEL_DIFFERENCE = false;
 	
 	public final static boolean COMBAT_SOUNDS = true;
 

@@ -1660,24 +1660,24 @@ public class CombatAssistant {
 			return true;
 		}
 		if (!PlayerHandler.players[player.playerIndex].inWild() && !PlayerHandler.players[player.playerIndex].inCwGame() && !CastOnOther.castOnOtherSpells(player.castingSpellId)) {
-			//player.getPacketSender().sendMessage("That player is not in the wilderness.");
-			//player.stopMovement();
-			//resetPlayerAttack();
-			return true; //default false
+			player.getPacketSender().sendMessage("That player is not in the wilderness.");
+			player.stopMovement();
+			resetPlayerAttack();
+			return false;
 		}
 		if (!player.inWild() && !PlayerHandler.players[player.playerIndex].inCwGame() && !CastOnOther.castOnOtherSpells(player.castingSpellId)) {
-			//player.getPacketSender().sendMessage("You are not in the wilderness.");
-			//player.stopMovement();
-			//resetPlayerAttack();
-			return true; //default false
+			player.getPacketSender().sendMessage("You are not in the wilderness.");
+			player.stopMovement();
+			resetPlayerAttack();
+			return false;
 		}
 		if (CombatConstants.COMBAT_LEVEL_DIFFERENCE && !player.inCw()) {
 			int combatDif1 = getCombatDifference(player.combatLevel, PlayerHandler.players[player.playerIndex].combatLevel);
 			if (combatDif1 > player.wildLevel || combatDif1 > PlayerHandler.players[player.playerIndex].wildLevel) {
-				//player.getPacketSender().sendMessage("Your combat level difference is too great to attack that player here.");
-				//player.stopMovement();
-				//resetPlayerAttack();
-				return true; //default false
+				player.getPacketSender().sendMessage("Your combat level difference is too great to attack that player here.");
+				player.stopMovement();
+				resetPlayerAttack();
+				return true;
 			}
 		}
 		if (CombatConstants.SINGLE_AND_MULTI_ZONES) {
