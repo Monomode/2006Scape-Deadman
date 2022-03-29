@@ -4,10 +4,10 @@ import com.rs2.game.players.Player;
 
 public class RangeData {
 
-	public final static int[] BOWS = { 9185, 839, 845, 847, 851, 855, 859, 841,
+	public final static int[] BOWS = { 767, 837, 9185, 839, 845, 847, 851, 855, 859, 841,
 			843, 849, 853, 857, 861, 4212, 4214, 4215, 11235, 4216, 4217, 4218,
 			4219, 4220, 4221, 4222, 4223, 6724, 4734, 4934, 4935, 4936, 4937 };
-	public final static int[] ARROWS = { 882, 883, 884, 885, 886, 887, 888, 889, 890, 891, 892, 893, 4740,
+	public final static int[] ARROWS = { 877, 878, 881, 882, 883, 884, 885, 886, 887, 888, 889, 890, 891, 892, 893, 4740,
 			11212, 9140, 9141, 4142, 9143, 9144, 9240, 9241, 9242, 9243, 9244,
 			9245, 4150, 4160, 4172 };
 	public final static int[] NO_ARROW_DROP = { 4212, 4214, 4215, 4216, 4217,
@@ -85,6 +85,12 @@ public class RangeData {
 			return -1;
 		}
 		switch (c.playerEquipment[c.playerWeapon]) {
+		case 767: //phoenix crossbow (rune crossbow)
+		return 881;
+
+		case 837: //crossbow (dorgeshuun)
+		return 877;
+
 		case 839://longbow
 		case 841:
 			return 882;
