@@ -212,8 +212,8 @@ public class Commands implements PacketType {
                 player.getPacketSender().sendMessage(String.format("Prayer points: %d", player.playerLevel[GameConstants.PRAYER]));
                 break;
             case "snow":
-                Calendar date = new GregorianCalendar();
-                if ((date.get(Calendar.MONTH) + 1) == 12 && !player.inWild()) {
+                //Calendar date = new GregorianCalendar();
+                //if ((date.get(Calendar.MONTH) + 1) == 12 && !player.inWild()) {
                     if (player.isSnowy) {
                         player.isSnowy = false;
                         player.getPacketSender().walkableInterface(-1);
@@ -222,7 +222,7 @@ public class Commands implements PacketType {
                         player.getPacketSender().walkableInterface(11877);
                         player.getPacketSender().sendMessage("Happy Holidays! Type ::snow to disable/enable! (Auto-disabling in certain area)");
                     }
-                }
+                //}
                 break;
             case "shop":
                 player.getDialogueHandler().sendDialogues(10000, 0);
