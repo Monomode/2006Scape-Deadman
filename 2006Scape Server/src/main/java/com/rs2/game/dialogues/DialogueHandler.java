@@ -4636,7 +4636,7 @@ public class DialogueHandler {
 			case 1348:
 				if (player.getItemAssistant().playerHasItem(995, 12)) {
 					player.getItemAssistant().deleteItem(995, 12);
-					player.getItemAssistant().addOrDropItem(3105, 1);
+					player.getItemAssistant().addOrDropItem(3107, 1);
 					sendPlayerChat("Yes please.");
 					player.nextChat = 0;
 				} else {
