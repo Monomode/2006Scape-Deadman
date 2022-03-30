@@ -1,5 +1,55 @@
 [
   {
+    "maxHit": 20,
+    "strength": 140,
+    "attack": 140,
+    "x": 2407,
+    "y": 3053,
+    "id": 1625,
+    "walk": 1,
+    "height": 0
+  },
+  {
+    "maxHit": 20,
+    "strength": 140,
+    "attack": 140,
+    "x": 2396,
+    "y": 3056,
+    "id": 1625,
+    "walk": 1,
+    "height": 0
+  },
+  {
+    "maxHit": 20,
+    "strength": 140,
+    "attack": 140,
+    "x": 2385,
+    "y": 3045,
+    "id": 1625,
+    "walk": 1,
+    "height": 0
+  },
+  {
+    "maxHit": 0,
+    "strength": 0,
+    "attack": 0,
+    "x": 3214,
+    "y": 2955,
+    "id": 1923,
+    "walk": 0,
+    "height": 0
+  },
+  {
+    "maxHit": 0,
+    "strength": 0,
+    "attack": 0,
+    "x": 3233,
+    "y": 9315,
+    "id": 1923,
+    "walk": 0,
+    "height": 0
+  },
+  {
     "maxHit": 0,
     "strength": 0,
     "attack": 0,
