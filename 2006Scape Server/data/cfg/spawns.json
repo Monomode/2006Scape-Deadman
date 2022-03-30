@@ -1,5 +1,25 @@
 [
   {
+    "maxHit": 0,
+    "strength": 0,
+    "attack": 0,
+    "x": 3230,
+    "y": 3228,
+    "id": 945,
+    "walk": 0,
+    "height": 0
+  },
+  {
+    "maxHit": 0,
+    "strength": 0,
+    "attack": 0,
+    "x": 3218,
+    "y": 9617,
+    "id": 945,
+    "walk": 0,
+    "height": 0
+  },
+  {
     "maxHit": 1,
     "strength": 3,
     "attack": 3,
