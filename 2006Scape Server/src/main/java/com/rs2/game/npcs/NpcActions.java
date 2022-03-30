@@ -53,6 +53,9 @@ public class NpcActions {
 		case 1705 : // Ghost Captain
 			player.getDialogueHandler().sendDialogues(1400, npcType);
 			break;
+		case 1923 : // eblis staff shop
+			player.getShopAssistant().openShop(351);
+				break;
 			
 		case 2324 :
 		case 2323 :
