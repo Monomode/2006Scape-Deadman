@@ -142,13 +142,14 @@ public class ItemHandler {
                 }
                 if (i.hideTicks == 1) { // item can now be seen by others
                     i.hideTicks = 0;
-                    createGlobalItem(i);
-                    i.removeTicks = HIDE_TICKS - 18;
+                    toRemove.add(i); //removes item
+                    //createGlobalItem(i); //creates item visible to players
+                    i.removeTicks = HIDE_TICKS;
                 }
                 if (i.removeTicks > 0) {
                     i.removeTicks--;
                 }
-                if (i.removeTicks == 1) { //item can now be removed
+                if (i.removeTicks == 1) {
                     i.removeTicks = 0;
                     toRemove.add(i); //removes item
                 }
