@@ -1,1 +1,2 @@
 [2019/10/04] 22:10 test dropped 3 coins absX: 3224 absY: 3202
+[2022/03/30] 03:47 test dropped 1 bronze arrow absX: 3222 absY: 3218
