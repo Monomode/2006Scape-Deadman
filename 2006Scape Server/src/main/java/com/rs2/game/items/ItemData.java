@@ -211,6 +211,9 @@ public class ItemData {
 					itemStackable[counter] = false;
 					itemStackable[291] = true; //notes
 					// itemStackable[] = true; //
+					itemStackable[1777] = true; //bowstring
+					itemStackable[1779] = true; //flax
+
 					itemStackable[199] = true; //grimy guam
 					itemStackable[249] = true; //clean guam
 					itemStackable[201] = true; //grimy marrentil
@@ -224,7 +227,18 @@ public class ItemData {
 					itemStackable[209] = true; //grimy irit
 					itemStackable[259] = true; //clean irit
 					itemStackable[227] = true; //vial of water
+					itemStackable[221] = true; //eye of newt
 					itemStackable[231] = true; //snape grass
+					// itemStackable[] = true; //
+
+					itemStackable[1753] = true; //green dragonhide
+					itemStackable[1751] = true; //blue dragonhide
+					itemStackable[1749] = true; //red dragonhide
+					itemStackable[1747] = true; //black dragonhide
+					itemStackable[1745] = true; //green d-leather
+					// itemStackable[] = true; //
+
+
 				} else {
 					itemStackable[counter] = true;
 				}
