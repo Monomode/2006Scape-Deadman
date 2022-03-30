@@ -924,7 +924,7 @@ public class PlayerAssistant {
 			{ 303, 1 }, { 315, 1 }, { 1925, 1 }, { 1931, 1 }, { 2309, 1 },
 			{ 1265, 1 }, { 1205, 1 }, { 1277, 1 }, { 1171, 1 }, { 841, 1 },
 			{ 882, 25 }, { 556, 25 }, { 558, 15 }, { 555, 6 }, { 557, 4 },
-			{ 559, 2 } };
+			{ 559, 2 }, {7804, 1 }, {3696, 1} };
 
 	public void addStarter() {
 		for (int[] element : STARTER_ITEMS) {
@@ -1447,8 +1447,8 @@ public class PlayerAssistant {
 				if (player.getPrayer().prayerActive[10] && System.currentTimeMillis() - player.lastProtItem > 700) {
 					player.getItemAssistant().keepItem(3, true);
 				}
-				player.getItemAssistant().dropAllItems(); // drop all items
-				player.getItemAssistant().deleteAllItems(); // delete all items
+				//player.getItemAssistant().dropAllItems(); // drop all items
+				//player.getItemAssistant().deleteAllItems(); // delete all items
 
 				if (!player.isSkulled) { // add the kept items once we finish deleting and dropping them
 					for (int i1 = 0; i1 < 3; i1++) {
