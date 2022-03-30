@@ -430,7 +430,7 @@ public class ShopAssistant {
 			}
 
 			// Add item to the shop
-			addShopItem(unNotedItemID, amount);
+			//addShopItem(unNotedItemID, amount); //ironman mode shops dont show items added by players
 			player.getItemAssistant().resetItems(3823);
 			resetShop(player.shopId);
 			updatePlayerShop();
