@@ -43,6 +43,9 @@ public class NpcActions {
 		case 389 : //thormac
 			player.getDialogueHandler().sendDialogues(3574, npcType);
 			break;
+		case 945:
+			player.getShopAssistant().openShop(350);
+			break;
 		case 1686 : // Ghost Desciple
 			player.getDialogueHandler().sendDialogues(1390, npcType);
 			break;
@@ -295,17 +298,17 @@ public class NpcActions {
 		/*
 		 * tutorial island
 		 */
-		case 945:
-			if (player.tutorialProgress == 0) {
-				player.getDialogueHandler().sendDialogues(3001, npcType);
-			}
-			if (player.tutorialProgress == 1) {
-				player.getDialogueHandler().sendDialogues(3008, npcType);
-			}
-			if (player.tutorialProgress == 2) {
-				player.getDialogueHandler().sendNpcChat1("You should move on now.", npcType, "Runescape Guide");
-			}
-			break;
+		//case 945:
+			//if (player.tutorialProgress == 0) {
+				//player.getDialogueHandler().sendDialogues(3001, npcType);
+			//}
+			//if (player.tutorialProgress == 1) {
+				//player.getDialogueHandler().sendDialogues(3008, npcType);
+			//}
+			//if (player.tutorialProgress == 2) {
+				//player.getDialogueHandler().sendNpcChat1("You should move on now.", npcType, "Runescape Guide");
+			//}
+			//break;
 
 		case 943:// survival
 			if (player.tutorialProgress == 2) {
