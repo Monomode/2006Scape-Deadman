@@ -760,9 +760,9 @@ public class Commands implements PacketType {
                 }
                 break;
             case "spellbook":
-                if (player.inWild()) {
-                    return;
-                }
+                //if (player.inWild()) {
+                    //return;
+                //}
                 if (player.playerMagicBook == 0) {
                     player.playerMagicBook = 1;
                     player.getPacketSender().setSidebarInterface(6, 12855);
