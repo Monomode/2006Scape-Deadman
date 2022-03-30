@@ -753,8 +753,7 @@ public class NpcHandler {
                             && npcs[i].applyDead
                             && npcs[i].needRespawn == false) {
                         npcs[i].needRespawn = true;
-                        npcs[i].actionTimer = NpcData.getRespawnTime(i); // respawn
-                        // time
+                        npcs[i].actionTimer = NpcData.getRespawnTime(i); // respawn time
                         dropItems(i); // npc drops items!
                         FightCaves.tzhaarDeathHandler(i);
                         if (npcs[i].npcType == 2745) {
