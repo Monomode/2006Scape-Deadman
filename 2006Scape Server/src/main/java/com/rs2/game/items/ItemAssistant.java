@@ -1429,7 +1429,9 @@ public class ItemAssistant {
 						canWearItem = false;
 					}
 				case 877: targetSlot = 13;
+					break;
 				case 7535: targetSlot = 1;
+					break;
 			}
 
 			if (!canWearItem) {
