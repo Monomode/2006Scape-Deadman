@@ -2,6 +2,34 @@
   {
     "buyModifier": 2,
     "sellModifier": 2,
+    "name": "Recipe for Disaster Store",
+    "id": 350,
+    "items": [
+      {
+        "itemId": 837,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 877,
+        "itemAmount": 5000
+      },
+      {
+        "itemId": 7460,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 7461,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 7462,
+        "itemAmount": 1
+      }
+    ]
+  },
+  {
+    "buyModifier": 2,
+    "sellModifier": 2,
     "name": "Amulet Store",
     "id": 2,
     "items": [
