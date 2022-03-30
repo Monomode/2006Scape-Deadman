@@ -1418,17 +1418,18 @@ public class ItemAssistant {
 				return false;
 			}
 			switch (wearID) {
-				case 877: targetSlot = 13;
 				// Dragon daggers/sword
 				case 1215:
 				case 1231:
 				case 5680:
 				case 5698:
 				case 1305:
-					if (player.lostCity != 3 && player.playerRights != 3) {
+					if (player.lostCity != 3) { // && player.playerRights != 3
 						player.getPacketSender().sendMessage("You must have completed the Lost City quest to equip this weapon.");
 						canWearItem = false;
 					}
+				case 877: targetSlot = 13;
+				case 7535: targetSlot = 1;
 			}
 
 			if (!canWearItem) {
@@ -2377,7 +2378,7 @@ public class ItemAssistant {
 	 * Delete Arrows
 	 **/
 	public void deleteArrow() {
-		if (player.playerEquipment[player.playerCape] == 10499 && Misc.random(5) != 1
+		if (player.playerEquipment[player.playerCape] == 7535 && Misc.random(5) != 1 //ava's 10499
 				&& player.playerEquipment[player.playerArrows] != 4740) {
 			return;
 		}
@@ -2437,7 +2438,7 @@ public class ItemAssistant {
 	 **/
 
 	public void dropArrowNpc() {
-		if (player.playerEquipment[player.playerCape] == 10499) {
+		if (player.playerEquipment[player.playerCape] == 7535) { //ava's 10499
 			return;
 		}
 		int enemyX = NpcHandler.npcs[player.oldNpcIndex].getX();
@@ -2461,7 +2462,7 @@ public class ItemAssistant {
 	public void dropArrowPlayer() {
 		int enemyX = PlayerHandler.players[player.oldPlayerIndex].getX();
 		int enemyY = PlayerHandler.players[player.oldPlayerIndex].getY();
-		if (player.playerEquipment[player.playerCape] == 10499) {
+		if (player.playerEquipment[player.playerCape] == 7535) { //ava's 10499
 			return;
 		}
 		if (Misc.random(10) >= 4) {
