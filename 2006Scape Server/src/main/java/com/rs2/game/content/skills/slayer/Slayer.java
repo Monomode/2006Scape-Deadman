@@ -94,6 +94,7 @@ public class Slayer {
 		DAGANNOTH_92(1342, 1, 80 + r(50), HARD_TASK, "Lighthouse Basement"),
 		DARK_BEAST(2783, 90, 180, VERY_HARD_TASK, "Slayer Tower"),
 		DUST_DEVIL(1624, 65, 105, MEDIUM_TASK, "Slayer Tower"),
+		SMOKE_DEVIL(1625, 93, 185, HARD_TASK, "Castle Wars"),
 		EARTH_WARRIOR(124, 1, 54, MEDIUM_TASK, "Edgeville Dungeon"),
 		FIRE_GIANT(110, 1, 111, HARD_TASK, "Brimhaven Dungeon"),
 		GARGOYLE(1611, 75, 105, HARD_TASK, "Slayer Tower"),
@@ -561,7 +562,7 @@ public class Slayer {
 		}
 		c.buySlayerTimer = System.currentTimeMillis();
 		c.slayerPoints -= 25;
-		c.getPacketSender().sendMessage("You spend 25 slayer points and aquire an useful Slayer's respite.");
+		c.getPacketSender().sendMessage("You spend 25 slayer points and acquire a useful Slayer's respite.");
 		c.getItemAssistant().addItem(5841, 1);
 		updatePoints();
 	}
