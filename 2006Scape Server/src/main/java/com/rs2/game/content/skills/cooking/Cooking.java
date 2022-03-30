@@ -19,27 +19,28 @@ public class Cooking extends SkillHandler {
 
 	private static enum CookingItems {
 		//raw, cooked, burnt, levelreq, exp, stopburn, stopburn w/gloves, name
-				SHRIMP(317, 315, 7954, 1, 30, 34, 30, "shrimp"), 
-				SARDINE(327, 325, 369, 1, 40, 38, 38, "sardine"), 
-				HERRING(345, 347, 357, 5, 50, 41, 41, "herring"), 
-				TROUT(335, 333, 343, 15, 70, 50, 50, "trout"), 
-				TUNA(359, 361, 367, 30, 100, 64, 63, "tuna"), 
-				ANCHOVIES(321, 319, 323, 5, 45, 34, 34, "anchovies"), 
-				RAW_BEEF(2132, 2142, 2146, 1, 30, 33, 33, "raw beef"), 
-				RAW_RAT(2134, 2142, 2146, 1, 30, 33, 33, "raw rat meat"), 
+				SHRIMP(317, 315, 7954, 1, 30, 34, 30, "shrimp"),
+				SARDINE(327, 325, 369, 1, 40, 38, 38, "sardine"),
+				HERRING(345, 347, 357, 5, 50, 41, 41, "herring"),
+				TROUT(335, 333, 343, 15, 70, 50, 50, "trout"),
+				TUNA(359, 361, 367, 30, 100, 64, 63, "tuna"),
+				ANCHOVIES(321, 319, 323, 5, 45, 34, 34, "anchovies"),
+				RAW_BEEF(2132, 2142, 2146, 1, 30, 33, 33, "raw beef"),
+				RAW_RAT(2134, 2142, 2146, 1, 30, 33, 33, "raw rat meat"),
 				BURNT_MEAT(2142, 2146, 2146, 1, 1, 100, 100, "cooked meat"),
-				RAW_CHICKEN(2138, 2140, 2144, 1, 30, 33, 33, "raw chicken"), 
-				RAW_BEAR_MEAT(2136, 2142, 2146, 1, 30, 33, 33, "raw bear meat"), 
-				MACKERAL(353, 355, 357, 10, 60, 45, 45, "mackeral"), 
+				RAW_CHICKEN(2138, 2140, 2144, 1, 30, 33, 33, "raw chicken"),
+				RAW_BEAR_MEAT(2136, 2142, 2146, 1, 30, 33, 33, "raw bear meat"),
+				MACKERAL(353, 355, 357, 10, 60, 45, 45, "mackeral"),
 				SALMON(331, 329, 343, 25, 90, 58, 55, "salmon"),
 				UNCOOKED_BERRY_PIE(2321, 2325, 2329, 10, 78, 50, 50, "uncooked pie"),
-				PIKE(349, 351, 343, 20, 80, 59, 59, "pike"), 
-				KARAMBWAN(3142, 3144, 3146, 1, 80, 20, 20, "karambwan"), 
-				LOBSTER(377, 379, 381, 40, 120, 74, 68, "lobster"), 
+				PIKE(349, 351, 343, 20, 80, 59, 59, "pike"),
+				KARAMBWAN(3142, 3144, 3146, 1, 80, 20, 20, "karambwan"),
+				LOBSTER(377, 379, 381, 40, 120, 74, 68, "lobster"),
 				SWORDFISH(371, 373, 375, 50, 140, 86, 81, "swordfish"),
-				MONKFISH(7944, 7946, 7948, 62, 150, 92, 90,	"monkfish"), 
-				SHARK(383, 385, 387, 76, 210, 100, 94, "shark"), 
-				MANTA_RAY(389, 391, 393, 91, 169, 100, 100, "manta ray"),
+				MONKFISH(7944, 7946, 7948, 62, 150, 92, 90,	"monkfish"),
+				SHARK(383, 385, 387, 76, 210, 100, 94, "shark"),
+				SEA_TURTLE(395, 397, 399, 82, 211, 100, 99, "sea turtle"),
+				MANTA_RAY(389, 391, 393, 91, 216, 100, 100, "manta ray"),
 				SEAWEED(401, 1781, 1781, 1, 1, 1, 1, "sea weed"),
 				CURRY(2009, 2011, 2013, 60, 280, 74, 74, "curry");
 
@@ -227,7 +228,7 @@ public class Cooking extends SkillHandler {
 					player.getItemAssistant().deleteItem(item.getRawItem(),
 							player.getItemAssistant().getItemSlot(itemId), 1);
 					if (!burn) {
-						player.getPacketSender().sendMessage("You successfully cook the " + item.getName().toLowerCase() + ".");
+						//gamefilter player.getPacketSender().sendMessage("You successfully cook the " + item.getName().toLowerCase() + ".");
 						if (GameConstants.SOUND) {
 							player.getPacketSender().sendSound(SoundList.COOK_ITEM, 100, 0);
 						}
