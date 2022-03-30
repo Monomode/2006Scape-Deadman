@@ -2,6 +2,22 @@
   {
     "buyModifier": 2,
     "sellModifier": 2,
+    "name": "Eblis Staff Shop",
+    "id": 351,
+    "items": [
+      {
+        "itemId": 4675,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 7804,
+        "itemAmount": 1
+      }
+    ]
+  },
+  {
+    "buyModifier": 2,
+    "sellModifier": 2,
     "name": "Recipe for Disaster Store",
     "id": 350,
     "items": [
@@ -111,6 +127,18 @@
       },
       {
         "itemId": 851,
+        "itemAmount": 10
+      },
+      {
+        "itemId": 837,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 877,
+        "itemAmount": 5000
+      },
+      {
+        "itemId": 7535,
         "itemAmount": 10
       }
     ]
