@@ -86,7 +86,11 @@ public class RangeData {
 		}
 		switch (c.playerEquipment[c.playerWeapon]) {
 		case 767: //phoenix crossbow (rune crossbow)
-		return 881;
+			if (c.playerEquipment[c.playerArrows] == 881) {
+				return 881;
+			} else if (c.playerEquipment[c.playerArrows] == 877) {
+				return 877;
+			}
 
 		case 837: //crossbow (dorgeshuun)
 		return 877;
