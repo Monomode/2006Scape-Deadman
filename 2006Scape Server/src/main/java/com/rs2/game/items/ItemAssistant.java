@@ -799,13 +799,14 @@ public class ItemAssistant {
 		}
 		if (itemId == 837) { //crossbow "dorgeshuun crossbow"
 				player.rangeLevelReq = 28;
-			//quest completed rune mysteries runeMist
-			//13 agility
-			//13 thieving
-			//17 mining
+				//player.agilityLevelReq = 13;
+				//player.thievingLevelReq = 13;
+				//player.miningLevelReq = 17;
+				//player.runeMist = 3;
 			}
 		if (itemId == 767) { //phoenix crossbow "rune crossbow"
 			player.rangeLevelReq = 61;
+			//player.slayerLevelReq = 55;
 			//player.fletchingLevelReq = 69;
 			//player.woodcuttingLevelReq = 60;
 		}
@@ -1429,6 +1430,10 @@ public class ItemAssistant {
 						canWearItem = false;
 					}
 				case 877: targetSlot = 13;
+					break;
+				case 1033: targetSlot = 7;
+					break;
+				case 1035: targetSlot = 4;
 					break;
 				case 7535: targetSlot = 1;
 					break;
