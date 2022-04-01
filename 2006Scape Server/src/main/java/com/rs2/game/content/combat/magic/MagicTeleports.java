@@ -23,10 +23,10 @@ public class MagicTeleports {
 		if (player.teleTimer > 0) {
 			return;
 		}
-		if (player.wildLevel > 20) {
-			player.getPacketSender().sendMessage("You can't teleport above level 20 wilderness.");
-			return;
-		}
+		//if (player.wildLevel > 20) { //could re-enable if wilderness boundary is redefined
+			//player.getPacketSender().sendMessage("You can't teleport above level 20 wilderness.");
+			//return;
+		//}
 		if (player.playerLevel[GameConstants.MAGIC] < teleport.getRequiredLevel()) {
 			player.getPacketSender().sendMessage("You need a magic level of " + teleport.getRequiredLevel() + " to cast this spell.");
 			return;
