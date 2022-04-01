@@ -3,7 +3,7 @@
 // Decompiler options: packimports(3) 
 
 final class WorldController {
-	public static int drawDistance = 25;
+	public static int drawDistance = 100;
 
 	public WorldController(int ai[][][]) {
 		int i = 104;// was parameter
