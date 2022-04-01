@@ -226,12 +226,12 @@ public class NpcData {
 		case 2560:
 			return 3;
 
-		case 2745:
+		case 2745: //jad
 			if (NpcHandler.npcs[i].attackType == 1
 					|| NpcHandler.npcs[i].attackType == 2) {
-				return 5;
+				return 6; //default 5
 			} else {
-				return 2;
+				return 3; //default 2
 			}
 
 		case 2025:
