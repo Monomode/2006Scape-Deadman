@@ -2638,6 +2638,7 @@ public abstract class Player {
 	}
 
 	public int getLevelForXP(int exp) {
+		//playerXP[GameConstants.DEFENCE] (max level defence 78)
 		if (exp > 13034430) {
 			return 99;
 		} else {
