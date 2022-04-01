@@ -59,4 +59,6 @@ public class CastRequirements {
 							BLOOD = 565,
 							SOUL = 566,
 							ASTRAL = 9075;
+							//SMOKE = 4697;
+							//MUD = 4698;
 }
