@@ -106,9 +106,9 @@ public class PlayerAssistant {
 	        if (player.lastLoginDate <= 0) {
 	            player.getPacketSender().sendString("This is your first time logging in!", 15258);
 	        } else if (player.lastLoginDate == 1) {
-	           player.getPacketSender().sendString("You last logged in @red@yesterday @bla@ from: @red@" + player.lastConnectedFrom, 15258);
+	           player.getPacketSender().sendString("You last logged in @red@yesterday @bla@ from: @red@", 15258); // + player.lastConnectedFrom
 	        } else {
-	        	player.getPacketSender().sendString("You last logged in @red@" + (currentDay > 1 ? (currentDay + " @bla@days ago") : ("earlier today")) + " @bla@ from: @red@" + player.lastConnectedFrom, 15258);
+	        	player.getPacketSender().sendString("You last logged in @red@" + (currentDay > 1 ? (currentDay + " @bla@days ago") : ("earlier today")) + " @bla@ from: @red@", 15258); // + player.lastConnectedFrom
 	        }
 		player.getPacketSender().sendString("" +GameConstants.SERVER_NAME + " will NEVER email you.\\n We use the forums or we \\nWill contact you through game.", 15260);
 		player.getPacketSender().sendString("You have 0 unread messages\\nin your message centre.", 15261);
