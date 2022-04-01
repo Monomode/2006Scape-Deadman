@@ -10,6 +10,16 @@ public class MagicRequirements {
 	public static boolean wearingStaff(Player player, int runeId) {
 		int wep = player.playerEquipment[player.playerWeapon];
 		switch (runeId) {
+		case 4697: //smoke
+			if (wep == 1387 || wep == 1393 || wep == 1401 || wep == 3053 || wep == 3054 || wep == 1381 || wep == 1397 || wep == 1405) {
+				return true;
+			}
+			break;
+		case 4698: //mud
+			if (wep == 1383 || wep == 1395 || wep == 1403 || wep == 6562 || wep == 6563 || wep == 1385 || wep == 1399 || wep == 3053 || wep == 3054 || wep == 6562 || wep == 6563) {
+				return true;
+			}
+			break;
 		case 554: // Fire runes
 			if (wep == 1387 || wep == 1393 || wep == 1401 || wep == 3053 || wep == 3054) {
 				return true;
