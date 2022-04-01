@@ -1283,7 +1283,7 @@ public class NpcHandler {
             case 3200:// chaos ele
             case 2743:
             case 2631:
-            case 2745:
+            case 2745://jad
                 return 8;
             case 2883:// rex
                 return 1;
@@ -1327,13 +1327,13 @@ public class NpcHandler {
             case 2881:
             case 2882:
             case 3200:
-                return 85;
+                return 85; //default 85
 
             case 2745:
-                return 130;
+                return 85; //default 130
 
             case 50:
-                return 90;
+                return 90; //default 90
 
             case 2025:
                 return 85;
