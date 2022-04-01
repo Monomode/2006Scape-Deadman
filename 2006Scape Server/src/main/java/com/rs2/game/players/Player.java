@@ -1461,7 +1461,7 @@ public abstract class Player {
 			dialogueId, randomCoffin, newLocation, specEffect,
 			specBarId, attackLevelReq, defenceLevelReq, strengthLevelReq,
 			rangeLevelReq, magicLevelReq, slayerLevelReq, agilityLevelReq, fletchingLevelReq,
-			woodcuttingLevelReq,
+			woodcuttingLevelReq, miningLevelReq, thievingLevelReq,
 			followId, skullTimer, nextChat = 0, talkingNpc = -1,
 			dialogueAction = 0, autocastId, followDistance, followId2,
 			barrageCount = 0, delayedDamage = 0, delayedDamage2 = 0,
