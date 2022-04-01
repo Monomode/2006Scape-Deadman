@@ -2,6 +2,18 @@
   {
     "buyModifier": 2,
     "sellModifier": 2,
+    "name": "Iban's Staff Shop",
+    "id": 352,
+    "items": [
+      {
+        "itemId": 1409,
+        "itemAmount": 1
+      }
+    ]
+  },
+  {
+    "buyModifier": 2,
+    "sellModifier": 2,
     "name": "Eblis Staff Shop",
     "id": 351,
     "items": [
