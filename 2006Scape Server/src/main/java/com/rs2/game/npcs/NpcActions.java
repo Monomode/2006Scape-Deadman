@@ -1084,7 +1084,10 @@ public class NpcActions {
 		}
 		if (player.absX > 2619 && player.absX < 2622 && player.absY > 3680 && player.absY < 3689 && player.getItemAssistant().playerHasItem(995, 1000)) {
 			//Sailing.startTravel(c, 18);
-			player.getPlayerAssistant().startTeleport(2551, 3759, 0, "modern");
+			//2620, 3686 - relleka
+			//2551, 3759 - waterbirth
+			// - dks lair shortcut
+			player.getPlayerAssistant().startTeleport(2538,3731, 0, "modern"); //2551, 3759
 			player.getItemAssistant().deleteItem(995, 1000);
 			player.getDialogueHandler().sendStatement("You arrive safely.");
 			player.nextChat = 0;
