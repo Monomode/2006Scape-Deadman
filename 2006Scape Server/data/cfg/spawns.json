@@ -3,6 +3,16 @@
     "maxHit": 23,
     "strength": 220,
     "attack": 220,
+    "x": 2539,
+    "y": 3731,
+    "id": 2438,
+    "walk": 0,
+    "height": 0
+  },
+  {
+    "maxHit": 23,
+    "strength": 220,
+    "attack": 220,
     "x": 2869,
     "y": 9834,
     "id": 1224,
