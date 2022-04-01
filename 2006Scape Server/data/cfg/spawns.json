@@ -1,8 +1,18 @@
 [
   {
-    "maxHit": 23,
-    "strength": 220,
-    "attack": 220,
+    "maxHit": 0,
+    "strength": 0,
+    "attack": 0,
+    "x": 2559,
+    "y": 3299,
+    "id": 1001,
+    "walk": 0,
+    "height": 0
+  },
+  {
+    "maxHit": 0,
+    "strength": 0,
+    "attack": 0,
     "x": 2539,
     "y": 3731,
     "id": 2438,
