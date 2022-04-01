@@ -43,8 +43,11 @@ public class NpcActions {
 		case 389 : //thormac
 			player.getDialogueHandler().sendDialogues(3574, npcType);
 			break;
-		case 945:
+		case 945: //recipe for disaster / crossbow shop (tutor)
 			player.getShopAssistant().openShop(350);
+			break;
+		case 1001:	//dark mage iban staff
+			player.getShopAssistant().openShop(352);
 			break;
 		case 1686 : // Ghost Desciple
 			player.getDialogueHandler().sendDialogues(1390, npcType);
