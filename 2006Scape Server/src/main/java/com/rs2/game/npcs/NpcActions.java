@@ -40,6 +40,9 @@ public class NpcActions {
 			}
 		}
 		switch (npcType) {
+		case 219: //fishing guild store
+			player.getShopAssistant().openShop(190);
+			break;
 		case 389 : //thormac
 			player.getDialogueHandler().sendDialogues(3574, npcType);
 			break;
