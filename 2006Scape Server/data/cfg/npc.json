@@ -16098,6 +16098,12 @@
     "id": 2680
   },
   {
+    "hitpoints": 6,
+    "name": "Seagull",
+    "combat": 2,
+    "id": 2693
+  },
+  {
     "hitpoints": 0,
     "name": "Pirate",
     "combat": 0,
