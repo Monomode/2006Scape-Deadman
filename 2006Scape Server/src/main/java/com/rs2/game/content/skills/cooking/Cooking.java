@@ -19,30 +19,30 @@ public class Cooking extends SkillHandler {
 
 	private static enum CookingItems {
 		//raw, cooked, burnt, levelreq, exp, stopburn, stopburn w/gloves, name
-				SHRIMP(317, 315, 7954, 1, 30, 34, 30, "shrimp"),
-				SARDINE(327, 325, 369, 1, 40, 38, 38, "sardine"),
-				HERRING(345, 347, 357, 5, 50, 41, 41, "herring"),
-				TROUT(335, 333, 343, 15, 70, 50, 50, "trout"),
-				TUNA(359, 361, 367, 30, 100, 64, 63, "tuna"),
-				ANCHOVIES(321, 319, 323, 5, 45, 34, 34, "anchovies"),
-				RAW_BEEF(2132, 2142, 2146, 1, 30, 33, 33, "raw beef"),
-				RAW_RAT(2134, 2142, 2146, 1, 30, 33, 33, "raw rat meat"),
-				BURNT_MEAT(2142, 2146, 2146, 1, 1, 100, 100, "cooked meat"),
-				RAW_CHICKEN(2138, 2140, 2144, 1, 30, 33, 33, "raw chicken"),
-				RAW_BEAR_MEAT(2136, 2142, 2146, 1, 30, 33, 33, "raw bear meat"),
-				MACKERAL(353, 355, 357, 10, 60, 45, 45, "mackeral"),
-				SALMON(331, 329, 343, 25, 90, 58, 55, "salmon"),
-				UNCOOKED_BERRY_PIE(2321, 2325, 2329, 10, 78, 50, 50, "uncooked pie"),
-				PIKE(349, 351, 343, 20, 80, 59, 59, "pike"),
-				KARAMBWAN(3142, 3144, 3146, 1, 80, 20, 20, "karambwan"),
-				LOBSTER(377, 379, 381, 40, 120, 74, 68, "lobster"),
-				SWORDFISH(371, 373, 375, 50, 140, 86, 81, "swordfish"),
-				MONKFISH(7944, 7946, 7948, 62, 150, 92, 90,	"monkfish"),
-				SHARK(383, 385, 387, 76, 210, 100, 94, "shark"),
-				SEA_TURTLE(395, 397, 399, 82, 211, 100, 99, "sea turtle"),
-				MANTA_RAY(389, 391, 393, 91, 216, 100, 100, "manta ray"),
-				SEAWEED(401, 1781, 1781, 1, 1, 1, 1, "sea weed"),
-				CURRY(2009, 2011, 2013, 60, 280, 74, 74, "curry");
+				SHRIMP(317, 315, 7954, 1, 30, 1, 30, "shrimp"), //stopBurn= 34
+				SARDINE(327, 325, 369, 1, 40, 1, 38, "sardine"), //stopBurn= 38
+				HERRING(345, 347, 357, 5, 50, 1, 41, "herring"), //stopBurn= 41
+				TROUT(335, 333, 343, 15, 70, 1, 50, "trout"), //stopBurn= 50
+				TUNA(359, 361, 367, 30, 100, 1, 63, "tuna"), //stopBurn= 64
+				ANCHOVIES(321, 319, 323, 5, 45, 1, 34, "anchovies"), //stopBurn= 34
+				RAW_BEEF(2132, 2142, 2146, 1, 30, 1, 33, "raw beef"), //stopBurn= 33
+				RAW_RAT(2134, 2142, 2146, 1, 30, 1, 33, "raw rat meat"), //stopBurn= 33
+				BURNT_MEAT(2142, 2146, 2146, 1, 1, 100, 100, "cooked meat"), //stopBurn= 100
+				RAW_CHICKEN(2138, 2140, 2144, 1, 30, 1, 33, "raw chicken"), //stopBurn= 33
+				RAW_BEAR_MEAT(2136, 2142, 2146, 1, 30, 1, 33, "raw bear meat"), //stopBurn= 33
+				MACKERAL(353, 355, 357, 10, 60, 1, 45, "mackeral"), //stopBurn= 45
+				SALMON(331, 329, 343, 25, 90, 1, 55, "salmon"), //stopBurn= 58
+				UNCOOKED_BERRY_PIE(2321, 2325, 2329, 10, 78, 1, 50, "uncooked pie"), //stopBurn= 50
+				PIKE(349, 351, 343, 20, 80, 1, 59, "pike"), //stopBurn= 59
+				KARAMBWAN(3142, 3144, 3146, 1, 80, 1, 20, "karambwan"), //stopBurn= 20
+				LOBSTER(377, 379, 381, 40, 120, 1, 68, "lobster"), //stopBurn= 74
+				SWORDFISH(371, 373, 375, 50, 140, 1, 81, "swordfish"), //stopBurn= 86
+				MONKFISH(7944, 7946, 7948, 62, 150, 1, 90,	"monkfish"), //stopBurn= 92
+				SHARK(383, 385, 387, 76, 210, 1, 94, "shark"), //stopBurn= 100
+				SEA_TURTLE(395, 397, 399, 82, 211, 1, 99, "sea turtle"), //stopBurn= 100
+				MANTA_RAY(389, 391, 393, 91, 216, 1, 100, "manta ray"), //stopBurn= 100
+				SEAWEED(401, 1781, 1781, 1, 1, 1, 1, "sea weed"), //stopBurn= 1
+				CURRY(2009, 2011, 2013, 60, 280, 1, 74, "curry"); //stopBurn= 74
 
 		int rawItem, cookedItem, burntItem, levelReq, xp, stopBurn, stopBurnGloves;
 		String name;
