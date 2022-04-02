@@ -19,31 +19,31 @@ import com.rs2.util.Misc;
 public class Prayer {
 
 	private static int[][] data = {
-			{ 526, 5 }, // NPC BONES
-			{ 528, 5 }, // BURNT BONES
-			{ 530, 5 }, // BAT BONES
-			{ 2859, 5 }, // WOLF BONES
-			{ 3179, 5 }, // MONKEY BONES
-			{ 3180, 5 }, // MONKEY BONES
-			{ 3181, 5 }, // MONKEY BONES
-			{ 3182, 5 }, // MONKEY BONES
-			{ 3183, 5 }, // MONKEY BONES
-			{ 3185, 5 }, // MONKEY BONES
-			{ 3186, 5 }, // MONKEY BONES
-			{ 3187, 5 }, // MONKEY BONES
-			{ 532, 15 }, // BIG BONES
-			{ 534, 30 }, // BABY DRAGON BONES
-			{ 536, 72 }, // DRAGON BONES
-			{ 2530, 5 }, // PLAYER BONES
-			{ 3123, 25 }, // SHAIKAHAN BONES
-			{ 3125, 23 }, // JOGRE BONES
-			{ 3127, 25 }, // BURNT JOGRE BONES
-			{ 4812, 82 }, // ZOGRE BONES
-			{ 4830, 84 }, // FAYGR BONES
-			{ 4832, 96 }, // RAURG BONES
-			{ 4834, 140 }, // OURG BONES
-			{ 6729, 125 }, // DAGANNOTH BONES
-			{ 6812, 50 }, // WYVERN BONES
+			{ 526, 2 }, // NPC BONES 5
+			{ 528, 2 }, // BURNT BONES 5
+			{ 530, 2 }, // BAT BONES 5
+			{ 2859, 2 }, // WOLF BONES 5
+			{ 3179, 2 }, // MONKEY BONES 5
+			{ 3180, 2 }, // MONKEY BONES 5
+			{ 3181, 2 }, // MONKEY BONES 5
+			{ 3182, 2 }, // MONKEY BONES 5
+			{ 3183, 2 }, // MONKEY BONES 5
+			{ 3185, 2 }, // MONKEY BONES 5
+			{ 3186, 2 }, // MONKEY BONES 5
+			{ 3187, 2 }, // MONKEY BONES 5
+			{ 532, 7 }, // BIG BONES 15
+			{ 534, 15 }, // BABY DRAGON BONES 30
+			{ 536, 36 }, // DRAGON BONES 72
+			{ 2530, 5 }, // PLAYER BONES 5
+			{ 3123, 25 }, // SHAIKAHAN BONES 25
+			{ 3125, 15 }, // JOGRE BONES 23
+			{ 3127, 15 }, // BURNT JOGRE BONES 25
+			{ 4812, 22 }, // ZOGRE BONES 82
+			{ 4830, 84 }, // FAYGR BONES 84
+			{ 4832, 96 }, // RAURG BONES 96
+			{ 4834, 140 }, // OURG BONES 140
+			{ 6729, 62 }, // DAGANNOTH BONES 125
+			{ 6812, 36 }, // WYVERN BONES 72
 	};
 
 	public static boolean playerBones(Player player, int item) {
