@@ -263,17 +263,17 @@ public class TreasureTrails {
 			557, // Earth rune
 			554, // Fire rune
 			884, // Iron arrow
-			885, // Iron arrow(p)
+			/*885, // Iron arrow(p)
 			5617, // Iron arrow(p+)
-			5623, // Iron arrow(p++)
+			5623, // Iron arrow(p++)*/
 	};
 	public static int mediumLevelStacks[] = {
 			995, // Coins
 			374, // Swordfish
 			890, // Adamant arrow
-			891, // Adamant arrow(p)
+			/*891, // Adamant arrow(p)
 			5620, // Adamant arrow(p+)
-			5626, // Adamant arrow(p++)
+			5626, // Adamant arrow(p++)*/
 			563, // Law rune
 			561, // Nature rune
 			562, // Chaos rune
@@ -283,9 +283,9 @@ public class TreasureTrails {
 			995, // Coins
 			386, // Shark
 			892, // Rune arrow
-			893, // Rune arrow(p)
+			/*893, // Rune arrow(p)
 			5621, // Rune arrow(p+)
-			5627, // Rune arrow(p++)
+			5627, // Rune arrow(p++)*/
 			4697, // Smoke rune
 			566, // Soul rune
 			4694, // Steam rune
