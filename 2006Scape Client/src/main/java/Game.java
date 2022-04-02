@@ -6583,7 +6583,7 @@ public class Game extends RSApplet {
 		}
 		String s = entityDef.name;
 		if (entityDef.combatLevel != 0) {
-			s = s + combatDiffColor(myPlayer.combatLevel, entityDef.combatLevel) + " (level-" + entityDef.combatLevel + ")";
+			s = s + combatDiffColor(myPlayer.combatLevel, entityDef.combatLevel) + " (level-" + entityDef.combatLevel + ")"; //hide npc combat level
 		}
 		if (itemSelected == 1) {
 			menuActionName[menuActionRow] = "Use " + selectedItemName + " with @yel@" + s;
@@ -6681,7 +6681,7 @@ public class Game extends RSApplet {
 		String s;
 		if (player.skill == 0) {
 			if (player.combatLevel > 0) {
-				s = player.name + combatDiffColor(myPlayer.combatLevel, player.combatLevel) + " (level-" + player.combatLevel + ")";
+				s = player.name + combatDiffColor(myPlayer.combatLevel, player.combatLevel); /* + " (level-" + player.combatLevel + ")"; */ //hides player combatLevel
 			} else {
 				s = player.name + " @cya@(store)";
 			}
@@ -6707,12 +6707,14 @@ public class Game extends RSApplet {
 		} else {
 			for (int l = 4; l >= 0; l--) {
 				if (atPlayerActions[l] != null) {
-					menuActionName[menuActionRow] = atPlayerActions[l] + " @whi@" + s;
+					menuActionName[menuActionRow] = atPlayerActions[l] + " @red@" + s; //changes player option color to red; default @whi@
 					char c = '\0';
-					if (atPlayerActions[l].equalsIgnoreCase("attack")) {
-						if (player.combatLevel > myPlayer.combatLevel) {
-							c = '\u07D0';
-						}
+					if (atPlayerActions[l].equalsIgnoreCase("attack")) { // attack options priority ? not based on combat level
+						c = '\0';
+						/*if (player.combatLevel > myPlayer.combatLevel) {
+							c = '\0'; //show player attack option
+							//c = '\u07D0'; //hide player attack option
+						}*/
 						if (myPlayer.team != 0 && player.team != 0) {
 							if (myPlayer.team == player.team) {
 								c = '\u07D0';
