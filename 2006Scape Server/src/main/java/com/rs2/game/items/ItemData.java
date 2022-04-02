@@ -231,6 +231,7 @@ public class ItemData {
 					itemStackable[231] = true; //snape grass
 					// itemStackable[] = true; //
 
+					itemStackable[1739] = true; //cowhide
 					itemStackable[1753] = true; //green dragonhide
 					itemStackable[1751] = true; //blue dragonhide
 					itemStackable[1749] = true; //red dragonhide
