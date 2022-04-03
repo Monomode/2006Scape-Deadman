@@ -6,6 +6,7 @@ import com.rs2.event.CycleEventContainer;
 import com.rs2.event.CycleEventHandler;
 import com.rs2.game.content.music.sound.SoundList;
 import com.rs2.game.players.Player;
+import com.rs2.util.Misc;
 import com.rs2.world.Boundary;
 
 /**
@@ -37,7 +38,9 @@ public class Pickable {
 				if (objectType == 1161 && Boundary.isIn(player, Boundary.FALADOR)) {//Cabbage falador
 					player.getItemAssistant().addItem(1967, 1);
 				} else {
-					player.getItemAssistant().addItem(itemId, 1);
+					if (Misc.random(2) == 1) { //2 == 1 rare af, 1 == 0 ok still common
+						player.getItemAssistant().addItem(itemId, 1);
+					}
 				}
 				break;
 			}
