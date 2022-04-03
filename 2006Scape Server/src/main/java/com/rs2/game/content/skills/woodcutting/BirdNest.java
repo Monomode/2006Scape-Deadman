@@ -74,14 +74,14 @@ public class BirdNest {
 	}
 	
 	public static void birdNests(Player player) {
-		if (Misc.random(256) == 69 && player.tutorialProgress >= 36) {
+		if (Misc.random(20) == 7 && player.tutorialProgress >= 36) { // 256 == 69
 			player.getPacketSender().sendMessage("A birds nest falls from the branches.");
 			dropNest(player);
 		}
 	}
 
 	public static void dropNest(Player player) {
-		GameEngine.itemHandler.createGroundItem(player, 5070 + Misc.random(4), player.getX(), player.getY(), 1, player.getId());
+		GameEngine.itemHandler.createGroundItem(player, 5073 + Misc.random(1), player.getX(), player.getY(), 1, player.getId()); /* + Misc.random(4)*/
 	}
 
 }
