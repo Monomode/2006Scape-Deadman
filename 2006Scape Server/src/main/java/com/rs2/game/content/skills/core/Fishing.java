@@ -48,7 +48,7 @@ public class Fishing extends SkillHandler {
 																			// +
 																			// ANCHOVIES
 			{ "You cast out your line." }, // SARDINE + HERRING
-			{ "You start harpooning fish." }, // TUNA + SWORDIE
+			{ "You start harpooning fish." }, // TUNA + SWORDISH
 			{ "You attempt to catch a lobster." }, // LOBSTER
 	};
 
@@ -284,8 +284,8 @@ public class Fishing extends SkillHandler {
 									randomEvents(c);
 								}
 								if (c.playerSkillProp[GameConstants.FISHING][1] > 0) {
-									c.getItemAssistant().deleteItem(c.playerSkillProp[GameConstants.FISHING][3], c.getItemAssistant().getItemSlot(c.playerSkillProp[GameConstants.FISHING][3]), 1);
-									c.getItemAssistant().addItem(c.playerSkillProp[GameConstants.FISHING][1], 1);
+									c.getItemAssistant().deleteItem(c.playerSkillProp[GameConstants.FISHING][3], c.getItemAssistant().getItemSlot(c.playerSkillProp[GameConstants.FISHING][3]), 3); //3x amount of bait used while fishing
+									c.getItemAssistant().addItem(c.playerSkillProp[GameConstants.FISHING][1], 3); //3x amount of catch from fishing
 									c.startAnimation(c.playerSkillProp[GameConstants.FISHING][0]);
 								}
 								if (c.playerSkillProp[GameConstants.FISHING][5] > 0
