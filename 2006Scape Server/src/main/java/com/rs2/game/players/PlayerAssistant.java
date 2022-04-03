@@ -628,10 +628,14 @@ public class PlayerAssistant {
 			player.getPacketSender().sendMessage("You can't teleport from a Fight pits Game!");
 			return;
 		}
-		//if (player.inWild() && player.wildLevel > GameConstants.NO_TELEPORT_WILD_LEVEL) {
+		/*if (player.logoutDelay < 7000) { // can't teleport until 7 seconds out of combat
+			player.getPacketSender().sendMessage("You can't teleport while in combat.");
+			return;
+		}*/
+		/*if (player.inWild() && player.wildLevel > GameConstants.NO_TELEPORT_WILD_LEVEL) {
 			//player.getPacketSender().sendMessage("You can't teleport above level " + GameConstants.NO_TELEPORT_WILD_LEVEL + " wilderness.");
 			//return;
-		//}
+		}*/
 		if (player.tutorialProgress < 36) {
 			player.getPacketSender().sendMessage("You can't teleport from tutorial island!");
 			return;
@@ -723,6 +727,10 @@ public class PlayerAssistant {
 				return;
 			}
 		}
+		/*if (player.logoutDelay > 7000) { // can't teleport until 7 seconds out of combat
+			player.getPacketSender().sendMessage("You can't teleport while in combat.");
+			return;
+		}*/
 		if (player.inTrade) {
 			player.getPacketSender().sendMessage(
 					"You can't teleport while in trade!");
@@ -823,10 +831,10 @@ public class PlayerAssistant {
 		if (GameConstants.SOUND) {
 			player.getPacketSender().sendSound(SoundList.TELEPORT, 100, 0);
 		}
-		if (player.inWild() && player.wildLevel > 30) {
+		/*if (player.inWild() && player.wildLevel > 30) {
 			player.getPacketSender().sendMessage("You can't teleport above level 30 wilderness.");
 			return;
-		}
+		}*/
 		if (!player.isDead && player.teleTimer == 0) {
 			player.stopMovement();
 			player.getPacketSender().closeAllWindows();
