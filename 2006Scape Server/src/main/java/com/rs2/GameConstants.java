@@ -29,7 +29,7 @@ public class GameConstants {
 	 * WEBSITE_INTEGRATION Enables/Disables Website Features(Total Accounts Registered & Players Online)
 	 */
 	public static String SERVER_NAME = "2006Scape", WEBSITE_LINK = "https://2006Scape.org";
-	public static int WORLD = 1, MAX_PLAYERS = 20, TIMEOUT = 150, SAVE_TIMER = 30,
+	public static int WORLD = 1, MAX_PLAYERS = 20, TIMEOUT = 150, SAVE_TIMER = 15,
 			RESPAWN_X = 3222, RESPAWN_Y = 3218;
 	public static boolean FILE_SERVER = true, SERVER_DEBUG = false, MEMBERS_ONLY = false, TUTORIAL_ISLAND = false,
 			PARTY_ROOM_DISABLED = false, CLUES_ENABLED = true, ITEM_REQUIREMENTS = true,
