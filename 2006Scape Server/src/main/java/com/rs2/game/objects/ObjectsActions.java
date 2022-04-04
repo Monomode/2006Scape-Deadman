@@ -2561,12 +2561,12 @@ public class ObjectsActions {
                 }
                 break;
 
-            case 2640:
-                if (player.inWild()) {
+            case 2640: // altar
+                /*if (player.inWild()) {
                     player.getPacketSender().sendMessage(
                             "You can't use this in the wilderness.");
                     return;
-                }
+                }*/
                 if (player.playerLevel[GameConstants.PRAYER] < player.getPlayerAssistant()
                         .getLevelForXP(player.playerXP[GameConstants.PRAYER])) {
                     player.startAnimation(645);
@@ -2581,17 +2581,17 @@ public class ObjectsActions {
                 }
                 break;
 
-            case 2407:
-                if (player.inWild()) {
+            case 2407: //lost city door to wilderness
+                /*if (player.inWild()) {
                     player.getPacketSender().sendMessage(
                             "You can't use this in the wilderness.");
                     return;
-                } else {
+                } else { */
                     player.getPacketSender().sendMessage(
                             "You feel the world around you dissolve...");
                     player.getPlayerAssistant().movePlayer(3171,
                             3609 + Misc.random(10), 0);
-                }
+               // }
                 break;
 
             case 2879:
