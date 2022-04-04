@@ -77,11 +77,16 @@ public class BirdNest {
 		if (Misc.random(20) == 7 && player.tutorialProgress >= 36) { // 256 == 69
 			player.getPacketSender().sendMessage("A birds nest falls from the branches.");
 			dropNest(player);
+			player.getPacketSender().sendMessage("A clue scroll falls from the branches.");
+			dropClue(player);
 		}
 	}
 
 	public static void dropNest(Player player) {
 		GameEngine.itemHandler.createGroundItem(player, 5073 + Misc.random(1), player.getX(), player.getY(), 1, player.getId()); /* + Misc.random(4)*/
+	}
+	public static void dropClue(Player player) {
+		GameEngine.itemHandler.createGroundItem(player, 2677 + Misc.random(2), player.getX(), player.getY(), 1, player.getId()); /* + Misc.random(4)*/
 	}
 
 }
