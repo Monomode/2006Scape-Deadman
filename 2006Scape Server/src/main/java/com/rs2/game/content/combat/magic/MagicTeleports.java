@@ -27,10 +27,11 @@ public class MagicTeleports {
 			player.getPacketSender().sendMessage("You can't teleport above level 20 wilderness.");
 			return;
 		}*/
-		/*if (player.logoutDelay < 7000) { // can't teleport until 7 seconds out of combat
+		if (System.currentTimeMillis() - player.logoutDelay > 7200 ) {
+			//&& player.getCombatAssistant().inCombat() //checks if there has gone 8000 units of time between the last hit
 			player.getPacketSender().sendMessage("You can't teleport while in combat.");
 			return;
-		}*/
+		}
 		if (player.playerLevel[GameConstants.MAGIC] < teleport.getRequiredLevel()) {
 			player.getPacketSender().sendMessage("You need a magic level of " + teleport.getRequiredLevel() + " to cast this spell.");
 			return;
