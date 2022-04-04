@@ -741,7 +741,7 @@ public abstract class Player {
 			if (hasNpc) {
 				getSummon().pickUpPet(this, summonId);
 			}
-			if (forceLogout || System.currentTimeMillis() - logoutDelay > 2500) {
+			if (forceLogout || System.currentTimeMillis() - logoutDelay > 7200) {
 				if (!isBot)
 					outStream.createFrame(109);
 				properLogout = true;
@@ -985,10 +985,10 @@ public abstract class Player {
 
 		PrayerDrain.handlePrayerDrain(this);
 
-		if (System.currentTimeMillis() - singleCombatDelay > 3300) {
+		if (System.currentTimeMillis() - singleCombatDelay > 9600) { //players pj timer
 			underAttackBy = 0;
 		}
-		if (System.currentTimeMillis() - singleCombatDelay2 > 3300) {
+		if (System.currentTimeMillis() - singleCombatDelay2 > 9600) { //npc pj timer
 			underAttackBy2 = 0;
 		}
 
@@ -3189,14 +3189,14 @@ public abstract class Player {
 		singleCombatDelay = System.currentTimeMillis();
 	}
 
-
+	public static long playerTeleDelay;
 	public void dealDamage(int damage) {
 		if (teleTimer <= 0) {
 			playerLevel[GameConstants.HITPOINTS] -= damage;
 			int difference = playerLevel[GameConstants.HITPOINTS] - damage;
 			if (difference <= getLevelForXP(playerXP[GameConstants.HITPOINTS]) / 10 && difference > 0)
 				appendRedemption();
-				getPlayerAssistant().handleROL();
+			getPlayerAssistant().handleROL();
 		} else {
 			if (hitUpdateRequired) {
 				hitUpdateRequired = false;
@@ -3205,6 +3205,9 @@ public abstract class Player {
 				hitUpdateRequired2 = false;
 			}
 		}
+
+		Player.playerTeleDelay = System.currentTimeMillis();
+
 		getPlayerAssistant().refreshSkill(GameConstants.HITPOINTS);
 	}
 
