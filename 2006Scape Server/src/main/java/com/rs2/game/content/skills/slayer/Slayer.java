@@ -37,6 +37,7 @@ public class Slayer {
 
 	public enum SlayerMasters {
 		TURAEL(70, 1, VERY_EASY_TASK,"Taverly", "Turael"),
+		KARDIA(992, 1, VERY_HARD_TASK,"Edgeville", "Kardia"),
 		MAZCHNA(1596, 20, EASY_TASK, "Canifis", "Mazchna"),
 		VANNAKA(1597, 40, MEDIUM_TASK, "Edgeville", "Vannaka"),
 		CHAELDAR(1598, 70, HARD_TASK, "Zanaris", "Chaeldar"),
