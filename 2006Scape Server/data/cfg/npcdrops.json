@@ -11069,7 +11069,7 @@
       },
       {
         "item_id": 225,
-        "chance": 64,
+        "chance": 11,
         "amounts": [
           1,
           1
@@ -11077,7 +11077,7 @@
       },
       {
         "item_id": 1917,
-        "chance": 32,
+        "chance": 21,
         "amounts": [
           1,
           1
@@ -11093,7 +11093,7 @@
       },
       {
         "item_id": 1153,
-        "chance": 32,
+        "chance": 25,
         "amounts": [
           1,
           1
@@ -11101,7 +11101,7 @@
       },
       {
         "item_id": 4698,
-        "chance": 32,
+        "chance": 42,
         "amounts": [
           7,
           7
@@ -11109,10 +11109,10 @@
       },
       {
         "item_id": 995,
-        "chance": 32,
+        "chance": 18,
         "amounts": [
-          8,
-          23
+          5,
+          88
         ]
       },
       {
@@ -11125,7 +11125,7 @@
       },
       {
         "item_id": 4697,
-        "chance": 64,
+        "chance": 42,
         "amounts": [
           15,
           15
@@ -11133,9 +11133,9 @@
       },
       {
         "item_id": 563,
-        "chance": 64,
+        "chance": 42,
         "amounts": [
-          1,
+          2,
           2
         ]
       },
@@ -11168,12 +11168,12 @@
         "chance": 64,
         "amounts": [
           10,
-          15
+          10
         ]
       },
       {
         "item_id": 1191,
-        "chance": 64,
+        "chance": 42,
         "amounts": [
           1,
           1
@@ -11205,7 +11205,7 @@
       },
       {
         "item_id": 560,
-        "chance": 256,
+        "chance": 128,
         "amounts": [
           2,
           2
@@ -11213,7 +11213,7 @@
       },
       {
         "item_id": 562,
-        "chance": 256,
+        "chance": 128,
         "amounts": [
           2,
           2
@@ -11221,7 +11221,7 @@
       },
       {
         "item_id": 1119,
-        "chance": 512,
+        "chance": 96,
         "amounts": [
           1,
           1
@@ -80808,6 +80808,14 @@
         "amounts": [
           5,
           5
+        ]
+      },
+      {
+        "item_id": 767,
+        "chance": 16,
+        "amounts": [
+          1,
+          1
         ]
       },
       {
