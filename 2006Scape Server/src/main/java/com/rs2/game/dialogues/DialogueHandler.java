@@ -3842,8 +3842,9 @@ public class DialogueHandler {
 				QuestRewards.shieldArravReward(player);
 				player.nextChat = 0;
 				break;
-
-
+			case 797:	//helemos
+				player.getShopAssistant().openShop(191);
+				break;
 			case 908:
 				sendPlayerChat("Hello there " + NpcHandler.getNpcListName(player.talkingNpc) + "!");
 				player.nextChat = 909;
