@@ -127,19 +127,19 @@ public class MeleeData {
 		} else if (s.equals("veracs flail")) {
 			return 5;
 		} else if (s.equals("ahrims staff")) {
-			return 6;
+			return 4; //default 6
 		} else if (s.contains("staff")) {
-			if (s.contains("zamarok") || s.contains("guthix")
-					|| s.contains("saradomian") || s.contains("slayer")
+			if (s.contains("zamorak") || s.contains("guthix")
+					|| s.contains("saradomin") || s.contains("slayer")
 					|| s.contains("ancient")) {
 				return 4;
 			} else {
-				return 5;
+				return 4; //default 5
 			}
 		} else if (s.contains("bow")) {
 			if (s.contains("composite") || s.equals("seercull")) {
-				return 5;
-			} else if (s.contains("aril")) {
+				return 4; //default 5
+			} else if (s.contains("karil")) {
 				return 4;
 			} else if (s.contains("Ogre")) {
 				return 8;
@@ -147,26 +147,28 @@ public class MeleeData {
 					|| s.contains("sword")) {
 				return 4;
 			} else if (s.contains("long") || s.contains("crystal")) {
-				return 6;
+				return 4; //default 6
+			} else if (s.contains("phoenix")) {
+				return 5;
 			} else if (s.contains("'bow")) {
 				return 7;
 			}
+			return 4; //default 5
 
-			return 5;
 		} else if (s.contains("dagger")) {
 			return 4;
 		} else if (s.contains("godsword") || s.contains("2h")) {
 			return 6;
 		} else if (s.contains("longsword")) {
-			return 5;
+			return 4; //default 5
 		} else if (s.contains("sword")) {
 			return 4;
 		} else if (s.contains("scimitar")) {
 			return 4;
 		} else if (s.contains("mace")) {
-			return 5;
+			return 4; //default 5
 		} else if (s.contains("battleaxe")) {
-			return 6;
+			return 5; //default 6
 		} else if (s.contains("pickaxe")) {
 			return 5;
 		} else if (s.contains("thrownaxe")) {
@@ -174,11 +176,11 @@ public class MeleeData {
 		} else if (s.contains("axe")) {
 			return 5;
 		} else if (s.contains("warhammer")) {
-			return 6;
-		} else if (s.contains("2h")) {
-			return 7;
-		} else if (s.contains("spear")) {
 			return 5;
+		} else if (s.contains("2h")) {
+			return 6;
+		} else if (s.contains("spear")) {
+			return 4; //default 5
 		} else if (s.contains("claw")) {
 			return 4;
 		} else if (s.contains("halberd")) {
@@ -196,7 +198,7 @@ public class MeleeData {
 		} else if (s.equals("toktz-xil-ul")) {
 			return 4;
 		} else if (s.equals("toktz-mej-tal")) {
-			return 6;
+			return 4;
 		} else if (s.contains("whip")) {
 			return 4;
 		} else if (s.contains("dart")) {
