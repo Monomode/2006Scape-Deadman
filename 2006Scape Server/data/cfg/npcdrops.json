@@ -105440,22 +105440,6 @@
     "id": 2025,
     "items": [
       {
-        "item_id": 526,
-        "chance": 0,
-        "amounts": [
-          1,
-          1
-        ]
-      },
-      {
-        "item_id": 995,
-        "chance": 3,
-        "amounts": [
-          1,
-          10
-        ]
-      },
-      {
         "item_id": 2677,
         "chance": 512,
         "amounts": [
@@ -105468,22 +105452,6 @@
   {
     "id": 2026,
     "items": [
-      {
-        "item_id": 526,
-        "chance": 0,
-        "amounts": [
-          1,
-          1
-        ]
-      },
-      {
-        "item_id": 995,
-        "chance": 3,
-        "amounts": [
-          1,
-          10
-        ]
-      },
       {
         "item_id": 2677,
         "chance": 512,
@@ -105498,22 +105466,6 @@
     "id": 2027,
     "items": [
       {
-        "item_id": 526,
-        "chance": 0,
-        "amounts": [
-          1,
-          1
-        ]
-      },
-      {
-        "item_id": 995,
-        "chance": 3,
-        "amounts": [
-          1,
-          10
-        ]
-      },
-      {
         "item_id": 2677,
         "chance": 512,
         "amounts": [
@@ -105526,22 +105478,6 @@
   {
     "id": 2028,
     "items": [
-      {
-        "item_id": 526,
-        "chance": 0,
-        "amounts": [
-          1,
-          1
-        ]
-      },
-      {
-        "item_id": 995,
-        "chance": 3,
-        "amounts": [
-          1,
-          10
-        ]
-      },
       {
         "item_id": 2677,
         "chance": 512,
@@ -105556,22 +105492,6 @@
     "id": 2029,
     "items": [
       {
-        "item_id": 526,
-        "chance": 0,
-        "amounts": [
-          1,
-          1
-        ]
-      },
-      {
-        "item_id": 995,
-        "chance": 3,
-        "amounts": [
-          1,
-          10
-        ]
-      },
-      {
         "item_id": 2677,
         "chance": 512,
         "amounts": [
@@ -105584,22 +105504,6 @@
   {
     "id": 2030,
     "items": [
-      {
-        "item_id": 526,
-        "chance": 0,
-        "amounts": [
-          1,
-          1
-        ]
-      },
-      {
-        "item_id": 995,
-        "chance": 3,
-        "amounts": [
-          1,
-          10
-        ]
-      },
       {
         "item_id": 2677,
         "chance": 512,
