@@ -252,6 +252,16 @@ public class ItemData {
 					itemStackable[1745] = true; //green d-leather
 					// itemStackable[] = true; //
 
+					itemStackable[2349] = true; //bronze bar
+					itemStackable[2351] = true; //iron bar
+					itemStackable[2353] = true; //steel bar
+					itemStackable[2355] = true; //silver bar
+					itemStackable[2357] = true; //gold bar
+					itemStackable[2359] = true; //mithril bar
+					itemStackable[2361] = true; //adamantite bar
+					itemStackable[2363] = true; //runite bar
+					// itemStackable[] = true; //
+
 
 				} else {
 					itemStackable[counter] = true;
