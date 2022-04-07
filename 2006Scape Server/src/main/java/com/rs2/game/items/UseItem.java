@@ -25,6 +25,7 @@ import com.rs2.game.items.impl.GodPages;
 import com.rs2.game.items.impl.WeaponPoison;
 import com.rs2.game.npcs.impl.MilkCow;
 import com.rs2.game.objects.impl.CrystalChest;
+import com.rs2.game.objects.impl.SinisterChest;
 import com.rs2.game.objects.impl.FlourMill;
 import com.rs2.game.objects.impl.Webs;
 import com.rs2.game.players.Player;
@@ -82,7 +83,7 @@ public class UseItem {
 				c.getSmithingInt().showSmithInterface(itemId);
 			} else {
 				c.getPacketSender().sendMessage(
-						"You need to beat dorics quest to use his anvils");
+						"You need to complete Doric's quest to use his anvils.");
 			}
 			break;
 		case 879:
@@ -100,6 +101,11 @@ public class UseItem {
 				CrystalChest.searchChest(c, objectID, objectX, objectY);
 			}
 			break;
+		case 377:
+				if (itemId == SinisterChest.KEY) {
+					SinisterChest.searchChest(c, objectID, objectX, objectY);
+				}
+				break;
 
 		case 364:
 			if (itemId == 1919) {
