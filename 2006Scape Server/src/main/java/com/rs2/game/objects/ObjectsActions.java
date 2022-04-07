@@ -46,6 +46,7 @@ import com.rs2.game.objects.impl.UseOther;
 import com.rs2.game.objects.impl.Webs;
 import com.rs2.game.players.Player;
 import com.rs2.game.players.Position;
+import com.rs2.net.PacketSender;
 import com.rs2.util.Misc;
 import com.rs2.world.Boundary;
 import com.rs2.world.clip.Region;
@@ -57,6 +58,8 @@ public class ObjectsActions {
     public ObjectsActions(Player player2) {
         player = player2;
     }
+
+    public long logoutdelay;
 
     public void firstClickObject(int objectType, int objectX, int objectY) {
         player.faceUpdate(0);
@@ -120,14 +123,42 @@ public class ObjectsActions {
             return;
         }
         switch (objectType) {
-            case 6969: // Swamp Boaty
+            case 6969: // objectActions.java line 123
+                if (player.objectX == 3523 && player.objectY == 3284 || System.currentTimeMillis() - player.logoutDelay > 7200) {
+                    player.getPlayerAssistant().movePlayer(3493, 3462, 0);
+                }
+                else {
+                    player.getPacketSender().sendMessage("You can't travel while in combat.");
+                }
+                break;
+            case 6970: // Swamp Boaty
+                if (player.objectX == 3490 && player.objectY == 3460 || System.currentTimeMillis() - player.logoutDelay > 7200) {
+                    player.getPlayerAssistant().movePlayer(3522, 3284, 0);
+                }
+                /*if (player.objectX == 3504 && player.objectY == 3464 || System.currentTimeMillis() - player.logoutDelay > 7200) {
+                    player.getPlayerAssistant().movePlayer(3522, 3284, 0);*/
+                else {
+                    player.getPacketSender().sendMessage("You can't travel while in combat.");
+                }
+                break;
+            case 5055: //Canifis bar trapdoor Myreque
+                if (player.objectX == 3494 && player.objectY == 3464 || System.currentTimeMillis() - player.logoutDelay > 7200) {
+                    player.getPlayerAssistant().movePlayer(3522, 3284, 0);
+                }
+                    else {
+                        player.getPacketSender().sendMessage("You can't travel while in combat.");
+                    }
+                break;
+
+
+            /*case 6969: // Swamp Boaty
                 if (player.objectX == 3523 && player.objectY == 3284)
                     player.getPlayerAssistant().movePlayer(3499, 3380, 0);
                 break;
             case 6970: // Swamp Boaty
                 if (player.objectX == 3498 && player.objectY == 3377)
                     player.getPlayerAssistant().movePlayer(3522, 3284, 0);
-                break;
+                break;*/
             case 6615:
                 if (player.absY == 2809) {
                     player.getPlayerAssistant().movePlayer(player.absX, 2810, 0);
@@ -1534,6 +1565,65 @@ public class ObjectsActions {
                     player.startAnimation(844);
                 }
                 break;
+            case 12776:
+                if (player.absX == 3474 && player.absY == 3221) {
+                    player.getPlayerAssistant().movePlayer(3473, 3221, 0);
+                    player.startAnimation(844);
+                } else if (player.absX == 3473 && player.absY == 3221) {
+                    player.getPlayerAssistant().movePlayer(3474, 3221, 0);
+                    player.startAnimation(844);
+                }
+                break;
+            case 9311:
+                if (player.playerLevel[GameConstants.AGILITY] < 21) {
+                    player.getPacketSender().sendMessage(
+                            "You need 21 agility to enter here!");
+                    return;
+                }
+                if (player.absX == 3188 && player.absY == 3493) {
+                    player.getPlayerAssistant().movePlayer(3193, 3493, 0);
+                    player.startAnimation(844);
+                } else if (player.absX == 3193 && player.absY == 3493) {
+                    player.getPlayerAssistant().movePlayer(3188, 3493, 0);
+                    player.startAnimation(844);
+                }
+                break;
+            case 9312:
+                if (player.playerLevel[GameConstants.AGILITY] < 21) {
+                    player.getPacketSender().sendMessage(
+                            "You need 21 agility to enter here!");
+                    return;
+                }
+                if (player.absX == 3193 && player.absY == 3493) {
+                    player.getPlayerAssistant().movePlayer(3188, 3493, 0);
+                    player.startAnimation(844);
+                } else if (player.absX == 3188 && player.absY == 3493) {
+                    player.getPlayerAssistant().movePlayer(3193, 3493, 0);
+                    player.startAnimation(844);
+                }
+                break;
+            case 9316:
+                if (player.playerLevel[GameConstants.AGILITY] < 37) {
+                    player.getPacketSender().sendMessage(
+                            "You need 37 agility to enter here!");
+                    return;
+                }
+                if (player.absX == 2486 && player.absY == 3515) {
+                    player.getPlayerAssistant().movePlayer(2489, 3521, 0);
+                    player.startAnimation(844);
+                }
+                    break;
+            case 9317:
+                if (player.playerLevel[GameConstants.AGILITY] < 37) {
+                    player.getPacketSender().sendMessage(
+                            "You need 37 agility to enter here!");
+                    return;
+                }
+                if (player.absX == 2489 && player.absY == 3521) {
+                    player.getPlayerAssistant().movePlayer(2486, 3515, 0);
+                    player.startAnimation(844);
+                }
+                break;
 
             case 2514:
             case 1600:
@@ -1851,7 +1941,7 @@ public class ObjectsActions {
                         "Disabled for dragon slayer.");
                 break;
 
-            case 2024: // WP quest
+            case 2024: // Witch's potion quest
                 if (player.witchspot == 2) {
                     // c.getDH().sendStatement("You drink from the cauldron, it tastes horrible!",
                     // "You feel yourself imbued with power.");
@@ -2062,7 +2152,7 @@ public class ObjectsActions {
             case 12266:
             case 272:
             case 273:
-            case 245:
+            //case 245: deep wildy ship noclip
             case 246:
             case 1767:
                 Climbing.handleClimbing(player);
@@ -2189,7 +2279,10 @@ public class ObjectsActions {
                     GameEngine.objectHandler.createAnObject(player, 2604, objectX, objectY, player.heightLevel, 0);
                     Region.addObject(2604, objectX, objectY, 0, 0, 0, false);
                 } else {
-                    player.getPacketSender().sendMessage("It's locked, maybe I can get the key from somewhere.");
+                    if (player.objectX == 3219 && player.objectY == 9623) {
+                        player.getShopAssistant().openShop(350);
+                        //player.getPacketSender().sendMessage("It's locked, maybe I can get the key from somewhere.");
+                    }
                 }
                 break;
 
@@ -2302,6 +2395,16 @@ public class ObjectsActions {
                     player.getPlayerAssistant().movePlayer(3016, 3849, 0);
                 }
                 break;
+            /*case 1767://down
+                if (player.inWild() && player.absX > 3015 && player.absX < 3019) {
+                    player.getPlayerAssistant().movePlayer(3067, 10256, 0);
+                }
+                break;*/
+            case 1768://up
+                if (player.inWild() && player.absX > 3015 && player.absX < 3019) {
+                    player.getPlayerAssistant().movePlayer(3069, 3857, 0);
+                }
+                break;
 
             case 6552:
                 if (player.playerMagicBook == 0) {
@@ -2333,6 +2436,10 @@ public class ObjectsActions {
                 if (player.getX() == 2490 && (player.getY() == 10132 || player.getY() == 10130)) {
                     new Object(6951, player.objectX, player.objectY, player.heightLevel, 1, 10, 8960, 15);
                 }
+                break;
+
+            case 12759:
+                player.getPacketSender().openUpBank();
                 break;
 
             case 14235:
