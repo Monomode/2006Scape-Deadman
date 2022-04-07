@@ -1,12 +1,92 @@
 [
   {
+    "maxHit": 4,
+    "strength": 50,
+    "attack": 50,
+    "x": 3493,
+    "y": 3211,
+    "id": 947,
+    "walk": 3,
+    "height": 0
+  },
+  {
+    "maxHit": 4,
+    "strength": 50,
+    "attack": 50,
+    "x": 3513,
+    "y": 3241,
+    "id": 520,
+    "walk": 0,
+    "height": 0
+  },
+  {
+    "maxHit": 4,
+    "strength": 50,
+    "attack": 50,
+    "x": 3091,
+    "y": 3268,
+    "id": 70,
+    "walk": 1,
+    "height": 0
+  },
+  {
+    "maxHit": 4,
+    "strength": 50,
+    "attack": 50,
+    "x": 2995,
+    "y": 3940,
+    "id": 92,
+    "walk": 1,
+    "height": 0
+  },
+  {
+    "maxHit": 4,
+    "strength": 50,
+    "attack": 50,
+    "x": 2991,
+    "y": 3944,
+    "id": 92,
+    "walk": 1,
+    "height": 0
+  },
+  {
+    "maxHit": 3,
+    "strength": 40,
+    "attack": 40,
+    "x": 3442,
+    "y": 3458,
+    "id": 1054,
+    "walk": 0,
+    "height": 0
+  },
+  {
+    "maxHit": 3,
+    "strength": 40,
+    "attack": 40,
+    "x": 3440,
+    "y": 9897,
+    "id": 1048,
+    "walk": 1,
+    "height": 0
+  },
+  {
+    "maxHit": 3,
+    "strength": 40,
+    "attack": 40,
+    "x": 3405,
+    "y": 9901,
+    "id": 1047,
+    "walk": 1,
+    "height": 0
+  },
+  {
     "maxHit": 0,
     "strength": 0,
     "attack": 0,
-    "x": 3565,
-    "y": 3288,
+    "x": 3563,
+    "y": 3290,
     "id": 2024,
-    "walk": 0,
+    "walk": 2,
     "height": 0
   },
   {
@@ -5991,8 +6071,8 @@
   },
   {
     "maxHit": 4,
-    "strength": 25,
-    "attack": 25,
+    "strength": 50,
+    "attack": 50,
     "x": 3013,
     "y": 3593,
     "id": 92,
@@ -6001,8 +6081,8 @@
   },
   {
     "maxHit": 4,
-    "strength": 25,
-    "attack": 25,
+    "strength": 50,
+    "attack": 50,
     "x": 3020,
     "y": 3594,
     "id": 92,
@@ -6011,8 +6091,8 @@
   },
   {
     "maxHit": 4,
-    "strength": 25,
-    "attack": 25,
+    "strength": 50,
+    "attack": 50,
     "x": 3018,
     "y": 3588,
     "id": 92,
@@ -6101,8 +6181,8 @@
   },
   {
     "maxHit": 4,
-    "strength": 25,
-    "attack": 25,
+    "strength": 50,
+    "attack": 50,
     "x": 3103,
     "y": 3561,
     "id": 92,
@@ -6111,8 +6191,8 @@
   },
   {
     "maxHit": 4,
-    "strength": 25,
-    "attack": 25,
+    "strength": 50,
+    "attack": 50,
     "x": 3106,
     "y": 3557,
     "id": 92,
@@ -6121,8 +6201,8 @@
   },
   {
     "maxHit": 4,
-    "strength": 25,
-    "attack": 25,
+    "strength": 50,
+    "attack": 50,
     "x": 3099,
     "y": 3552,
     "id": 92,
@@ -6131,8 +6211,8 @@
   },
   {
     "maxHit": 4,
-    "strength": 25,
-    "attack": 25,
+    "strength": 50,
+    "attack": 50,
     "x": 3106,
     "y": 3539,
     "id": 92,
@@ -6141,8 +6221,8 @@
   },
   {
     "maxHit": 4,
-    "strength": 25,
-    "attack": 25,
+    "strength": 50,
+    "attack": 50,
     "x": 3113,
     "y": 3537,
     "id": 92,
@@ -6151,8 +6231,8 @@
   },
   {
     "maxHit": 4,
-    "strength": 25,
-    "attack": 25,
+    "strength": 50,
+    "attack": 50,
     "x": 3108,
     "y": 3530,
     "id": 92,
@@ -6161,8 +6241,8 @@
   },
   {
     "maxHit": 4,
-    "strength": 25,
-    "attack": 25,
+    "strength": 50,
+    "attack": 50,
     "x": 3105,
     "y": 3549,
     "id": 92,
@@ -12200,9 +12280,9 @@
     "height": 0
   },
   {
-    "maxHit": 3,
-    "strength": 20,
-    "attack": 20,
+    "maxHit": 4,
+    "strength": 50,
+    "attack": 50,
     "x": 3121,
     "y": 9569,
     "id": 92,
