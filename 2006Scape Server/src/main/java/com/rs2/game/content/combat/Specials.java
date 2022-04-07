@@ -144,9 +144,9 @@ public class Specials {
 					player.projectileStage = 1;
 					player.gfx100(RangeData.getRangeStartGFX(player));
 					player.hitDelay = player.getCombatAssistant().getHitDelay();
-					if (player.fightMode == 2) {
+					/*if (player.fightMode == 2) {
 						player.attackTimer--;
-					}
+					}*/
 					if (player.playerIndex > 0) {
 						player.getCombatAssistant().fireProjectilePlayer();
 					} else if (player.npcIndex > 0) {
@@ -165,13 +165,13 @@ public class Specials {
 					player.hitDelay = 5;
 					player.attackTimer -= 7;
 					player.hitDelay = player.getCombatAssistant().getHitDelay();
-					if (player.fightMode == 2) {
+					//if (player.fightMode == 2) {
 						if (player.playerIndex > 0) {
 							player.getCombatAssistant().fireProjectilePlayer();
 						} else if (player.npcIndex > 0) {
 							player.getCombatAssistant().fireProjectileNpc();
 						}
-					}
+					//}
 				} else if (SA.getWeapon() == 13879 || SA.getWeapon() == 13883) {
 					player.usingRangeWeapon = true;
 					player.rangeItemUsed = player.playerEquipment[player.playerWeapon];
@@ -183,9 +183,9 @@ public class Specials {
 					player.specDamage = SA.getSpecDamage();
 					player.projectileStage = 1;
 					player.hitDelay = player.getCombatAssistant().getHitDelay();
-					if (player.fightMode == 2) {
+					/*if (player.fightMode == 2) {
 						player.attackTimer--;
-					}
+					}*/
 					if (player.playerIndex > 0) {
 						player.getCombatAssistant().fireProjectilePlayer();
 					} else if (player.npcIndex > 0) {
@@ -200,9 +200,9 @@ public class Specials {
 					player.startAnimation(SA.getAnim());
 					player.projectileStage = 1;
 					player.hitDelay = player.getCombatAssistant().getHitDelay();
-					if (player.fightMode == 2) {
+					/*if (player.fightMode == 2) {
 						player.attackTimer--;
-					}
+					}*/
 					if (player.playerIndex > 0) {
 						player.getCombatAssistant().fireProjectilePlayer();
 					} else if (player.npcIndex > 0) {
