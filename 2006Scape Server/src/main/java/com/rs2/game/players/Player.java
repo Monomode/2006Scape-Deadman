@@ -3188,7 +3188,6 @@ public abstract class Player {
 		logoutDelay = System.currentTimeMillis();
 		singleCombatDelay = System.currentTimeMillis();
 	}
-
 	public static long playerTeleDelay;
 	public void dealDamage(int damage) {
 		if (teleTimer <= 0) {
@@ -3205,7 +3204,6 @@ public abstract class Player {
 				hitUpdateRequired2 = false;
 			}
 		}
-
 		Player.playerTeleDelay = System.currentTimeMillis();
 
 		getPlayerAssistant().refreshSkill(GameConstants.HITPOINTS);

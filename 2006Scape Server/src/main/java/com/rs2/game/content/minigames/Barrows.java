@@ -18,22 +18,98 @@ public class Barrows {
 	 * Variables used for reward.
 	 */
 	public static int Barrows[] = {4708, 4710, 4712, 4714, 4716, 4718, 4720, 4722, 4724, 4726, 4728, 4730, 4732, 4734, 4736, 4738, 4745, 4747, 4749, 4751, 4753, 4755, 4757, 4759};
-	public static int Runes[] = {554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565};
-	public static int Pots[] = {121, 123, 125, 127, 119, 2428, 2430, 2434, 2432, 2444};
+	public static int Minds[] = {558, 560, 565, 995};
+	public static int Chaos[] = {562};
+	public static int Deaths[] = {560};
+	public static int Bloods[] = {565};
+	public static int Racks[] = {4740};
+	public static int Key[] = {989};
+	public static int Dmed[] = {1149};
+	public static int Clues[] = {2677};
+	public static int Coins[] = {995};
+	public static int Pots[] = {3024, 6685, 2430, 2434, 2444, 2450}; //{3024, 6685, 2430, 2434, 2444, 2450};
+	public static int Herbs[] = {6694, 224, 246, 226, 240, 220};
+	//runes: mind558, chaos562, death560, blood565
+	//6694 crushed nest, 224 red spiders eggs, 246 wine of zamorak,
+	//226 limpwurt root, 240 whiteberries, 220 grimy torstol
 	/**
 	 * Getting random barrow pieces.
 	 * @return
 	 */
 	public int randomBarrows() {
-		return Barrows[(int)(Math.random()*Barrows.length)];
+		return Barrows[(int) (Math.random()*Barrows.length)];
 	}
 
 	/**
-	 * Getting random runes.
+	 * Getting random coins.
 	 * @return
 	 */
-	public int randomRunes() {
-		return Runes[(int) (Math.random()*Runes.length)];
+	public int randomCoins() {
+		return Coins[(int) (Math.random()*Coins.length)];
+	}
+
+	/**
+	 * Getting random mind runes.
+	 * @return
+	 */
+	public int randomMinds() {
+		return Minds[(int) (Math.random()*Minds.length)];
+	}
+
+	/**
+	 * Getting random chaos runes.
+	 * @return
+	 */
+	public int randomChaos() {
+		return Chaos[(int) (Math.random()*Chaos.length)];
+	}
+
+	/**
+	 * Getting random death runes.
+	 * @return
+	 */
+	public int randomDeaths() {
+		return Deaths[(int) (Math.random()*Deaths.length)];
+	}
+
+	/**
+	 * Getting random blood runes.
+	 * @return
+	 */
+	public int randomBloods() {
+		return Bloods[(int) (Math.random()*Bloods.length)];
+	}
+
+	/**
+	 * Getting random bolt racks.
+	 * @return
+	 */
+	public int randomRacks() {
+		return Racks[(int) (Math.random()*Racks.length)];
+	}
+
+	/**
+	 * Getting a random crystal key.
+	 * @return
+	 */
+	public int randomKey() {
+		return Key[(int) (Math.random()*Key.length)];
+	}
+
+	/**
+	 * Getting a random dragon medium helmet.
+	 * @return
+	 */
+	public int randomDmed() {
+		return Dmed[(int) (Math.random()*Dmed.length)];
+	}
+
+	/**
+	 * Getting random clues.
+	 * @return
+	 */
+	public int randomClues() {
+		return Clues[(int) (Math.random()*Clues.length)];
 	}
 	
 	/**
@@ -42,6 +118,14 @@ public class Barrows {
 	 */
 	public int randomPots() {
 		return Pots[(int) (Math.random()*Pots.length)];
+	}
+
+	/**
+	 * Getting random herbs.
+	 * @return
+	 */
+	public int randomHerbs() {
+		return Herbs[(int) (Math.random()*Herbs.length)];
 	}
 	
 	/**
@@ -174,23 +258,44 @@ public class Barrows {
 	 */
 	public void reward() {
 		if (Boundary.isIn(c, Boundary.BARROWS_UNDERGROUND)) {
-		c.getItemAssistant().addItem(randomRunes(), Misc.random(150) + 100);
-		c.getItemAssistant().addItem(randomRunes(), Misc.random(150) + 100);
-		c.getItemAssistant().addItem(randomPots(), 1);
+
+		c.getItemAssistant().addItem(randomCoins(), Misc.random(774) + 2);
+
+			if (Misc.random(1) == 1) {
+		c.getItemAssistant().addItem(randomMinds(), Misc.random(336) + 0); }
+
+			if (Misc.random(2) == 1) {
+		c.getItemAssistant().addItem(randomChaos(), Misc.random(139) + 0); }
+
+			if (Misc.random(2) == 1) {
+		c.getItemAssistant().addItem(randomDeaths(), Misc.random(83) + 0); }
+
+			if (Misc.random(2) == 1) {
+		c.getItemAssistant().addItem(randomBloods(), Misc.random(43) + 0); }
+
+		//c.getItemAssistant().addItem(randomRacks(), Misc.random(40) + 0);
+		//c.getItemAssistant().addItem(randomKey(), Misc.random(150) + 100);
+		//c.getItemAssistant().addItem(randomDmed(), Misc.random(150) + 100);
+		//c.getItemAssistant().addItem(randomClues(), Misc.random(150) + 100);
+		//c.getItemAssistant().addItem(randomPots(), 1);
+
+			if (Misc.random(2) == 1) {
+		c.getItemAssistant().addItem(randomHerbs(), Misc.random(4) + 3); }
+
 		if (c.barrowsKillCount >= 6 && c.barrowsKillCount <= 24) {
 			if (Misc.random(10) == 1) 
-				c.getItemAssistant().addItem(randomBarrows(), 1);
+				c.getItemAssistant().addItem(randomBarrows(), 2);
 		} else if (c.barrowsKillCount >= 25 && c.barrowsKillCount <= 49) {
 			if (Misc.random(8) == 1) 
-				c.getItemAssistant().addItem(randomBarrows(), 1);
+				c.getItemAssistant().addItem(randomBarrows(), 2);
 		} else if (c.barrowsKillCount >= 50 && c.barrowsKillCount <= 99) {
 			if (Misc.random(5) == 1) 
-				c.getItemAssistant().addItem(randomBarrows(), 1);
+				c.getItemAssistant().addItem(randomBarrows(), 2);
 		} else if (c.barrowsKillCount >= 100 && c.barrowsKillCount <= 149) {
 			if (Misc.random(2) == 1) 
-				c.getItemAssistant().addItem(randomBarrows(), 1);
+				c.getItemAssistant().addItem(randomBarrows(), 2);
 		} else if (c.barrowsKillCount >= 150) {
-				c.getItemAssistant().addItem(randomBarrows(), 1);
+				c.getItemAssistant().addItem(randomBarrows(), 2);
 			}
 		} else {
 			c.getPacketSender().sendMessage("You have to be in barrows to do this!");
