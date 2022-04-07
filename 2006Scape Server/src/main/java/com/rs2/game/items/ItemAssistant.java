@@ -1076,7 +1076,9 @@ public class ItemAssistant {
 	 * two handed weapon check
 	 **/
 	public boolean is2handed(String itemName, int itemId) {
-		if (itemName.contains("ahrim") || itemName.contains("karil") || itemName.contains("verac") || itemName.contains("guthan") || itemName.contains("dharok") || itemName.contains("torag")) {
+		if (itemName.contains("karil") || itemName.contains("verac") || itemName.contains("dharok") || itemName.contains("torag")) {
+			//itemName.contains("ahrim") ||
+			//itemName.contains("guthan") ||
 			return true;
 		}
 		if (itemName.contains("claws")) {
@@ -1088,7 +1090,8 @@ public class ItemAssistant {
 		if (itemName.contains("crystal")) {
 			return true;
 		}
-		if (itemName.contains("2h") || itemName.contains("spear")) {
+		if (itemName.contains("2h")) {
+			// || itemName.contains("spear")
 			return true;
 		}
 		switch (itemId) {
@@ -1434,6 +1437,10 @@ public class ItemAssistant {
 				case 1033: targetSlot = 7;
 					break;
 				case 1035: targetSlot = 4;
+					break;
+				case 6398: targetSlot = 7;
+					break;
+				case 6406: targetSlot = 7;
 					break;
 				case 7535: targetSlot = 1;
 					break;
