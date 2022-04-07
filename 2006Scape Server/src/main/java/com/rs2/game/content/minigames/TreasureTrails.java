@@ -9,27 +9,10 @@ public class TreasureTrails {
 			// Weapons
 			853, // Maple shortbow
 			851, // Maple longbow
-			//1327, // Black scimitar
-			//1233, // Black Dagger (p)
-			//5682, // Black Dagger (p+)
-			//5700, // Black Dagger (p++)
-			//6611, // White scimitar
-			//6591, // White dagger
-			//6593, // White dagger(p)
-			//6595, // White dagger(p+)
-			//6597, // White dagger(p++)
-			//6599, // White halberd
-			6603, // White magic staff
-			// Armor
-			//6619, // White boots
-			//6615, // White chainbody
-			//6623, // White full helm
-			//6629, // White gloves
-			//6633, // White kiteshield
-			//6617, // White platebody
-			//6625, // White platelegs
-			//6627, // White plateskirt
-			//6631, // White sq shield
+			1327, // Black scimitar
+			1233, // Black Dagger (p)
+			5682, // Black Dagger (p+)
+			5700, // Black Dagger (p++)
 			2587, // Black full helm (t)
 			2589, // Black kiteshield (t)
 			2583, // Black platebody (t)
@@ -66,28 +49,6 @@ public class TreasureTrails {
 			//3721, // Toy ship
 			//7759, // Toy soldier
 			//6856, // Bobble hat
-			//2978, // Chompy bird hat
-			//2979, // Chompy bird hat
-			//2980, // Chompy bird hat
-			//2981, // Chompy bird hat
-			//2982, // Chompy bird hat
-			//2983, // Chompy bird hat
-			//2984, // Chompy bird hat
-			//2985, // Chompy bird hat
-			//2986, // Chompy bird hat
-			//2987, // Chompy bird hat
-			//2988, // Chompy bird hat
-			//2989, // Chompy bird hat
-			//2990, // Chompy bird hat
-			//2991, // Chompy bird hat
-			//2992, // Chompy bird hat
-			//2993, // Chompy bird hat
-			//2994, // Chompy bird hat
-			//2995, // Chompy bird hat
-			//6345, // Villager hat
-			//6355, // Villager hat
-			//6365, // Villager hat
-			//6375, // Villager hat
 			//6862, // Woolly hat
 			//6860, // Tri-jester hat
 			//6858, // Jester hat
@@ -126,32 +87,34 @@ public class TreasureTrails {
 			// Jewelery
 			2568, // Ring of forging
 			2570, // Ring of life
-			2550, // Ring of recoil
+			//2550, // Ring of recoil
 			1727, // Amulet of magic
 			1725, // Amulet of strength
 			// Misc
 			2581, // Robin hood hat
 			2577, // Ranger boots
+			2579, // Wizard boots
+			3105, // Climbing boots
 			//2651, // Pirate's hat
 			//2631, //Highwayman mask
 	};
 	public static int highLevelReward[] = {
 			// Weapons
 			1333, // Rune scimitar
-			//1229, // Rune dagger(p)
-			//5678, // Rune dagger(p+)
-			//5696, // Rune dagger(p++)
+			1229, // Rune dagger(p)
+			5678, // Rune dagger(p+)
+			5696, // Rune dagger(p++)
 			1215, // Dragon dagger
 			1231, // Dragon dagger(p)
 			5680, // Dragon dagger(p+)
 			5698, // Dragon dagger(p++)
-			1249, // Dragon spear
+			//1249, // Dragon spear
 			3176, // Dragon spear(kp)
-			1263, // Dragon spear(p)
-			5716, // Dragon spear(p+)
-			5730, // Dragon spear(p++)
-			1359, // Rune axe
-			6739, // Dragon axe
+			//1263, // Dragon spear(p)
+			//5716, // Dragon spear(p+)
+			//5730, // Dragon spear(p++)
+			1359, //Rune axe
+			//6739, // Dragon axe
 			3054, // Mystic lava staff
 			6563, // Mystic mud staff
 			1403, // Mystic water staff
@@ -179,11 +142,11 @@ public class TreasureTrails {
 			7400, // Enchanted hat
 			7398, // Enchanted robe
 			7399, // Enchanted top
-			6920, // Infinity boots
-			6924, // Infinity bottoms
-			6922, // Infinity gloves
-			6918, // Infinity hat
-			6916, // Infinity top
+			//6920, // Infinity boots
+			//6924, // Infinity bottoms
+			//6922, // Infinity gloves
+			//6918, // Infinity hat
+			//6916, // Infinity top
 			4097, // Mystic boots
 			4107, // Mystic boots (dark)
 			4117, // Mystic boots (light)
@@ -206,42 +169,39 @@ public class TreasureTrails {
 			//2491, // Black d'hide vamb
 			2497, // Black d'hide chaps
 			2503, // Black d'hide body
-			2513, // Dragon chainbody
-			1149, // Dragon med helm
-			4087, // Dragon platelegs
-			4585, // Dragon plateskirt
-			1187, // Dragon sq shield
-			//2414, // Zamorak cape
+			//2513, // Dragon chainbody
+			//1149, // Dragon med helm
+			//4087, // Dragon platelegs
+			//4585, // Dragon plateskirt
+			//1187, // Dragon sq shield
 			2657, // Zamorak full helm
 			2659, // Zamorak kiteshield
 			2653, // Zamorak platebody
 			2655, // Zamorak platelegs
 			3478, // Zamorak plateskirt
-			//2413, // Guthix cape
 			2673, // Guthix full helm
 			2675, // Guthix kiteshield
 			2669, // Guthix platebody
 			2671, // Guthix platelegs
 			3480, // Guthix plateskirt
-			2412, // Saradomin cape
 			2665, // Saradomin full helm
 			2667, // Saradomin kiteshield
 			2661, // Saradomin platebody
 			2663, // Saradomin platelegs
 			3479, // Saradomin plateskirt
 			// Jewelery
-			1631, // Uncut dragonstone
-			1615, // Dragonstone
-			1702, // Dragonstone amulet
+			//1631, // Uncut dragonstone
+			//1615, // Dragonstone
+			//1702, // Dragonstone amulet
 			1645, // Dragonstone ring
 			2572, // Ring of wealth
 			2552, // Ring of dueling(8)
-			6733, // Archers ring
-			6737, // Berserker ring
+			//6733, // Archers ring
+			//6737, // Berserker ring
 			6040, // Amulet of nature
 			1497, // Amulet of othanian
 			1731, // Amulet of power
-			6585, // Amulet of fury
+			//6585, // Amulet of fury
 			// Misc
 			7927, // Easter ring
 			1050, // Santa hat
@@ -262,18 +222,11 @@ public class TreasureTrails {
 			559, // Body rune
 			557, // Earth rune
 			554, // Fire rune
-			//884, // Iron arrow
-			/*885, // Iron arrow(p)
-			5617, // Iron arrow(p+)
-			5623, // Iron arrow(p++)*/
 	};
 	public static int mediumLevelStacks[] = {
 			995, // Coins
 			374, // Swordfish
 			890, // Adamant arrow
-			/*891, // Adamant arrow(p)
-			5620, // Adamant arrow(p+)
-			5626, // Adamant arrow(p++)*/
 			563, // Law rune
 			561, // Nature rune
 			562, // Chaos rune
@@ -283,9 +236,6 @@ public class TreasureTrails {
 			995, // Coins
 			386, // Shark
 			892, // Rune arrow
-			/*893, // Rune arrow(p)
-			5621, // Rune arrow(p+)
-			5627, // Rune arrow(p++)*/
 			4697, // Smoke rune
 			566, // Soul rune
 			4694, // Steam rune
@@ -309,20 +259,20 @@ public class TreasureTrails {
 						Misc.randomArrayItem(lowLevelReward), 1,
 						Misc.randomArrayItem(lowLevelReward), 1,
 						Misc.randomArrayItem(lowLevelReward), 1,
-						Misc.randomArrayItem(lowLevelStacks), Misc.random(50, 150)
+						Misc.randomArrayItem(lowLevelStacks), Misc.random(35, 115)
 				);
 				break;
 			case 1:
 				displayReward(player,
 						Misc.randomArrayItem(lowLevelReward), 1,
 						Misc.randomArrayItem(lowLevelReward), 1,
-						Misc.randomArrayItem(lowLevelStacks), Misc.random(50, 150)
+						Misc.randomArrayItem(lowLevelStacks), Misc.random(35, 115)
 				);
 				break;
 			case 2:
 				displayReward(player,
 						Misc.randomArrayItem(lowLevelReward), 1,
-						Misc.randomArrayItem(lowLevelStacks), Misc.random(50, 150)
+						Misc.randomArrayItem(lowLevelStacks), Misc.random(35, 115)
 				);
 				break;
 			}
@@ -333,20 +283,20 @@ public class TreasureTrails {
 						Misc.randomArrayItem(mediumLevelReward), 1,
 						Misc.randomArrayItem(mediumLevelReward), 1,
 						Misc.randomArrayItem(mediumLevelReward), 1,
-						Misc.randomArrayItem(mediumLevelStacks), Misc.random(50, 150)
+						Misc.randomArrayItem(mediumLevelStacks), Misc.random(35, 115)
 				);
 				break;
 			case 1:
 				displayReward(player,
 						Misc.randomArrayItem(mediumLevelReward), 1,
 						Misc.randomArrayItem(mediumLevelReward), 1,
-						Misc.randomArrayItem(mediumLevelStacks), Misc.random(50, 150)
+						Misc.randomArrayItem(mediumLevelStacks), Misc.random(35, 115)
 				);
 				break;
 			case 2:
 				displayReward(player,
 						Misc.randomArrayItem(mediumLevelReward), 1,
-						Misc.randomArrayItem(mediumLevelStacks), Misc.random(50, 150)
+						Misc.randomArrayItem(mediumLevelStacks), Misc.random(35, 115)
 				);
 				break;
 			}
@@ -357,20 +307,20 @@ public class TreasureTrails {
 						Misc.randomArrayItem(highLevelReward), 1,
 						Misc.randomArrayItem(highLevelReward), 1,
 						Misc.randomArrayItem(highLevelReward), 1,
-						Misc.randomArrayItem(highLevelStacks), Misc.random(50, 150)
+						Misc.randomArrayItem(highLevelStacks), Misc.random(35, 115)
 				);
 				break;
 			case 1:
 				displayReward(player,
 						Misc.randomArrayItem(highLevelReward), 1,
 						Misc.randomArrayItem(highLevelReward), 1,
-						Misc.randomArrayItem(highLevelStacks), Misc.random(50, 150)
+						Misc.randomArrayItem(highLevelStacks), Misc.random(35, 115)
 				);
 				break;
 			case 2:
 				displayReward(player,
 						Misc.randomArrayItem(highLevelReward), 1,
-						Misc.randomArrayItem(highLevelStacks), Misc.random(50, 150)
+						Misc.randomArrayItem(highLevelStacks), Misc.random(35, 115)
 				);
 				break;
 			}
