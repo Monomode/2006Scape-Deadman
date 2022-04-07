@@ -28,7 +28,7 @@ public class CrystalChest {
 		if (c.getItemAssistant().playerHasItem(KEY)) {
 			return true;
 		} else {
-			c.getPacketSender().sendMessage("The chest is locked");
+			c.getPacketSender().sendMessage("The chest is locked.");
 			return false;
 		}
 	}
