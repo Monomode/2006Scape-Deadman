@@ -62,6 +62,10 @@ public class NpcActions {
 		case 1923 : // eblis staff shop
 			player.getShopAssistant().openShop(351);
 				break;
+		case 2024: //strange old man (barrows)
+			player.getPacketSender().sendMessage("Your barrows crypts have been reset.");
+			player.getPlayerAssistant().resetBarrows();
+				break;
 			
 		case 2324 :
 		case 2323 :
@@ -433,6 +437,7 @@ public class NpcActions {
 			break;		
 
 		case 70:
+		case 992:
 		case 1596:
 		case 1597:
 		case 1598:
@@ -1236,6 +1241,7 @@ public class NpcActions {
 		break;
 		
 		case 70:
+		case 992:
 		case 1596:
 		case 1597:
 		case 1598:
