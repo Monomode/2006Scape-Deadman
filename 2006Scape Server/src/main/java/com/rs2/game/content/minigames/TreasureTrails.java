@@ -95,6 +95,7 @@ public class TreasureTrails {
 			2577, // Ranger boots
 			2579, // Wizard boots
 			3105, // Climbing boots
+			2904, // Boots (Red) from Canifis clothing store (example: Dragon boots)
 			//2651, // Pirate's hat
 			//2631, //Highwayman mask
 	};
