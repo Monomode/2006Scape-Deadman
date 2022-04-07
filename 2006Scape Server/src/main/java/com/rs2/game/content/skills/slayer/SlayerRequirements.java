@@ -12,7 +12,7 @@ public class SlayerRequirements {
 
 	private static final int NOSE_PEG = 4168, MIRROR_SHIELD = 4156,
 			EAR_MUFFS = 4166, ROCK_HAMMER = 4162, FACEMASK = 4164,
-			LEAF_BLADED_SPEAR = 4158, BROAD_ARROWS = 4172, BAG_OF_SALT = 4161;
+			LEAF_BLADED_SPEAR = 4158, BROAD_ARROWS = 4172, BAG_OF_SALT = 4161, BARBED_BOLTS = 881;
 
 	public static boolean itemNeededSlayer(Player c, int i) {
 		int npcType = NpcHandler.npcs[i].npcType;
@@ -26,12 +26,12 @@ public class SlayerRequirements {
 		}
 		break;
 		case 1632: // turoth
-			if (c.playerEquipment[c.playerWeapon] != LEAF_BLADED_SPEAR && c.playerEquipment[c.playerArrows] != BROAD_ARROWS) {
-				c.getPacketSender().sendMessage("You need a Leaf Bladed Spear or Broad Arrows to attack Turoths.");
+			if (c.playerEquipment[c.playerWeapon] != LEAF_BLADED_SPEAR && c.playerEquipment[c.playerArrows] != BARBED_BOLTS) {
+				c.getPacketSender().sendMessage("You need a Leaf Bladed Spear, Barbed bolts or Broad Arrows to attack Turoths.");
 				c.getCombatAssistant().resetPlayerAttack();
 				return false;
-			} else if (c.playerEquipment[c.playerArrows] != BROAD_ARROWS && c.playerEquipment[c.playerWeapon] != LEAF_BLADED_SPEAR) {
-				c.getPacketSender().sendMessage("You need a Leaf Bladed Spear or Broad Arrows to attack Turoths.");
+			} else if (c.playerEquipment[c.playerArrows] != BARBED_BOLTS && c.playerEquipment[c.playerWeapon] != LEAF_BLADED_SPEAR) {
+				c.getPacketSender().sendMessage("You need a Leaf Bladed Spear, Barbed bolts or Broad Arrows to attack Turoths.");
 				c.getCombatAssistant().resetPlayerAttack();
 				return false;
 			}
