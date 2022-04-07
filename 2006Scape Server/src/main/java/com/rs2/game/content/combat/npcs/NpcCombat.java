@@ -102,7 +102,7 @@ public class NpcCombat {
 				|| NpcHandler.npcs[i].absY == 3226 && c.absY == 3227
 				|| Boundary.isIn(c, Boundary.DRAYNOR_BUILDING) && (NpcHandler.npcs[i].npcType == 172 || NpcHandler.npcs[i].npcType == 174)
 				|| NpcHandler.npcs[i].inLesserNpc()
-				|| !c.npcCanAttack
+				|| !c.npcCanAttack //|| c.teleTimer > 0
 				|| NpcHandler.npcs[i].isDead) {
 				return;
 			}
@@ -315,14 +315,24 @@ public class NpcCombat {
 		case 1590:
 		case 1591:
 		case 1592:
-			int random1 = Misc.random(3);
+			int random1 = Misc.random(2);
 			switch (random1) {
+			case 0:
+					NpcHandler.npcs[i].projectileId = 393; // red
+					NpcHandler.npcs[i].endGfx = 430;
+					NpcHandler.npcs[i].attackType = 3;
+					break;
 			case 1:
 				NpcHandler.npcs[i].projectileId = 393; // red
 				NpcHandler.npcs[i].endGfx = 430;
 				NpcHandler.npcs[i].attackType = 3;
 				break;
-			default:
+			case 2:
+					NpcHandler.npcs[i].projectileId = 393; // red
+					NpcHandler.npcs[i].endGfx = 430;
+					NpcHandler.npcs[i].attackType = 3;
+					break;
+			case 3:
 				NpcHandler.npcs[i].projectileId = -1; // melee
 				NpcHandler.npcs[i].endGfx = -1;
 				NpcHandler.npcs[i].attackType = 0;
@@ -643,7 +653,12 @@ public class NpcCombat {
 						if (c.getItemAssistant().playerHasEquipped(5, 1540)) {
 							damage = Misc.random(4) + 1;
 							c.getPacketSender().sendMessage("Your shield protects you from the fire.");
+						} else {
+						if (c.getItemAssistant().playerHasEquipped(5, 1187)) {
+							damage = Misc.random(1) + 0; //damage = Misc.random(4) + 1;
+							c.getPacketSender().sendMessage("Your dragon sq shield protects you from the fire.");
 						}
+					}
 						break;
 					case 2:// melee
 						damage = Misc.random(5);
