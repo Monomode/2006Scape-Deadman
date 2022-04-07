@@ -181,8 +181,14 @@ public class ObjectManager {
 	}
 
 	public void loadCustomSpawns(Player c) {
-		c.getPacketSender().object(6970,3490, 3460, 0,0,10);//objectManager.java line 184
+		c.getPacketSender().object(6970,3490, 3460, 0,0,10);//swamp boaty canifis tavern
 		Region.addObject(6970,3490, 3460, 0,0,10, false);
+
+		c.getPacketSender().object(170,3018, 3955, 1,0,10);//larran's big chest
+		Region.addObject(170,3018, 3955, 0,0,10, false);
+
+		c.getPacketSender().object(882,2990, 3965, 0,0,10);//wilderness agility course
+		Region.addObject(882,2990, 3965, 0,0,10, false);
 
 		/*c.getPacketSender().object(6970,3504, 3464, 0,0,10);//objectManager.java line 184
 		Region.addObject(6970,3504, 3464, 0,0,10, false);*/
