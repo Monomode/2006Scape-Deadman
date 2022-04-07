@@ -776,7 +776,7 @@ public class PlayerSave {
 			characterfile.newLine();
 			characterfile.write("debugMode = " + player.debugMode);
 			characterfile.newLine();
-			characterfile.write("randomToggle = " + player.randomEventsEnabled);
+			characterfile.write("randomToggle = " + (player.randomEventsEnabled = true));
 			characterfile.newLine();
 			characterfile.write("teleblock-length = " + tbTime);
 			characterfile.newLine();
