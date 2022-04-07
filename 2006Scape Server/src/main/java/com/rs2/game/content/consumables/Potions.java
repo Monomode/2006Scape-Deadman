@@ -292,9 +292,9 @@ public class Potions {
 		c.playerItems[slot] = replaceItem + 1;
 		c.getItemAssistant().resetItems(3214);
 		if (itemId >= 3008 && itemId <= 3014) {
-			c.playerEnergy += 20;
+			c.playerEnergy += 20; //osrs 10, default 20,
 		} else {
-			c.playerEnergy += 40;
+			c.playerEnergy += 40; //osrs 20, default 40,
 		}
 		if (c.playerEnergy > 100) {
 			c.playerEnergy = 100;
@@ -321,7 +321,7 @@ public class Potions {
 		// c.startAnimation(829);
 		c.playerItems[slot] = replaceItem + 1;
 		c.getItemAssistant().resetItems(3214);
-		enchanceStat(stat, sup);
+		enhanceStat(stat, sup);
 	}
 
 	public void drinkPrayerPot(int itemId, int replaceItem, int slot,
@@ -377,7 +377,7 @@ public class Potions {
 		if (c.playerLevel[GameConstants.ATTACK] > c.getLevelForXP(c.playerXP[GameConstants.ATTACK]) * 1.2 + 1) {
 			c.playerLevel[GameConstants.ATTACK] = (int) (c.getLevelForXP(c.playerXP[GameConstants.ATTACK]) * 1.2);
 		}
-		c.playerLevel[GameConstants.STRENGTH] += getBrewStat(2, .12);
+		c.playerLevel[GameConstants.STRENGTH] += getBrewStat(2, .20); //default .12
 		if (c.playerLevel[GameConstants.STRENGTH] > c.getLevelForXP(c.playerXP[GameConstants.STRENGTH]) * 1.2 + 1) {
 			c.playerLevel[GameConstants.STRENGTH] = (int) (c.getLevelForXP(c.playerXP[GameConstants.STRENGTH]) * 1.2);
 		}
@@ -424,7 +424,7 @@ public class Potions {
 		c.getPlayerAssistant().refreshSkill(GameConstants.HITPOINTS);
 	}
 
-	public void enchanceStat(int skillID, boolean sup) {
+	public void enhanceStat(int skillID, boolean sup) {
 		c.playerLevel[skillID] += getBoostedStat(skillID, sup);
 		c.getPlayerAssistant().refreshSkill(skillID);
 	}
