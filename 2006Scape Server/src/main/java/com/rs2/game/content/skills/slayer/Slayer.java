@@ -14,20 +14,25 @@ public class Slayer {
 			EASY_TASK = 1,
 			MEDIUM_TASK = 2,
 			HARD_TASK = 3,
-			VERY_HARD_TASK = 4;
+			VERY_HARD_TASK = 4,
+			DRAGON_TASK = 5,
+			BOSS_TASK = 6;
 	public static final int[]
-			VERY_EASY_AMOUNT = new int[]{15, 40},
-			EASY_AMOUNT =  new int[]{25, 50},
-			MEDIUM_AMOUNT =  new int[]{50, 75},
-			HARD_AMOUNT =  new int[]{100, 150},
-			VERY_HARD_AMOUNT =  new int[]{130, 200},
-			DRAGON_AMOUNT = new int[]{20, 60};
+			VERY_EASY_AMOUNT = new int[]{9, 15}, //15, 40
+			EASY_AMOUNT =  new int[]{9, 15}, //25, 50
+			MEDIUM_AMOUNT =  new int[]{9, 15}, //50, 75
+			HARD_AMOUNT =  new int[]{11, 18}, //100, 150
+			VERY_HARD_AMOUNT =  new int[]{13, 21}, //130, 200
+			DRAGON_AMOUNT = new int[]{6, 9}, //20, 60
+			BOSS_AMOUNT = new int[]{5, 9};
 
 	public static ArrayList<Integer> veryEasyTask = new ArrayList<Integer>();
 	public static ArrayList<Integer> easyTask = new ArrayList<Integer>();
 	public static ArrayList<Integer> mediumTask = new ArrayList<Integer>();
 	public static ArrayList<Integer> hardTask = new ArrayList<Integer>();
 	public static ArrayList<Integer> veryHardTask = new ArrayList<Integer>();
+	public static ArrayList<Integer> dragonTask = new ArrayList<Integer>();
+	public static ArrayList<Integer> bossTask = new ArrayList<Integer>();
 
 	private final Player c;
 
@@ -36,12 +41,13 @@ public class Slayer {
 	}
 
 	public enum SlayerMasters {
-		TURAEL(70, 1, VERY_EASY_TASK,"Taverly", "Turael"),
+		TURAEL(70, 1, VERY_EASY_TASK,"Burthrope and Draynor", "Turael"),
 		KARDIA(992, 1, VERY_HARD_TASK,"Edgeville", "Kardia"),
 		MAZCHNA(1596, 20, EASY_TASK, "Canifis", "Mazchna"),
 		VANNAKA(1597, 40, MEDIUM_TASK, "Edgeville", "Vannaka"),
 		CHAELDAR(1598, 70, HARD_TASK, "Zanaris", "Chaeldar"),
 		DURADEL(1599, 100, VERY_HARD_TASK, "Shilo Village", "Duradel");
+		//OZIACH DRAGON SLAYER MASTER
 
 		private int masterId, combatReq, diffuculty;
 		private String masterLocation, masterName;
@@ -78,6 +84,12 @@ public class Slayer {
 
 	//dark beast, red dragon, skeleton
 	public enum Task {
+		AHRIM_THE_BLIGHTED(2025, 1, 102, BOSS_TASK, "Barrows"),
+		DHAROK_THE_WRETCHED(2026, 1, 115, BOSS_TASK, "Barrows"),
+		GUTHAN_THE_INFESTED(2027, 1, 115, BOSS_TASK, "Barrows"),
+		KARIL_THE_TAINTED(2028, 1, 100, BOSS_TASK, "Barrows"),
+		TORAG_THE_CORRUPTED(2029, 1, 112, BOSS_TASK, "Barrows"),
+		VERAC_THE_DEFILED(2030, 1, 112, BOSS_TASK, "Barrows"),
 		ABERRANT_SPECTRE(1604, 60, 90, HARD_TASK, "Slayer Tower"),
 		ABYSSAL_DEMON(1615, 85, 150, VERY_HARD_TASK, "Slayer Tower"),
 		BANSHEE(1612, 15, 22, VERY_EASY_TASK + r(1), "Slayer Tower"),
@@ -437,7 +449,7 @@ public class Slayer {
 			c.getPacketSender().sendMessage("You must have a task to cancel first.");
 			return;
 		}
-		if (c.slayerPoints < 30) {
+		if (c.slayerPoints < 0) { //if (c.slayerPoints < 30) {
 			c.getPacketSender().sendMessage("This requires atleast 30 slayer points, which you don't have.");
 			c.getDialogueHandler().sendNpcChat1("This requires atleast 30 slayer points, which you don't have.", c.npcType,	NpcHandler.getNpcListName(c.talkingNpc));
 			c.nextChat = 0;
@@ -446,7 +458,7 @@ public class Slayer {
 		c.getPacketSender().sendMessage("You have cancelled your current task of " + c.taskAmount + " " + getTaskName(c.slayerTask) + ".");
 		c.slayerTask = -1;
 		c.taskAmount = 0;
-		c.slayerPoints -= 30;
+		c.slayerPoints -= 0; //c.slayerPoints -= 30;
 	}
 
 	public void removeTask() {
