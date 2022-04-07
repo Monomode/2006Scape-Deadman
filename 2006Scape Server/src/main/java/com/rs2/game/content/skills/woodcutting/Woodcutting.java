@@ -325,7 +325,7 @@ public class Woodcutting {
 					if (p.isWoodcutting && p.tutorialProgress >= 36 && p.treeSpiritSpawned == false) {
 						RandomEventHandler.addRandom(p);
 					}
-					if (p.isWoodcutting && Misc.random(350) == 69 && p.tutorialProgress >= 36 && p.randomEventsEnabled) {
+					if (p.isWoodcutting && Misc.random(35) == 7 && p.tutorialProgress >= 36 && p.randomEventsEnabled) { //default 350 == 69
 						TreeSpirit.spawnTreeSpirit(p);
 					}
 					if (p.playerIsFletching || p.isFiremaking) {
