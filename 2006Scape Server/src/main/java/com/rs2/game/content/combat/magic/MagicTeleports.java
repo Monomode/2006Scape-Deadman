@@ -23,12 +23,17 @@ public class MagicTeleports {
 		if (player.teleTimer > 0) {
 			return;
 		}
-		/*if (player.wildLevel > 20) { //could re-enable if wilderness boundary is redefined
+
+		/*if (player.wildLevel > 20) { //could re-enable if wilderness boundary is redefined // wildLevel > 20
 			player.getPacketSender().sendMessage("You can't teleport above level 20 wilderness.");
 			return;
 		}*/
-		if (System.currentTimeMillis() - player.logoutDelay > 7200 ) {
-			//&& player.getCombatAssistant().inCombat() //checks if there has gone 8000 units of time between the last hit
+		/*if (player.underAttackBy != 0 && System.currentTimeMillis() - player.singleCombatDelay < 7200||player.underAttackBy2 != 0){ //&& System.currentTimeMillis() - player.singleCombatDelay2 <= 7200
+			player.getPacketSender().sendMessage("You can't teleport while in combat.");
+			return;
+		} */
+
+		if (player.underAttackBy != 0 && System.currentTimeMillis() - player.singleCombatDelay < 7200 || player.underAttackBy2 != 0){
 			player.getPacketSender().sendMessage("You can't teleport while in combat.");
 			return;
 		}
