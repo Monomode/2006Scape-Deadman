@@ -628,10 +628,6 @@ public class PlayerAssistant {
 			player.getPacketSender().sendMessage("You can't teleport from a Fight pits Game!");
 			return;
 		}
-		/*if (player.logoutDelay < 7000) { // can't teleport until 7 seconds out of combat
-			player.getPacketSender().sendMessage("You can't teleport while in combat.");
-			return;
-		}*/
 		/*if (player.inWild() && player.wildLevel > GameConstants.NO_TELEPORT_WILD_LEVEL) {
 			//player.getPacketSender().sendMessage("You can't teleport above level " + GameConstants.NO_TELEPORT_WILD_LEVEL + " wilderness.");
 			//return;
@@ -727,10 +723,6 @@ public class PlayerAssistant {
 				return;
 			}
 		}
-		/*if (player.logoutDelay > 7000) { // can't teleport until 7 seconds out of combat
-			player.getPacketSender().sendMessage("You can't teleport while in combat.");
-			return;
-		}*/
 		if (player.inTrade) {
 			player.getPacketSender().sendMessage(
 					"You can't teleport while in trade!");
@@ -1446,19 +1438,20 @@ public class PlayerAssistant {
 				&& !player.inFightCaves()) { // Fight Caves
 			player.getItemAssistant().resetKeepItems();
 			// admin and bots do not lose/drop items
-			if (player.playerRights != 3 && !player.isBot) {
+			//if (player.playerRights != 3 && !player.isBot) {
 				if (!player.isSkulled) { // what items to keep
-					player.getItemAssistant().keepItem(0, true);
-					player.getItemAssistant().keepItem(1, true);
-					player.getItemAssistant().keepItem(2, true);
+					player.getItemAssistant().keepItem(0, false); //default true
+					player.getItemAssistant().keepItem(1, false); //default true
+					player.getItemAssistant().keepItem(2, false); //default true
+					player.getItemAssistant().keepItem(3, false); //default true
 				}
 				if (player.getPrayer().prayerActive[10] && System.currentTimeMillis() - player.lastProtItem > 700) {
-					player.getItemAssistant().keepItem(3, true);
+					player.getItemAssistant().keepItem(4, false); //default true
 				}
 				//player.getItemAssistant().dropAllItems(); // drop all items
 				//player.getItemAssistant().deleteAllItems(); // delete all items
 
-				if (!player.isSkulled) { // add the kept items once we finish deleting and dropping them
+				/* if (!player.isSkulled) { // add the kept items once we finish deleting and dropping them
 					for (int i1 = 0; i1 < 3; i1++) {
 						if (player.itemKeptId[i1] > 0) {
 							player.getItemAssistant().addItem(player.itemKeptId[i1], 1);
@@ -1469,8 +1462,8 @@ public class PlayerAssistant {
 					if (player.itemKeptId[3] > 0) {
 						player.getItemAssistant().addItem(player.itemKeptId[3], 1);
 					}
-				}
-			}
+				} */
+			//}
 			player.getItemAssistant().resetKeepItems();
 		}
 		PrayerDrain.resetPrayers(player);
@@ -1864,7 +1857,7 @@ public class PlayerAssistant {
 	}
 
 	public void levelUp(int skill) {
-		SkillHandler.resetSkills(player);
+		//SkillHandler.resetSkills(player);
 		player.getPacketSender().sendString("Total Lvl: "+getTotalLevel(), 3984);
 		player.getPacketSender().sendString("Combat Lvl: "+player.calculateCombatLevel()+"", 3983);
 
@@ -2105,7 +2098,7 @@ public class PlayerAssistant {
 		if (player.antiFirePot) {
 			toReturn++;
 		}
-		if (player.playerEquipment[player.playerShield] == 1540 || player.playerEquipment[player.playerShield] == 11284 || player.playerEquipment[player.playerShield] == 11283) {
+		if (player.playerEquipment[player.playerShield] == 1540 || player.playerEquipment[player.playerShield] == 1187 || player.playerEquipment[player.playerShield] == 11284 || player.playerEquipment[player.playerShield] == 11283) {
 			toReturn++;
 		}
 		return toReturn;
