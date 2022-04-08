@@ -3143,7 +3143,7 @@ public class Game extends RSApplet {
 					inputTaken = true;
 				}
 				activeInterfaceType = 0;
-				if (aBoolean1242 && anInt989 >= 5) {
+				if (aBoolean1242 && anInt989 >= 10) { //10 switching delay default 5
 					lastActiveInvInterface = -1;
 					processRightClick();
 					if (lastActiveInvInterface == anInt1084 && mouseInvInterfaceIndex != anInt1085) {
@@ -8177,7 +8177,7 @@ public class Game extends RSApplet {
 											if (j7 < 5 && j7 > -5) {
 												j7 = 0;
 											}
-											if (anInt989 < 5) {
+											if (anInt989 < 10) { //10 switching delay default 5
 												k6 = 0;
 												j7 = 0;
 											}
