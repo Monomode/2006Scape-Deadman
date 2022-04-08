@@ -21713,6 +21713,16 @@
     "maxHit": 4,
     "strength": 20,
     "attack": 20,
+    "x": 3280,
+    "y": 3146,
+    "id": 107,
+    "walk": 1,
+    "height": 0
+  },
+  {
+    "maxHit": 4,
+    "strength": 20,
+    "attack": 20,
     "x": 3251,
     "y": 9906,
     "id": 107,
