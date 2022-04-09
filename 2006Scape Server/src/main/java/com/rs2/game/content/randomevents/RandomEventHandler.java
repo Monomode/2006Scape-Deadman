@@ -45,10 +45,10 @@ public class RandomEventHandler {
 			resetEvent(c);
 		}
 		break;
-		case 2:
+		/*case 2:
 			FreakyForester.teleportToLocation(c);
 			resetEvent(c);
-		break;
+		break;*/
 		case 3:
 			Swarm.spawnSwarm(c);
 			resetEvent(c);
