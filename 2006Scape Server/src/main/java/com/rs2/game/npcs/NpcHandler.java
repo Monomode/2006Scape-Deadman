@@ -14,7 +14,7 @@ import com.rs2.game.content.combat.npcs.NpcEmotes;
 import com.rs2.game.content.minigames.FightCaves;
 import com.rs2.game.content.minigames.PestControl;
 import com.rs2.game.content.music.sound.CombatSounds;
-import com.rs2.game.content.randomevents.FreakyForester;
+//import com.rs2.game.content.randomevents.FreakyForester;
 import com.rs2.game.content.randomevents.RandomEventHandler;
 import com.rs2.game.content.randomevents.RiverTroll;
 import com.rs2.game.npcs.drops.ItemDrop;
@@ -1055,7 +1055,7 @@ public class NpcHandler {
                 }
             }
             switch (npcs[i].npcType) {
-                case 2459:
+                /*case 2459:
                     FreakyForester.killedPheasant(c, 0);
                     GameEngine.itemHandler.createGroundItem(c, 6178, npcs[i].absX, npcs[i].absY, 1, c.playerId);
                     break;
@@ -1070,7 +1070,7 @@ public class NpcHandler {
                 case 2462:
                     FreakyForester.killedPheasant(c, 3);
                     GameEngine.itemHandler.createGroundItem(c, 6178, npcs[i].absX, npcs[i].absY, 1, c.playerId);
-                    break;
+                    break;*/
                 case 92:
                     if (c.restGhost == 3) {
                         GameEngine.itemHandler.createGroundItem(c, 553, npcs[i].absX, npcs[i].absY, 1, c.playerId);
