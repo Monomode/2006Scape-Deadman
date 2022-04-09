@@ -13,7 +13,7 @@ import com.rs2.game.content.minigames.castlewars.CastleWarObjects;
 import com.rs2.game.content.minigames.castlewars.CastleWars;
 import com.rs2.game.content.quests.QuestRewards;
 import com.rs2.game.content.random.PartyRoom;
-import com.rs2.game.content.randomevents.FreakyForester;
+//import com.rs2.game.content.randomevents.FreakyForester;
 import com.rs2.game.content.skills.agility.AgilityShortcut;
 import com.rs2.game.content.skills.core.Mining;
 import com.rs2.game.content.skills.crafting.Spinning;
@@ -2376,13 +2376,13 @@ public class ObjectsActions {
                 FlourMill.hopperControl(player);
                 break;
 
-            case 8972:
+            /*case 8972:
                 if (!player.canLeaveArea) {
                     player.getDialogueHandler().sendDialogues(3, 2458);
                 } else {
                     FreakyForester.leaveArea(player);
                 }
-                break;
+                break;*/
 
             case 1765://down
                 if (player.inWild() && player.absX > 3015 && player.absX < 3019) {
