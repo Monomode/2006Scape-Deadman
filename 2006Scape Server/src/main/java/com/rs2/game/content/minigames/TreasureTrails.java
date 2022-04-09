@@ -217,12 +217,9 @@ public class TreasureTrails {
 	public static int lowLevelStacks[] = {
 			995, // Coins
 			380, // Lobster
-			555, // Water rune
-			558, // Mind rune
-			556, // Air rune
+			4697, // Smoke rune
+			4698, // Mud rune
 			559, // Body rune
-			557, // Earth rune
-			554, // Fire rune
 	};
 	public static int mediumLevelStacks[] = {
 			995, // Coins
@@ -238,16 +235,16 @@ public class TreasureTrails {
 			386, // Shark
 			892, // Rune arrow
 			4697, // Smoke rune
-			566, // Soul rune
-			4694, // Steam rune
-			4699, // Lava rune
-			4695, // Mist rune
 			4698, // Mud rune
+			566, // Soul rune
+			//4694, // Steam rune
+			//4699, // Lava rune
+			//4695, // Mist rune
 			565, // Blood rune
 			560, // Death rune
-			4696, // Dust rune
+			//4696, // Dust rune
 			535, // Babydragon bones
-			537, // Dragon bones
+			//537, // Dragon bones
 	};
 
 
@@ -260,20 +257,20 @@ public class TreasureTrails {
 						Misc.randomArrayItem(lowLevelReward), 1,
 						Misc.randomArrayItem(lowLevelReward), 1,
 						Misc.randomArrayItem(lowLevelReward), 1,
-						Misc.randomArrayItem(lowLevelStacks), Misc.random(35, 115)
+						Misc.randomArrayItem(lowLevelStacks), Misc.random(35, 75)
 				);
 				break;
 			case 1:
 				displayReward(player,
 						Misc.randomArrayItem(lowLevelReward), 1,
 						Misc.randomArrayItem(lowLevelReward), 1,
-						Misc.randomArrayItem(lowLevelStacks), Misc.random(35, 115)
+						Misc.randomArrayItem(lowLevelStacks), Misc.random(35, 75)
 				);
 				break;
 			case 2:
 				displayReward(player,
 						Misc.randomArrayItem(lowLevelReward), 1,
-						Misc.randomArrayItem(lowLevelStacks), Misc.random(35, 115)
+						Misc.randomArrayItem(lowLevelStacks), Misc.random(35, 75)
 				);
 				break;
 			}
@@ -284,20 +281,20 @@ public class TreasureTrails {
 						Misc.randomArrayItem(mediumLevelReward), 1,
 						Misc.randomArrayItem(mediumLevelReward), 1,
 						Misc.randomArrayItem(mediumLevelReward), 1,
-						Misc.randomArrayItem(mediumLevelStacks), Misc.random(35, 115)
+						Misc.randomArrayItem(mediumLevelStacks), Misc.random(35, 75)
 				);
 				break;
 			case 1:
 				displayReward(player,
 						Misc.randomArrayItem(mediumLevelReward), 1,
 						Misc.randomArrayItem(mediumLevelReward), 1,
-						Misc.randomArrayItem(mediumLevelStacks), Misc.random(35, 115)
+						Misc.randomArrayItem(mediumLevelStacks), Misc.random(35, 75)
 				);
 				break;
 			case 2:
 				displayReward(player,
 						Misc.randomArrayItem(mediumLevelReward), 1,
-						Misc.randomArrayItem(mediumLevelStacks), Misc.random(35, 115)
+						Misc.randomArrayItem(mediumLevelStacks), Misc.random(35, 75)
 				);
 				break;
 			}
@@ -308,20 +305,20 @@ public class TreasureTrails {
 						Misc.randomArrayItem(highLevelReward), 1,
 						Misc.randomArrayItem(highLevelReward), 1,
 						Misc.randomArrayItem(highLevelReward), 1,
-						Misc.randomArrayItem(highLevelStacks), Misc.random(35, 115)
+						Misc.randomArrayItem(highLevelStacks), Misc.random(35, 75)
 				);
 				break;
 			case 1:
 				displayReward(player,
 						Misc.randomArrayItem(highLevelReward), 1,
 						Misc.randomArrayItem(highLevelReward), 1,
-						Misc.randomArrayItem(highLevelStacks), Misc.random(35, 115)
+						Misc.randomArrayItem(highLevelStacks), Misc.random(35, 75)
 				);
 				break;
 			case 2:
 				displayReward(player,
 						Misc.randomArrayItem(highLevelReward), 1,
-						Misc.randomArrayItem(highLevelStacks), Misc.random(35, 115)
+						Misc.randomArrayItem(highLevelStacks), Misc.random(35, 75)
 				);
 				break;
 			}
