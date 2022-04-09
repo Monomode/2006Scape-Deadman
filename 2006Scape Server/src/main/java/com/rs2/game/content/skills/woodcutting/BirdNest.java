@@ -74,7 +74,7 @@ public class BirdNest {
 	}
 	
 	public static void birdNests(Player player) {
-		if (Misc.random(20) == 7 && player.tutorialProgress >= 36) { // 256 == 69
+		if (Misc.random(32) == 7 && player.tutorialProgress >= 36) { // 256 == 69
 			player.getPacketSender().sendMessage("A birds nest falls from the branches.");
 			dropNest(player);
 			player.getPacketSender().sendMessage("A clue scroll falls from the branches.");
