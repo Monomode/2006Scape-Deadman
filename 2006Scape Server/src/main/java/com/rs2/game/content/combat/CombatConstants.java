@@ -8,11 +8,11 @@ package com.rs2.game.content.combat;
 
 public class CombatConstants {
 	
-	public final static int MELEE_EXP_RATE = 2;
+	public final static int MELEE_EXP_RATE = 4; //default 4
 	
-	public final static int RANGE_EXP_RATE = 2;
+	public final static int RANGE_EXP_RATE = 4; //default 4
 	
-	public final static int MAGIC_EXP_RATE = 2;
+	public final static int MAGIC_EXP_RATE = 4; //default 4
 	
 	public final static int INCREASE_SPECIAL_AMOUNT = 17500;
 	
@@ -22,7 +22,7 @@ public class CombatConstants {
 	
 	public final static boolean CRYSTAL_BOW_DEGRADES = true;
 	
-	public final static int SKULL_TIMER = 1200;
+	public final static int SKULL_TIMER = 1000; //default 1200
 	
 	public final static int TELEBLOCK_DELAY = 20000;
 	
