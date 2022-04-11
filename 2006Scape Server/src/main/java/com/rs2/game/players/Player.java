@@ -823,14 +823,14 @@ public abstract class Player {
 	            @Override
 	            public void execute(CycleEventContainer container) {
 				antiFirePot = false;
-				getPacketSender().sendMessage("Your resistance to dragon fire has worn off.");
+				getPacketSender().sendMessage("@red@Your resistance to dragon fire has worn off.");
 				container.stop();
 			}
 			@Override
 				public void stop() {
 
 				}
-		}, 200);
+		}, 600); //antifire potion duration (6 minutes) default 200 (2 minutes)
 	}
 
 	public boolean isBusy;
