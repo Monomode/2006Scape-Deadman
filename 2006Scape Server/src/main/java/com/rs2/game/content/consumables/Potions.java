@@ -306,6 +306,8 @@ public class Potions {
 			long delay) {
 		// c.startAnimation(829);
 		c.playerItems[slot] = replaceItem + 1;
+		c.getPacketSender().sendMessage(
+				"@gre@Your immunity against poison has been increased.");
 		c.getItemAssistant().resetItems(3214);
 		curePoison(delay);
 	}
@@ -435,7 +437,7 @@ public class Potions {
 		c.antiFirePot = true;
 		c.antiFirePotion();
 		c.getPacketSender().sendMessage(
-				"Your immunity against dragon fire has been increased.");
+				"@gre@Your immunity against dragon fire has been increased.");
 		c.getItemAssistant().resetItems(3214);
 
 	}
