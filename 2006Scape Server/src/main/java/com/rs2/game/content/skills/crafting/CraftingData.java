@@ -345,9 +345,14 @@ public class CraftingData extends SkillHandler {
 	}
 
 	public static enum amuletData {
-		GOLD(1673, 1692), SAPPHIRE(1675, 1694), EMERALD(1677, 1696), RUBY(1679,
-				1698), DIAMOND(1681, 1700), DRAGONSTONE(1683, 1702), ONYX(6579,
-				6581);
+		GOLD(1673, 1692),
+		SILVER(1714, 1718),
+		SAPPHIRE(1675, 1694),
+		EMERALD(1677, 1696),
+		RUBY(1679,	1698),
+		DIAMOND(1681, 1700),
+		DRAGONSTONE(1683, 1702),
+		ONYX(6579,	6581);
 
 		private final int amuletId, product;
 
