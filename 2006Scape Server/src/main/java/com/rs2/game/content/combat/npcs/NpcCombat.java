@@ -312,43 +312,56 @@ public class NpcCombat {
 		case 941: // Green-Dragon
 		case 4682:
 		case 5362:
-		case 1590:
-		case 1591:
-		case 1592:
-			int random1 = Misc.random(2);
-			switch (random1) {
-			case 0:
+		case 1590: //bronze
+		case 1591: //iron
+		case 1592: //steel
+			int randomDragon = Misc.random(4);
+			switch (randomDragon) {
+				case 0:
 					NpcHandler.npcs[i].projectileId = 393; // red
 					NpcHandler.npcs[i].endGfx = 430;
 					NpcHandler.npcs[i].attackType = 3;
 					break;
-			case 1:
-				NpcHandler.npcs[i].projectileId = 393; // red
-				NpcHandler.npcs[i].endGfx = 430;
-				NpcHandler.npcs[i].attackType = 3;
-				break;
-			case 2:
-					NpcHandler.npcs[i].projectileId = 393; // red
-					NpcHandler.npcs[i].endGfx = 430;
+				case 1:
+					NpcHandler.npcs[i].projectileId = 394; // green
+					NpcHandler.npcs[i].endGfx = 429;
 					NpcHandler.npcs[i].attackType = 3;
 					break;
-			case 3:
-				NpcHandler.npcs[i].projectileId = -1; // melee
-				NpcHandler.npcs[i].endGfx = -1;
-				NpcHandler.npcs[i].attackType = 0;
-				break;
+				case 2:
+					NpcHandler.npcs[i].projectileId = 395; // white
+					NpcHandler.npcs[i].endGfx = 431;
+					NpcHandler.npcs[i].attackType = 3;
+					break;
+				case 3:
+					NpcHandler.npcs[i].projectileId = 396; // blue
+					NpcHandler.npcs[i].endGfx = 428;
+					NpcHandler.npcs[i].attackType = 3;
+					break;
+				case 4:
+					NpcHandler.npcs[i].projectileId = -1; // melee
+					NpcHandler.npcs[i].endGfx = -1;
+					NpcHandler.npcs[i].attackType = 0;
+					break;
 			}
 			break;
 		case 134:
 			if (c.playerLevel[GameConstants.PRAYER] > 0) {
 				c.playerLevel[GameConstants.PRAYER]--;
 				c.getPlayerAssistant().refreshSkill(GameConstants.PRAYER);
-				c.getPlayerAssistant().appendPoison(5);
+				c.getPlayerAssistant().appendPoison(6);
 				c.getCombatAssistant().resetPlayerAttack();
 			}
 			break;
+		case 997: //venenatis
+				if (c.playerLevel[GameConstants.PRAYER] > 0) {
+					c.playerLevel[GameConstants.PRAYER]--;
+					c.getPlayerAssistant().refreshSkill(GameConstants.PRAYER);
+					c.getPlayerAssistant().appendPoison(8);
+					c.getCombatAssistant().resetPlayerAttack();
+				}
+				break;
 
-		case 3590:
+		case 3590: //Lava Dragon, Wilderness Dragon
 		case 50:
 		case 742:
 			int random = Misc.random(4);
@@ -646,8 +659,9 @@ public class NpcCombat {
 					int anti = c.getPlayerAssistant().antiFire();
 					switch (anti) {
 					case 0:// has no shield
+						//if (c.getPlayerAssistant().antiFire()) = true {
 						damage = Misc.random(45) + 10;
-						c.getPacketSender().sendMessage("You are badly burnt by the dragon fire!");
+						c.getPacketSender().sendMessage("@red@You are badly burnt by the dragon fire!");
 						break;
 					case 1:// has a shield
 						if (c.getItemAssistant().playerHasEquipped(5, 1540)) {
@@ -660,9 +674,14 @@ public class NpcCombat {
 						}
 					}
 						break;
+					/* case 2:// shield and potion protection
+						damage = Misc.random(2) + 1; //damage = Misc.random(4) + 1;
+						c.getPacketSender().sendMessage("Your potion protects you from the fire.");
+						break; */
 					case 2:// melee
-						damage = Misc.random(5);
-						break;
+							damage = Misc.random(5);
+						c.getPacketSender().sendMessage("You are hurt by the dragon's melee!");
+							break;
 					}
 				}
 				if (damage > 0) {
