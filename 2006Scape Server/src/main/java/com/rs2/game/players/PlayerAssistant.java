@@ -2096,10 +2096,10 @@ public class PlayerAssistant {
 	public int antiFire() {
 		int toReturn = 0;
 		if (player.antiFirePot) {
-			toReturn++;
+			toReturn = 2;;
 		}
 		if (player.playerEquipment[player.playerShield] == 1540 || player.playerEquipment[player.playerShield] == 1187 || player.playerEquipment[player.playerShield] == 11284 || player.playerEquipment[player.playerShield] == 11283) {
-			toReturn++;
+			toReturn++;;
 		}
 		return toReturn;
 	}
