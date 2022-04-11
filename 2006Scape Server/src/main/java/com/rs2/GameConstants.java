@@ -36,7 +36,7 @@ public class GameConstants {
 			ADMIN_CAN_TRADE = false, ADMIN_DROP_ITEMS = false, ADMIN_CAN_SELL_ITEMS = false, VARIABLE_XP_RATE = false,
 			WEBSITE_INTEGRATION = false;
 	public static int[] VARIABLE_XP_RATES = new int[] {1, 2, 5, 10};
-	public static double TEST_VERSION = 0.3, XP_RATE = 150.0;
+	public static double TEST_VERSION = 0.3, XP_RATE = 100.0;
 
 
 	/**
