@@ -383,6 +383,21 @@ public class ObjectsActions {
                 GameEngine.trawler.upLadder(player, objectX, objectY);
                 break;
 
+            case 1987: //lava dragon isle shortcut
+                if (player.playerLevel[GameConstants.AGILITY] < 74) {
+                    player.getPacketSender().sendMessage(
+                            "You need 74 agility to use this shortcut!");
+                    return;
+                }
+                if (player.absX == 3200 && player.absY == 3810) {
+                    player.getPlayerAssistant().movePlayer(3200, 3807, 0);
+                    player.startAnimation(844);
+                } else if (player.absX == 3200 && player.absY == 3807) {
+                    player.getPlayerAssistant().movePlayer(3200, 3810, 0);
+                    player.startAnimation(844);
+                }
+                break;
+
             case 2230:
             case 2265:
                 player.getPacketSender().sendMessage("You look at hajedys cart.");
