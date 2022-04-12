@@ -6,7 +6,7 @@ import com.rs2.game.bots.Bot;
 import com.rs2.game.bots.BotHandler;
 import com.rs2.game.content.quests.QuestAssistant;
 import com.rs2.game.content.quests.QuestRewards;
-import com.rs2.game.content.randomevents.FreakyForester;
+//import com.rs2.game.content.randomevents.FreakyForester;
 import com.rs2.game.content.randomevents.RandomEventHandler;
 import com.rs2.game.content.skills.SkillHandler;
 import com.rs2.game.content.skills.farming.Farmers;
@@ -58,7 +58,7 @@ public class DialogueHandler {
 				player.dialogueAction = 8;
 				break;
 
-			case 2:
+			/* case 2:
 				if (player.canLeaveArea) {
 					sendNpcChat2(
 							"Just step through the glowing portal when you're ready",
@@ -79,7 +79,7 @@ public class DialogueHandler {
 							player.talkingNpc, "Freaky Forester");
 				}
 				player.nextChat = 0;
-				break;// go to where they appear or whatever
+				break;// go to where they appear or whatever */
 
 			case 3:
 				sendNpcChat1("Come back mate! You can't leave yet!",
