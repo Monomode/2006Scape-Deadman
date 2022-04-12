@@ -232,6 +232,8 @@ public class ItemData {
 					itemStackable[263] = true; //clean kwuarm
 					itemStackable[215] = true; //grimy cadantine
 					itemStackable[265] = true; //clean cadantine
+					itemStackable[2485] = true; //grimy lantadyme
+					itemStackable[2481] = true; //clean lantadyme
 					itemStackable[217] = true; //grimy dwarf weed
 					itemStackable[267] = true; //clean dwarf weed
 					itemStackable[219] = true; //grimy torstol
@@ -239,6 +241,7 @@ public class ItemData {
 					itemStackable[227] = true; //vial of water
 					itemStackable[221] = true; //eye of newt
 					itemStackable[231] = true; //snape grass
+					itemStackable[239] = true; //white berries
 					itemStackable[243] = true; //blue dragon scale
 					// itemStackable[] = true; //
 
@@ -250,6 +253,9 @@ public class ItemData {
 					itemStackable[1749] = true; //red dragonhide
 					itemStackable[1747] = true; //black dragonhide
 					itemStackable[1745] = true; //green d-leather
+					itemStackable[2505] = true; //blue d-leather
+					itemStackable[2507] = true; //red d-leather
+					itemStackable[2509] = true; //black d-leather
 					// itemStackable[] = true; //
 
 					itemStackable[2349] = true; //bronze bar
