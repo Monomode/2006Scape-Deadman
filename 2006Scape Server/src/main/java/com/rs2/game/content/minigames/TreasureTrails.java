@@ -101,7 +101,12 @@ public class TreasureTrails {
 	};
 	public static int highLevelReward[] = {
 			// Weapons
+			1247, //Rune spear
+			1319, //Rune 2h sword
+			1303, //Rune longsword
+			1373, //Rune battleaxe
 			1333, // Rune scimitar
+			1213, //Rune dagger
 			1229, // Rune dagger(p)
 			5678, // Rune dagger(p+)
 			5696, // Rune dagger(p++)
@@ -114,6 +119,7 @@ public class TreasureTrails {
 			//1263, // Dragon spear(p)
 			//5716, // Dragon spear(p+)
 			//5730, // Dragon spear(p++)
+			1275, //Rune pickaxe
 			1359, //Rune axe
 			//6739, // Dragon axe
 			3054, // Mystic lava staff
@@ -130,6 +136,14 @@ public class TreasureTrails {
 			3481, // Gilded platebody
 			3483, // Gilded platelegs
 			3485, // Gilded plateskirt
+			1147, // Rune med helm
+			1163, // Rune full helm
+			1113, // Rune chainbody
+			1127, // Rune platebody
+			1093, // Rune platelegs
+			1079, // Rune plateskirt
+			1185, // Rune sq shield
+			1201, // Rune kiteshield
 			2627, // Rune full helm (t)
 			2629, // Rune kiteshield (t)
 			2623, // Rune platebody (t)
@@ -145,7 +159,7 @@ public class TreasureTrails {
 			7399, // Enchanted top
 			//6920, // Infinity boots
 			//6924, // Infinity bottoms
-			//6922, // Infinity gloves
+			6922, // Infinity gloves
 			//6918, // Infinity hat
 			//6916, // Infinity top
 			4097, // Mystic boots
@@ -163,11 +177,17 @@ public class TreasureTrails {
 			4091, // Mystic robe top
 			4101, // Mystic robe top (dark)
 			4111, // Mystic robe top (light)
+			2499, // Blue d'hide body
+			2493, // Blue d'hide chaps
+			2487, // Blue d'hide vambs
 			7376, // Blue d'hide body (t)
 			7384, // Blue d'hide chaps (t)
 			7374, // Blue d'hide body (g)
 			7382, // Blue d'hide chaps (g)
-			//2491, // Black d'hide vamb
+			2489, // Red d'hide vambs
+			2495, // Red d'hide chaps
+			2501, // Red d'hide body
+			2491, // Black d'hide vamb
 			2497, // Black d'hide chaps
 			2503, // Black d'hide body
 			//2513, // Dragon chainbody
@@ -231,6 +251,12 @@ public class TreasureTrails {
 			564, // Cosmic rune
 	};
 	public static int highLevelStacks[] = {
+			//Super energy potion
+			//Super restore
+			//Antifire
+			//Super attack
+			//Super strength
+			//Super defence
 			995, // Coins
 			386, // Shark
 			892, // Rune arrow
