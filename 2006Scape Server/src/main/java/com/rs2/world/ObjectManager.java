@@ -190,6 +190,11 @@ public class ObjectManager {
 		c.getPacketSender().object(882,2990, 3965, 0,0,10);//wilderness agility course
 		Region.addObject(882,2990, 3965, 0,0,10, false);
 
+		c.getPacketSender().object(1987,3200, 3809, 0,1,10);//lava dragon isle
+		Region.addObject(1987,3200, 3809, 0,10,10, false); //1987, 2283
+		c.getPacketSender().object(1987,3200, 3808, 0,1,10);//lava dragon isle
+		Region.addObject(1987,3200, 3808, 0,10,10, false); //1987, 2283
+
 		/*c.getPacketSender().object(6970,3504, 3464, 0,0,10);//objectManager.java line 184
 		Region.addObject(6970,3504, 3464, 0,0,10, false);*/
 
