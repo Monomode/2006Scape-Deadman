@@ -40,29 +40,32 @@ public class NpcActions {
 			}
 		}
 		switch (npcType) {
-		case 219: //fishing guild store
+		case 219: //Fishing guild store
 			player.getShopAssistant().openShop(190);
 			break;
-		case 389 : //thormac
+		case 389 : //Thormac
 			player.getDialogueHandler().sendDialogues(3574, npcType);
 			break;
-		case 945: //recipe for disaster / crossbow shop (tutor)
+		case 569: //Ardougne silver shop
+			player.getShopAssistant().openShop(214);
+			break;
+		case 945: //Recipe for disaster / crossbow shop
 			player.getShopAssistant().openShop(350);
 			break;
-		case 1001:	//dark mage iban staff
+		case 1001:	//Dark mage Iban's staff
 			player.getShopAssistant().openShop(352);
 			break;
-		case 1686 : // Ghost Desciple
+		case 1686 : // Ghost Disciple
 			player.getDialogueHandler().sendDialogues(1390, npcType);
 			break;
 		case 1704 : // Ghost Captain
 		case 1705 : // Ghost Captain
 			player.getDialogueHandler().sendDialogues(1400, npcType);
 			break;
-		case 1923 : // eblis staff shop
+		case 1923 : // Eblis staff shop
 			player.getShopAssistant().openShop(351);
 				break;
-		case 2024: //strange old man (barrows)
+		case 2024: //Strange old man (barrows)
 			player.getPacketSender().sendMessage("Your barrows crypts have been reset.");
 			player.getPlayerAssistant().resetBarrows();
 				break;
