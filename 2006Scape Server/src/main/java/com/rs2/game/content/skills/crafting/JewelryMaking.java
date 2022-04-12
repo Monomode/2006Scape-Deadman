@@ -6,15 +6,15 @@ import com.rs2.game.players.Player;
 
 public class JewelryMaking {
 
-	private final static int[][] RINGS = { // Ring, Gem, Level, XP
-	{ 1635, -1, 5, 15 }, { 1637, 1607, 20, 40 }, { 1639, 1605, 27, 55 },
+	private final static int[][] RINGS = { // Item, Gem, Level, XP
+			{ 1635, -1, 5, 15 }, { 1637, 1607, 20, 40 }, { 1639, 1605, 27, 55 },
 			{ 1641, 1603, 34, 70 }, { 1643, 1601, 43, 85 },
 			{ 1645, 1615, 55, 100 }, { 6575, 6573, 67, 115 } };
 	private final static int[][] NECKLACES = { { 1654, -1, 6, 20 },
 			{ 1656, 1607, 22, 55 }, { 1658, 1605, 29, 60 },
 			{ 1660, 1603, 40, 75 }, { 1662, 1601, 56, 90 },
 			{ 1664, 1615, 72, 105 }, { 6577, 6573, 82, 120 } };
-	private static int[][] AMULETS = { { 1673, -1, 8, 30 },
+	private static int[][] AMULETS = { { 1714, -1, 16, 50 }, { 1673, -1, 8, 30 },
 			{ 1675, 1607, 24, 65 }, { 1677, 1605, 31, 70 },
 			{ 1679, 1603, 50, 85 }, { 1681, 1601, 70, 100 },
 			{ 1683, 1615, 80, 150 }, { 6579, 6573, 90, 165 } };
@@ -22,7 +22,7 @@ public class JewelryMaking {
 	private final static int[][] MOULD_INTERFACE_IDS = {
 	/* Rings */
 	{ 1635, 1637, 1639, 1641, 1643, 1645, 6575 },
-	/* Neclece */
+	/* Necklace */
 	{ 1654, 1656, 1658, 1660, 1662, 1664, 6577 },
 	/* amulet */
 	{ 1673, 1675, 1677, 1679, 1681, 1683, 6579 }
