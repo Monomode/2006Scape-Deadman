@@ -3,6 +3,18 @@
     "face": 1,
     "locations": [
       {
+        "x": 2889,
+        "y": 9831,
+        "height": 0
+      }
+    ],
+    "id": 2144,
+    "type": 0
+  },
+  {
+    "face": 1,
+    "locations": [
+      {
         "x": 2009,
         "y": 4747,
         "height": 0

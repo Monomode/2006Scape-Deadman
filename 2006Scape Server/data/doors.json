@@ -3,6 +3,66 @@
     "face": 1,
     "locations": [
       {
+        "x": 2998,
+        "y": 3931,
+        "height": 0
+      }
+    ],
+    "id": 2307,
+    "type": 0
+  },
+  {
+    "face": 1,
+    "locations": [
+      {
+        "x": 2997,
+        "y": 3931,
+        "height": 0
+      }
+    ],
+    "id": 2308,
+    "type": 0
+  },
+  {
+    "face": 0,
+    "locations": [
+      {
+        "x": 2924,
+        "y": 9803,
+        "height": 0
+      }
+    ],
+    "id": 2623,
+    "type": 0
+  },
+  {
+    "face": 2,
+    "locations": [
+      {
+        "x": 2545,
+        "y": 3570,
+        "height": 0
+      }
+    ],
+    "id": 2115,
+    "type": 0
+  },
+  {
+    "face": 2,
+    "locations": [
+      {
+        "x": 2545,
+        "y": 3569,
+        "height": 0
+      }
+    ],
+    "id": 2116,
+    "type": 0
+  },
+  {
+    "face": 1,
+    "locations": [
+      {
         "x": 1943,
         "y": 4702,
         "height": 0
