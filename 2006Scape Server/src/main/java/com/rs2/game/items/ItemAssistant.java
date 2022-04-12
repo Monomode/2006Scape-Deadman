@@ -1076,9 +1076,12 @@ public class ItemAssistant {
 	 * two handed weapon check
 	 **/
 	public boolean is2handed(String itemName, int itemId) {
-		if (itemName.contains("karil") || itemName.contains("verac") || itemName.contains("dharok") || itemName.contains("torag")) {
+		if (itemName.contains("dharok")) {
+			//itemName.contains("karil") ||
 			//itemName.contains("ahrim") ||
 			//itemName.contains("guthan") ||
+			//|| itemName.contains("verac")
+			// || itemName.contains("torag")
 			return true;
 		}
 		if (itemName.contains("claws")) {
@@ -1095,7 +1098,7 @@ public class ItemAssistant {
 			return true;
 		}
 		switch (itemId) {
-			case 6724: // seercull
+			//case 6724: // seercull
 			case 11730:
 			case 4153:
 			case 6528:
@@ -1428,15 +1431,18 @@ public class ItemAssistant {
 				case 5680:
 				case 5698:
 				case 1305:
+					targetSlot = 3;
 					if (player.lostCity != 3) { // && player.playerRights != 3
 						player.getPacketSender().sendMessage("You must have completed the Lost City quest to equip this weapon.");
 						canWearItem = false;
-					}
+					} break;
 				case 877: targetSlot = 13;
 					break;
 				case 1033: targetSlot = 7;
 					break;
 				case 1035: targetSlot = 4;
+					break;
+				case 2661: targetSlot = 4;
 					break;
 				case 6398: targetSlot = 7;
 					break;
