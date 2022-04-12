@@ -1,5 +1,45 @@
 [
   {
+    "maxHit": 37,
+    "strength": 220,
+    "attack": 220,
+    "x": 3283,
+    "y": 2846,
+    "id": 3847,
+    "walk": 0,
+    "height": 0
+  },
+  {
+    "maxHit": 23,
+    "strength": 240,
+    "attack": 240,
+    "x": 2295,
+    "y": 3330,
+    "id": 1185,
+    "walk": 0,
+    "height": 0
+  },
+  {
+    "maxHit": 23,
+    "strength": 240,
+    "attack": 240,
+    "x": 2243,
+    "y": 3274,
+    "id": 1185,
+    "walk": 0,
+    "height": 0
+  },
+  {
+    "maxHit": 23,
+    "strength": 240,
+    "attack": 240,
+    "x": 2240,
+    "y": 3274,
+    "id": 1185,
+    "walk": 0,
+    "height": 0
+  },
+  {
     "maxHit": 23,
     "strength": 240,
     "attack": 240,
@@ -95,7 +135,7 @@
     "attack": 50,
     "x": 3095,
     "y": 3504,
-    "id": 1552,
+    "id": 2862,
     "walk": 0,
     "height": 0
   },
