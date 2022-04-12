@@ -255,8 +255,8 @@ public class CombatAssistant {
 				}
 				player.killingNpcIndex = player.oldNpcIndex;
 				NpcHandler.npcs[i].updateRequired = true;
-				player.usingMagic = false;
-				player.castingMagic = false;
+				//player.usingMagic = false; //fixes autocasting
+				//player.castingMagic = false; //fixes autocasting
 				player.oldSpellId = 0;
 			}
 		}
@@ -418,7 +418,6 @@ public class CombatAssistant {
 					|| !player.goodDistance(player.getX(), player.getY(), NpcHandler.npcs[i].getX(), NpcHandler.npcs[i].getY(), 4) && player.usingRangeWeapon && !player.usingBow && !player.usingMagic
 					|| !player.goodDistance(player.getX(), player.getY(), NpcHandler.npcs[i].getX(), NpcHandler.npcs[i].getY(), 1) && !player.usingRangeWeapon && !RangeData.usingHally(player) && !player.usingBow && !player.usingMagic
 					|| !player.goodDistance(player.getX(), player.getY(), NpcHandler.npcs[i].getX(), NpcHandler.npcs[i].getY(), 7) && (player.usingBow || player.usingMagic)) {
-				//player.mageFollow = true;
 				return;
 			} else {
 				player.stopMovement();
@@ -452,7 +451,6 @@ public class CombatAssistant {
 					|| !player.goodDistance(player.getX(), player.getY(), PlayerHandler.players[i].getX(), PlayerHandler.players[i].getY(), 2) && !player.usingRangeWeapon 	&& RangeData.usingHally(player) && !player.usingBow && !player.usingMagic
 					|| !player.goodDistance(player.getX(), player.getY(), PlayerHandler.players[i].getX(), PlayerHandler.players[i].getY(), getRequiredDistance()) && !player.usingRangeWeapon && !RangeData.usingHally(player) 	&& !player.usingBow && !player.usingMagic
 					|| !player.goodDistance(player.getX(), player.getY(), PlayerHandler.players[i].getX(), PlayerHandler.players[i].getY(), 10) && (player.usingBow || player.usingMagic)) {
-				//player.mageFollow = true;
 				return;
 			} else {
 				player.stopMovement();
@@ -575,11 +573,9 @@ public class CombatAssistant {
 				if (!player.goodDistance(player.getX(), player.getY(), NpcHandler.npcs[i].getX(), NpcHandler.npcs[i].getY(), 2) && RangeData.usingHally(player) && !player.usingRangeWeapon && !player.usingBow && !player.usingMagic
 						|| !player.goodDistance(player.getX(), player.getY(), NpcHandler.npcs[i].getX(), NpcHandler.npcs[i].getY(), 4) && player.usingRangeWeapon && !player.usingBow && !player.usingMagic
 						|| !player.goodDistance(player.getX(), player.getY(), NpcHandler.npcs[i].getX(), NpcHandler.npcs[i].getY(), 1) && !player.usingRangeWeapon && !RangeData.usingHally(player) && !player.usingBow && !player.usingMagic
-						|| !player.goodDistance(player.getX(), player.getY(), NpcHandler.npcs[i].getX(), NpcHandler.npcs[i].getY(), 8) && (player.usingBow || player.usingMagic)) {
-					//player.mageFollow = true; //farcast
+						|| !player.goodDistance(player.getX(), player.getY(), NpcHandler.npcs[i].getX(), NpcHandler.npcs[i].getY(), 10) && (player.usingBow || player.usingMagic)) { // default 8 tiles
 					return;
 				} else {
-					//player.mageFollow = false; //farcast
 					player.stopMovement();
 				}
 
@@ -610,7 +606,7 @@ public class CombatAssistant {
 				/**
 				 * Don't run up to player if using hally, set distance to 2
 				 */
-				if (player.usingBow || player.usingMagic || player.usingRangeWeapon || player.goodDistance(player.getX(), player.getY(), NpcHandler.npcs[i].getX(), NpcHandler.npcs[i].getY(), 2) && RangeData.usingHally(player)) {
+				if (player.usingBow || player.usingMagic || player.usingRangeWeapon || player.goodDistance(player.getX(), player.getY(), NpcHandler.npcs[i].getX(), NpcHandler.npcs[i].getY(), 2) && RangeData.usingHally(player)) { //default distance 2
 					player.stopMovement();
 				}
 				if (!checkMagicReqs(player.spellId)) {
@@ -623,6 +619,7 @@ public class CombatAssistant {
 				NpcHandler.npcs[i].underAttackBy = player.playerId;
 				NpcHandler.npcs[i].lastDamageTaken = System.currentTimeMillis();
 				if (player.usingSpecial && !player.usingMagic) {
+					player.mageFollow = true;
 					if (player.getCombatAssistant().checkSpecAmount(player.playerEquipment[player.playerWeapon])) {
 						player.lastWeaponUsed = player.playerEquipment[player.playerWeapon];
 						player.lastArrowUsed = player.playerEquipment[player.playerArrows];
@@ -663,9 +660,9 @@ public class CombatAssistant {
 					if (usingCross) {
 						player.usingBow = true;
 					}
-					if (player.fightMode == 2) {
+					/*if (player.fightMode == 2) {
 						player.attackTimer--;
-					}
+					}*/
 					player.lastArrowUsed = player.playerEquipment[player.playerArrows];
 					player.lastWeaponUsed = player.playerEquipment[player.playerWeapon];
 					player.gfx100(RangeData.getRangeStartGFX(player));
@@ -684,6 +681,7 @@ public class CombatAssistant {
 				}
 
 				if (player.usingRangeWeapon && !player.usingMagic && !player.usingBow) { // knives, darts, etc hit delay
+					player.mageFollow = true;
 					player.lastWeaponUsed = player.playerEquipment[player.playerWeapon];
 					player.rangeItemUsed = player.playerEquipment[player.playerWeapon];
 					player.getItemAssistant().deleteEquipment();
@@ -692,9 +690,9 @@ public class CombatAssistant {
 					player.hitDelay = getHitDelay();
 					player.projectileStage = 1;
 					player.oldNpcIndex = i;
-					if (player.fightMode == 2) {
+					/*if (player.fightMode == 2) {
 						player.attackTimer--;
-					}
+					}*/
 					fireProjectileNpc();
 				}
 				if (player.usingMagic) { // magic hit delay
@@ -759,6 +757,10 @@ public class CombatAssistant {
 				player.getPacketSender().sendMessage("This spell only affects skeletons, zombies, ghosts and shades, not humans.");
 				resetPlayerAttack();
 				player.stopMovement();
+				return;
+			}
+			if (o.teleTimer > 0){
+				player.getPacketSender().sendMessage("You cannot attack a teleporting target.");
 				return;
 			}
 			if (CastleWars.isInCw(PlayerHandler.players[i]) && CastleWars.isInCw(player)) {
@@ -833,9 +835,11 @@ public class CombatAssistant {
 				if (player.autocasting) {
 					player.spellId = player.autocastId;
 					player.usingMagic = true;
+					player.mageFollow = true;
 				}
 				if (player.spellId > 0) {
 					player.usingMagic = true;
+					player.mageFollow = true;
 				}
 				if (player.duelRule[9]) {
 					boolean canUseWeapon = false;
@@ -970,7 +974,6 @@ public class CombatAssistant {
 						player.getPacketSender().sendSound(CombatSounds.getWeaponSounds(player), 100, 0);
 					}
 					player.startAnimation(getWepAnim());
-					player.mageFollow = false;
 				} else {
 					player.startAnimation(MagicData.MAGIC_SPELLS[player.spellId][2]);
 					if (CombatConstants.COMBAT_SOUNDS) {
@@ -1000,9 +1003,9 @@ public class CombatAssistant {
 						player.rangeItemUsed = player.playerEquipment[player.playerArrows];
 						player.getItemAssistant().deleteArrow();
 					}
-					if (player.fightMode == 2) {
+					/*if (player.fightMode == 2) {
 						player.attackTimer--;
-					}
+					}*/
 					if (usingCross) {
 						player.usingBow = true;
 					}
@@ -1022,9 +1025,9 @@ public class CombatAssistant {
 					player.usingRangeWeapon = true;
 					player.followId = PlayerHandler.players[player.playerIndex].playerId;
 					player.gfx100(RangeData.getRangeStartGFX(player));
-					if (player.fightMode == 2) {
+					/*if (player.fightMode == 2) {
 						player.attackTimer--;
-					}
+					}*/
 					player.hitDelay = getHitDelay();
 					player.projectileStage = 1;
 					player.oldPlayerIndex = i;
@@ -1055,7 +1058,8 @@ public class CombatAssistant {
 					}
 					if (player.autocastId > 0) {
 						player.followId = player.playerIndex;
-						player.followDistance = 5;
+						player.mageFollow = true;
+						player.followDistance = 5; //default 5
 					}
 					player.hitDelay = getHitDelay();
 					player.oldPlayerIndex = i;
@@ -1685,14 +1689,14 @@ public class CombatAssistant {
 			}
 		}
 		if (CombatConstants.SINGLE_AND_MULTI_ZONES) {
-			if (!Boundary.isIn(PlayerHandler.players[player.playerIndex], Boundary.MULTI)) { // single single zones
+			if (!Boundary.isIn(PlayerHandler.players[player.playerIndex], Boundary.MULTI)) { // ? commented as single multi zones or something
 				if (PlayerHandler.players[player.playerIndex].underAttackBy != player.playerId && PlayerHandler.players[player.playerIndex].underAttackBy != 0) {
 					player.getPacketSender().sendMessage("That player is already in combat.");
 					player.stopMovement();
 					resetPlayerAttack();
 					return false;
 				}
-				if (PlayerHandler.players[player.playerIndex].playerId != player.underAttackBy && player.underAttackBy != 0 || player.underAttackBy2 > 0) {
+				if (PlayerHandler.players[player.playerIndex].playerId != player.underAttackBy && player.underAttackBy != 0 ) { //|| player.underAttackBy2 > 0
 					player.getPacketSender().sendMessage("You are already in combat.");
 					player.stopMovement();
 					resetPlayerAttack();
