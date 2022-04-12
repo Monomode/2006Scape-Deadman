@@ -16644,6 +16644,12 @@
     "id": 3340
   },
   {
+    "hitpoints": 230,
+    "name": "Lava dragon",
+    "combat": 252,
+    "id": 3590
+  },
+  {
     "hitpoints": 0,
     "name": "Squire",
     "combat": 0,
