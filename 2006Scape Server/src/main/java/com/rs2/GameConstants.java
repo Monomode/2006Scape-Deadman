@@ -28,14 +28,14 @@ public class GameConstants {
 	 * XP_RATE Sets The XP Rate Multiplier For All Players/Skills If VARIABLE_XP_RATES is false
 	 * WEBSITE_INTEGRATION Enables/Disables Website Features(Total Accounts Registered & Players Online)
 	 */
-	public static String SERVER_NAME = "2006Scape", WEBSITE_LINK = "https://2006Scape.org";
+	public static String SERVER_NAME = "Deadman Mode", WEBSITE_LINK = "https://2006Scape.org";
 	public static int WORLD = 1, MAX_PLAYERS = 20, TIMEOUT = 150, SAVE_TIMER = 15,
 			RESPAWN_X = 3222, RESPAWN_Y = 3218;
 	public static boolean FILE_SERVER = true, SERVER_DEBUG = false, MEMBERS_ONLY = false, TUTORIAL_ISLAND = false,
-			PARTY_ROOM_DISABLED = false, CLUES_ENABLED = true, ITEM_REQUIREMENTS = true,
+			PARTY_ROOM_DISABLED = true, CLUES_ENABLED = true, ITEM_REQUIREMENTS = true,
 			ADMIN_CAN_TRADE = false, ADMIN_DROP_ITEMS = false, ADMIN_CAN_SELL_ITEMS = false, VARIABLE_XP_RATE = false,
 			WEBSITE_INTEGRATION = false;
-	public static int[] VARIABLE_XP_RATES = new int[] {1, 2, 5, 10};
+	public static int[] VARIABLE_XP_RATES = new int[] {5, 25, 50, 100};
 	public static double TEST_VERSION = 0.3, XP_RATE = 100.0;
 
 
@@ -61,16 +61,13 @@ public class GameConstants {
 	
 	public final static int NO_TELEPORT_WILD_LEVEL = 20;
 	
-	public final static int NPC_RANDOM_WALK_DISTANCE = 5;
+	public final static int NPC_RANDOM_WALK_DISTANCE = 6; //default 5
 	
-	public final static int NPC_FOLLOW_DISTANCE = 10;
+	public final static int NPC_FOLLOW_DISTANCE = 12; //default 10
 	
 	public final static String[] UNDEAD = {
 		"armoured zombie", "ankous", "banshee", "crawling hand", "dried zombie", "ghost", "ghostly warrior", "ghast",
-		"mummy", "mighty banshee", "reventant imp", "reventant goblin",  "reventant icefiend",  "reventant pyrefiend",
-		"reventant hobgoblin",  "reventant vampyre",  "reventant werewolf", "reventant cyclops", "reventant darkbeast",
-		"reventant demon", "reventant ork",  "reventant hellhound", "reventant knight", "reventant dragon",
-		"shade", "skeleton", "skeleton brute", "skeleton thug", "skeleton warload", "summoned zombie",
+		"mummy", "mighty banshee", "shade", "skeleton", "skeleton brute", "skeleton thug", "skeleton warload", "summoned zombie",
 		"skorge", "tortured soul", "undead chicken", "undead cow", "undead one", "undead troll", "zombie", "zombie rat", "zogre"
 	};
 	
