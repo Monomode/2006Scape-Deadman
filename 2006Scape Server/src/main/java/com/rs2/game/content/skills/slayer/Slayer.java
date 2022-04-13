@@ -18,12 +18,13 @@ public class Slayer {
 			DRAGON_TASK = 5,
 			BOSS_TASK = 6;
 	public static final int[]
-			VERY_EASY_AMOUNT = new int[]{9, 15}, //15, 40
-			EASY_AMOUNT =  new int[]{9, 15}, //25, 50
-			MEDIUM_AMOUNT =  new int[]{9, 15}, //50, 75
-			HARD_AMOUNT =  new int[]{11, 18}, //100, 150
-			VERY_HARD_AMOUNT =  new int[]{13, 21}, //130, 200
-			DRAGON_AMOUNT = new int[]{6, 9}, //20, 60
+			VERY_EASY_AMOUNT = new int[]{11, 21}, //15, 40
+			EASY_AMOUNT =  new int[]{13, 23}, //25, 50
+			MEDIUM_AMOUNT =  new int[]{15, 28}, //50, 75
+			HARD_AMOUNT =  new int[]{16, 32}, //100, 150
+			VERY_HARD_AMOUNT =  new int[]{21, 45}, //130, 200
+
+			DRAGON_AMOUNT = new int[]{21, 35}, //20, 60
 			BOSS_AMOUNT = new int[]{5, 9};
 
 	public static ArrayList<Integer> veryEasyTask = new ArrayList<Integer>();
