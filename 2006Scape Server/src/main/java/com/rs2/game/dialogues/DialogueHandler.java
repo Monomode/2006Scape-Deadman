@@ -157,7 +157,7 @@ public class DialogueHandler {
 
 			case 14: // lumby guide
 				sendNpcChat1(
-						"Greetings, welcome to " + GameConstants.SERVER_NAME + ".",
+						"Greetings, welcome to Deadman Mode.", // + GameConstants.SERVER_NAME +
 						player.talkingNpc, "Lumbridge Guide");
 				player.nextChat = 0;
 				break;
