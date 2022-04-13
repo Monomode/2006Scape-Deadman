@@ -58,6 +58,13 @@ public class SlayerRequirements {
 				return false;
 			}
 			break;
+			case 1625:// Smoke devil
+				if (c.playerEquipment[c.playerHat] != FACEMASK) {
+					c.getPacketSender().sendMessage("You need a Face Mask to attack Smoke devils.");
+					c.getCombatAssistant().resetPlayerAttack();
+					return false;
+				}
+				break;
 		case 1604:
 		case 1605:
 		case 1606:
