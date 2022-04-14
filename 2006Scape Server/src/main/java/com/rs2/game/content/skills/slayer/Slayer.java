@@ -15,6 +15,7 @@ public class Slayer {
 			MEDIUM_TASK = 2,
 			HARD_TASK = 3,
 			VERY_HARD_TASK = 4,
+			WILDERNESS_TASK = 7,
 			DRAGON_TASK = 5,
 			BOSS_TASK = 6;
 	public static final int[]
@@ -24,6 +25,7 @@ public class Slayer {
 			HARD_AMOUNT =  new int[]{16, 32}, //100, 150
 			VERY_HARD_AMOUNT =  new int[]{21, 45}, //130, 200
 
+			WILDERNESS_AMOUNT = new int[]{21, 45}, //
 			DRAGON_AMOUNT = new int[]{21, 35}, //20, 60
 			BOSS_AMOUNT = new int[]{5, 9};
 
@@ -32,6 +34,7 @@ public class Slayer {
 	public static ArrayList<Integer> mediumTask = new ArrayList<Integer>();
 	public static ArrayList<Integer> hardTask = new ArrayList<Integer>();
 	public static ArrayList<Integer> veryHardTask = new ArrayList<Integer>();
+	public static ArrayList<Integer> wildernessTask = new ArrayList<Integer>();
 	public static ArrayList<Integer> dragonTask = new ArrayList<Integer>();
 	public static ArrayList<Integer> bossTask = new ArrayList<Integer>();
 
