@@ -83,8 +83,8 @@ public class WildernessAgility {
 				c.getAgility().steppingStone = 6;
 				c.getAgility().steppingStoneTimer = 2;
 				c.getAgility().steppingStone--;
-				if (c.getAgility().agilityProgress[2]) {
-					c.getAgility().agilityProgress[3] = true;
+				if (c.getAgility().agilityProgress[1]) {
+					c.getAgility().agilityProgress[2] = true;
 				}
 				return true;
 
@@ -104,7 +104,7 @@ public class WildernessAgility {
 					}
 
 					if (c.getAgility().agilityProgress[3]) {
-						c.getAgility().agilityProgress[5] = true;
+						c.getAgility().agilityProgress[4] = true;
 					}
 					c.getPlayerAssistant().addSkillXP(c.getAgility().getXp(objectId), GameConstants.AGILITY);
 				} else if (c.absX > 2994 && c.absX < 3002 && c.absY == 3945) {
@@ -117,7 +117,7 @@ public class WildernessAgility {
 					return false;
 				}
 				c.getAgility().walk(0, -4, c.getAgility().getAnimation(objectId), -1);
-				if (c.getAgility().agilityProgress[5]) {
+				if (c.getAgility().agilityProgress[4]) {
 					c.getPlayerAssistant().addSkillXP(c.getAgility().getXp(objectId), GameConstants.AGILITY);
 					c.getAgility().lapBonus = 2400 / 30;
 					c.getAgility().lapFinished();
