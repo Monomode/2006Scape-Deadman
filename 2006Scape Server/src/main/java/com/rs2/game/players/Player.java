@@ -1677,12 +1677,13 @@ public abstract class Player {
 	public int gameInterface;
 	public int lastGame;
 
-	public int[][] barrowsNpcs = { { 2030, 0 }, // verac
-			{ 2029, 0 }, // toarg
+	public int[][] barrowsNpcs = {
+			{ 2030, 0 }, // verac
+			{ 2029, 0 }, // torag
 			{ 2028, 0 }, // karil
 			{ 2027, 0 }, // guthan
 			{ 2026, 0 }, // dharok
-			{ 2025, 0 } // ahrim
+			{ 2025, 0 }  // ahrim
 	};
 
 	public int barrowsKillCount;
@@ -1719,7 +1720,8 @@ public abstract class Player {
 			crystalBowArrowCount, playerMagicBook, teleGfx, teleEndAnimation,
 			teleHeight, teleX, teleY, rangeItemUsed, killingNpcIndex,
 			totalDamageDealt, globalDamageDealt, oldNpcIndex, fightMode, attackTimer,
-			bowSpecShot, ectofuntusWorshipped, graveyardPoints, alchemyPoints, enchantmentPoints, telekineticPoints, telekineticMazesSolved;
+			bowSpecShot, ectofuntusWorshipped, graveyardPoints, alchemyPoints, enchantmentPoints,
+			telekineticPoints, telekineticMazesSolved;
 	public boolean magicFailed, oldMagicFailed;
 	/**
 	 * End
