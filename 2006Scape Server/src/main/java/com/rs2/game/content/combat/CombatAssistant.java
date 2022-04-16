@@ -255,8 +255,8 @@ public class CombatAssistant {
 				}
 				player.killingNpcIndex = player.oldNpcIndex;
 				NpcHandler.npcs[i].updateRequired = true;
-				//player.usingMagic = false; //fixes autocasting
-				//player.castingMagic = false; //fixes autocasting
+				player.usingMagic = false;
+				player.castingMagic = false;
 				player.oldSpellId = 0;
 			}
 		}
@@ -485,13 +485,13 @@ public class CombatAssistant {
 			}
 			if (NpcHandler.npcs[i].npcType == 757 && player.vampSlayer > 2) {
 				if (!player.getItemAssistant().playerHasItem(1549, 1) || !player.getItemAssistant().playerHasItem(2347, 1)) {
-					player.getPacketSender().sendMessage("You need a stake and hammer to attack count draynor.");
+					player.getPacketSender().sendMessage("You need a stake and hammer to attack Count Draynor.");
 					resetPlayerAttack();
 					return;
 				}
 			}
 			if (player.isWoodcutting) {
-				player.getPacketSender().sendMessage("You can't attack an npc while woodcutting.");
+				player.getPacketSender().sendMessage("You can't attack while woodcutting.");
 				resetPlayerAttack();
 				return;
 			}
@@ -619,13 +619,14 @@ public class CombatAssistant {
 				NpcHandler.npcs[i].underAttackBy = player.playerId;
 				NpcHandler.npcs[i].lastDamageTaken = System.currentTimeMillis();
 				if (player.usingSpecial && !player.usingMagic) {
-					player.mageFollow = true;
 					if (player.getCombatAssistant().checkSpecAmount(player.playerEquipment[player.playerWeapon])) {
 						player.lastWeaponUsed = player.playerEquipment[player.playerWeapon];
 						player.lastArrowUsed = player.playerEquipment[player.playerArrows];
 						player.getSpecials().activateSpecial(player.playerEquipment[player.playerWeapon], null, i);
+						player.mageFollow = true;
 						return;
 					} else {
+						player.mageFollow = false;
 						player.getPacketSender().sendMessage("You don't have the required special energy to use this attack.");
 						player.usingSpecial = false;
 						player.getItemAssistant().updateSpecialBar();
@@ -681,7 +682,6 @@ public class CombatAssistant {
 				}
 
 				if (player.usingRangeWeapon && !player.usingMagic && !player.usingBow) { // knives, darts, etc hit delay
-					player.mageFollow = true;
 					player.lastWeaponUsed = player.playerEquipment[player.playerWeapon];
 					player.rangeItemUsed = player.playerEquipment[player.playerWeapon];
 					player.getItemAssistant().deleteEquipment();
