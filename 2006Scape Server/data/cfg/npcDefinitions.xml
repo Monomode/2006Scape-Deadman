@@ -44631,7 +44631,7 @@
    <attackBonus>100</attackBonus>
    <defenceMelee>130</defenceMelee>
    <defenceRange>130</defenceRange>
-   <defenceMage>100</defenceMage>
+   <defenceMage>0</defenceMage>
   </npcDefinition>
  <npcDefinition>
    <id>2029</id>
