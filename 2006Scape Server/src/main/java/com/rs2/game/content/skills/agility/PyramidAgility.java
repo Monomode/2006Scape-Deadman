@@ -50,6 +50,10 @@ public class PyramidAgility {
 						c.getPacketSender()
 								.sendMessage(
 										"Congratulations you completed the pyramid course!");
+						c.getPacketSender()
+								.sendMessage(
+										"Simon Templeton buys the pyramid top for 10,000 coins!");
+						c.getItemAssistant().addOrDropItem(995, 10000);
 					}
 				}
 				return true;
