@@ -330,7 +330,7 @@ public class Commands implements PacketType {
                 break;
             case "home":
             case "stuck":
-                //3222 3218
+                player.getPlayerAssistant().startTeleport(3222, 3218, 0, "modern"); // RESPAWN_X = 3222, RESPAWN_Y = 3218;
                 break;
             case "randomtoggle":
             case "togglerandom":
