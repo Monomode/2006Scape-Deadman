@@ -398,9 +398,55 @@ public class ObjectsActions {
                 }
                 break;
 
+            case 3944: //arandar pass gate
+                if (player.playerLevel[GameConstants.AGILITY] < 56) {
+                    player.getPacketSender().sendMessage(
+                            "You need 56 agility to travel the mountain pass!");
+                    return;
+                }
+                if (player.absX == 2387 && player.absY == 3335) {
+                    player.getPlayerAssistant().movePlayer(2386, 3333, 0);
+                    player.startAnimation(844);
+                } else if (player.absX == 2386 && player.absY == 3335) {
+                    player.getPlayerAssistant().movePlayer(2386, 3333, 0);
+                    player.startAnimation(844);
+                }
+
+                else if (player.absX == 2387 && player.absY == 3333) {
+                    player.getPlayerAssistant().movePlayer(2386, 3335, 0);
+                    player.startAnimation(844);
+                } else if (player.absX == 2386 && player.absY == 3333) {
+                    player.getPlayerAssistant().movePlayer(2386, 3335, 0);
+                    player.startAnimation(844);
+                }
+                break;
+
+            case 3945: //arandar pass gate
+                if (player.playerLevel[GameConstants.AGILITY] < 56) {
+                    player.getPacketSender().sendMessage(
+                            "You need 56 agility to travel the mountain pass!");
+                    return;
+                }
+                if (player.absX == 2385 && player.absY == 3335) {
+                    player.getPlayerAssistant().movePlayer(2385, 3333, 0);
+                    player.startAnimation(844);
+                } else if (player.absX == 2384 && player.absY == 3335) {
+                    player.getPlayerAssistant().movePlayer(2385, 3333, 0);
+                    player.startAnimation(844);
+                }
+
+                else if (player.absX == 2384 && player.absY == 3333) {
+                    player.getPlayerAssistant().movePlayer(2385, 3335, 0);
+                    player.startAnimation(844);
+                } else if (player.absX == 2385 && player.absY == 3333) {
+                    player.getPlayerAssistant().movePlayer(2385, 3335, 0);
+                    player.startAnimation(844);
+                }
+                break;
+
             case 2230:
             case 2265:
-                player.getPacketSender().sendMessage("You look at hajedys cart.");
+                player.getPacketSender().sendMessage("You look at Hajedy's cart.");
                 break;
 
             case 10041:
