@@ -2,6 +2,22 @@
   {
     "buyModifier": 2,
     "sellModifier": 2,
+    "name": "Crystal Store",
+    "id": 353,
+    "items": [
+      {
+        "itemId": 4224,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 4212,
+        "itemAmount": 1
+      }
+    ]
+  },
+  {
+    "buyModifier": 2,
+    "sellModifier": 2,
     "name": "Iban's Staff Shop",
     "id": 352,
     "items": [
