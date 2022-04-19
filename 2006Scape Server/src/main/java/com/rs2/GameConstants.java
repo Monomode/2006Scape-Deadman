@@ -66,9 +66,9 @@ public class GameConstants {
 	public final static int NPC_FOLLOW_DISTANCE = 12; //default 10
 	
 	public final static String[] UNDEAD = {
-		"armoured zombie", "ankous", "banshee", "crawling hand", "dried zombie", "ghost", "ghostly warrior", "ghast",
-		"mummy", "mighty banshee", "shade", "skeleton", "skeleton brute", "skeleton thug", "skeleton warload", "summoned zombie",
-		"skorge", "tortured soul", "undead chicken", "undead cow", "undead one", "undead troll", "zombie", "zombie rat", "zogre"
+		"armoured zombie", "ankou", "banshee", "crawling hand", "dried zombie", "ghost", "ghostly warrior", "ghast",
+		"mummy", "mighty banshee", "shade", "skeleton", "skeleton brute", "skeleton thug", "skeleton warlord", "summoned zombie",
+		"skogre", "tortured soul", "undead chicken", "undead cow", "undead one", "undead troll", "zombie", "zombie rat", "zogre"
 	};
 	
 	public final static int CYCLE_TIME = 600;
