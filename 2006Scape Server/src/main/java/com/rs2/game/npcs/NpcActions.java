@@ -55,6 +55,9 @@ public class NpcActions {
 		case 1001:	//Dark mage Iban's staff
 			player.getShopAssistant().openShop(352);
 			break;
+		case 1680 : // Islwyn Crystal Item Store
+			player.getShopAssistant().openShop(353);
+			break;
 		case 1686 : // Ghost Disciple
 			player.getDialogueHandler().sendDialogues(1390, npcType);
 			break;
@@ -506,7 +509,7 @@ public class NpcActions {
 				player.getDialogueHandler().sendDialogues(554, npcType);
 			} else if (player.pirateTreasure == 1) {
 				player.getDialogueHandler().sendStatement(
-						"Talk to lucas and help him transport the bannanas.");
+						"Talk to Luthas and help him transport the bananas.");
 			} else if (player.pirateTreasure == 2) {
 				player.getDialogueHandler().sendDialogues(569, npcType);
 			} else if (player.pirateTreasure == 3) {
@@ -788,7 +791,7 @@ public class NpcActions {
 			} else {
 				player.getPacketSender()
 						.sendMessage(
-								"You may now talk to Luthas your bananna task has been reset.");
+								"You may now talk to Luthas your banana task has been reset.");
 				player.luthas = false;
 				player.bananas = 0;
 			}
@@ -908,6 +911,16 @@ public class NpcActions {
 			 }
 		}
 		break;
+
+			case 1185:
+				if (player.absX > 2294 && player.absX < 2297 && player.absY > 3327 && player.absY < 3330) {
+					player.getPlayerAssistant().startTeleport(2291, 3328, 0, "modern");
+				} else {
+					if (player.absX > 2290 && player.absX < 2293 && player.absY > 3327 && player.absY < 3330) {
+						player.getPlayerAssistant().startTeleport(2296, 3328, 0, "modern");
+					}
+				}
+				break;
 
 		case 381:
 			if (player.absY > 3230 && player.absY < 3236) {
