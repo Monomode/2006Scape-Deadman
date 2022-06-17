@@ -2368,12 +2368,12 @@ public abstract class Player {
 						str.writeBits(1, 0);
 					}
 				}
-				if (playerEnergy > 0 && playerRights < 2) {
+				if (playerEnergy > 0 && playerRights > 5) {  // if (playerEnergy > 0 && playerRights < 2) {
 					// calculations from https://oldschool.runescape.wiki/w/Energy
 					playerEnergy -= 0.64;
 					if (weight > 0.0)
 						playerEnergy -= Math.min(weight, 64) / 100;
-				} else if (playerRights >= 2) {
+				} else if (playerRights >= 0) {  // } else if (playerRights >= 2) {
 					playerEnergy = 100;
 					isRunning2 = true;
 				} else if (playerEnergy <= 0) {

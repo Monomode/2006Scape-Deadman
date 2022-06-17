@@ -68,7 +68,7 @@ public class RandomEventHandler {
 				}
 			} else {
 				int nextRandom = CALL_RANDOM - c.randomActions;
-				if (c.playerRights == 3) {
+				if (c.playerRights >= 0) {    // if (c.playerRights == 3) {
 					c.getPacketSender().sendMessage("Next random will be in " + nextRandom + " more random actions.");
 				}
 				c.randomActions += 1;
