@@ -19,23 +19,35 @@ public class ActivatePrayers {
 					"Prayer has been disabled in this duel!");
 			return;
 		}
+		if (i == 21 && player.playerLevel[GameConstants.DEFENCE] < 70) {
+			player.getPacketSender().sendConfig(player.getPrayer().PRAYER_GLOW[i], 0);
+			player.getPacketSender().sendMessage(
+					"This prayer requires level 70 Defence.");
+			return;
+		}
+		if (i == 22 && player.playerLevel[GameConstants.DEFENCE] < 70) {
+			player.getPacketSender().sendConfig(player.getPrayer().PRAYER_GLOW[i], 0);
+			player.getPacketSender().sendMessage(
+					"This prayer requires level 70 Defence.");
+			return;
+		}
 		if (i == 24 && player.playerLevel[GameConstants.DEFENCE] < 65) {
 			player.getPacketSender().sendConfig(player.getPrayer().PRAYER_GLOW[i], 0);
 			player.getPacketSender().sendMessage(
-					"You may not use this prayer yet.");
+					"This prayer requires level 65 Defence.");
 			return;
 		}
 		if (i == 25 && player.playerLevel[GameConstants.DEFENCE] < 70) {
 			player.getPacketSender().sendConfig(player.getPrayer().PRAYER_GLOW[i], 0);
 			player.getPacketSender().sendMessage(
-					"You may not use this prayer yet.");
+					"This prayer requires level 70 Defence.");
 			return;
 		}
-		int[] defencePrayer = { 0, 5, 13, 24, 25 };
-		int[] strengthPrayer = { 1, 6, 14, 24, 25 };
-		int[] attackPrayer = { 2, 7, 15, 24, 25 };
-		int[] rangePrayer = { 3, 11, 19 };
-		int[] magePrayer = { 4, 12, 20 };
+		int[] defencePrayer = { 0, 5, 13, 21, 24, 25 };
+		int[] strengthPrayer = { 1, 6, 14, 21, 24, 25 };
+		int[] attackPrayer = { 2, 7, 15, 21, 24, 25 };
+		int[] rangePrayer = { 3, 11, 19, 22 };
+		int[] magePrayer = { 4, 12, 20, 22 };
 
 		if (player.playerLevel[GameConstants.PRAYER] > 0) {
 			if (player.getPlayerAssistant().getLevelForXP(player.playerXP[GameConstants.PRAYER]) >= player
