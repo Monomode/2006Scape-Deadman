@@ -20,7 +20,7 @@ public class WitchsPotion {
 			client.getPacketSender().sendString(
 					"I can start this quest by speaking to Hetty", 8147);
 			client.getPacketSender().sendString("Rimmington.", 8148);
-			client.getPacketSender().sendString("Minimum Requirments:", 8149);
+			client.getPacketSender().sendString("Minimum Requirements:", 8149);
 			client.getPacketSender().sendString("None.", 8150);
 		} else if (client.witchspot == 1) {
 			client.getPacketSender().sendString("Witch's Potion", 8144);
