@@ -16,6 +16,8 @@ public class MeleeMaxHit {
 			strength += (int) (lvlForXP * .10);
 		} else if (c.getPrayer().prayerActive[14]) {
 			strength += (int) (lvlForXP * .15);
+		} else if (c.getPrayer().prayerActive[21]) {
+			strength += (int) (lvlForXP * .23);
 		} else if (c.getPrayer().prayerActive[24]) {
 			strength += (int) (lvlForXP * .18);
 		} else if (c.getPrayer().prayerActive[25]) {

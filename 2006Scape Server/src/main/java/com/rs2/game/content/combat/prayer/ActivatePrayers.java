@@ -43,11 +43,11 @@ public class ActivatePrayers {
 					"This prayer requires level 70 Defence.");
 			return;
 		}
-		int[] defencePrayer = { 0, 5, 13, 21, 24, 25 };
-		int[] strengthPrayer = { 1, 6, 14, 21, 24, 25 };
-		int[] attackPrayer = { 2, 7, 15, 21, 24, 25 };
-		int[] rangePrayer = { 3, 11, 19, 22 };
-		int[] magePrayer = { 4, 12, 20, 22 };
+		int[] defencePrayer = { 0, 5, 13, 21, 22, 24, 25 };
+		int[] strengthPrayer = { 1, 6, 14, 21, 22, 24, 25 };
+		int[] attackPrayer = { 2, 7, 14, 21, 22, 24, 25 };
+		int[] rangePrayer = { 2, 7, 15, 21, 22 };
+		int[] magePrayer = { 2, 7, 15, 21, 22 };
 
 		if (player.playerLevel[GameConstants.PRAYER] > 0) {
 			if (player.getPlayerAssistant().getLevelForXP(player.playerXP[GameConstants.PRAYER]) >= player
@@ -92,34 +92,12 @@ public class ActivatePrayers {
 					}
 					break;
 
-				case 2:
-				case 7:
-				case 15:
-					if (player.getPrayer().prayerActive[i] == false) {
-						for (int j = 0; j < attackPrayer.length; j++) {
-							if (attackPrayer[j] != i) {
-								player.getPrayer().prayerActive[attackPrayer[j]] = false;
-								player.getPacketSender().sendConfig(player.getPrayer().PRAYER_GLOW[attackPrayer[j]], 0);
-							}
-						}
-						for (int j = 0; j < rangePrayer.length; j++) {
-							if (rangePrayer[j] != i) {
-								player.getPrayer().prayerActive[rangePrayer[j]] = false;
-								player.getPacketSender().sendConfig(player.getPrayer().PRAYER_GLOW[rangePrayer[j]], 0);
-							}
-						}
-						for (int j = 0; j < magePrayer.length; j++) {
-							if (magePrayer[j] != i) {
-								player.getPrayer().prayerActive[magePrayer[j]] = false;
-								player.getPacketSender().sendConfig(player.getPrayer().PRAYER_GLOW[magePrayer[j]], 0);
-							}
-						}
-					}
-					break;
-
 				case 3:// range prays
 				case 11:
 				case 19:
+				case 2: // range prays (ultimate strength and incredible reflexes)
+				case 7:
+				case 15:
 					if (player.getPrayer().prayerActive[i] == false) {
 						for (int j = 0; j < attackPrayer.length; j++) {
 							if (attackPrayer[j] != i) {
@@ -206,6 +184,47 @@ public class ActivatePrayers {
 					}
 				case 21:
 				case 22:
+					headIcon = true;
+					for (int p = 16; p < 24; p++) {
+						if (i != p && p != 19 && p != 20) {
+							player.getPrayer().prayerActive[p] = false;
+							player.getPacketSender().sendConfig(
+									player.getPrayer().PRAYER_GLOW[p], 0);
+						}
+					}
+					if (player.getPrayer().prayerActive[i] == false) {
+						for (int j = 0; j < attackPrayer.length; j++) {
+							if (attackPrayer[j] != i) {
+								player.getPrayer().prayerActive[attackPrayer[j]] = false;
+								player.getPacketSender().sendConfig(player.getPrayer().PRAYER_GLOW[attackPrayer[j]], 0);
+							}
+						}
+						for (int j = 0; j < strengthPrayer.length; j++) {
+							if (strengthPrayer[j] != i) {
+								player.getPrayer().prayerActive[strengthPrayer[j]] = false;
+								player.getPacketSender().sendConfig(player.getPrayer().PRAYER_GLOW[strengthPrayer[j]], 0);
+							}
+						}
+						for (int j = 0; j < rangePrayer.length; j++) {
+							if (rangePrayer[j] != i) {
+								player.getPrayer().prayerActive[rangePrayer[j]] = false;
+								player.getPacketSender().sendConfig(player.getPrayer().PRAYER_GLOW[rangePrayer[j]], 0);
+							}
+						}
+						for (int j = 0; j < magePrayer.length; j++) {
+							if (magePrayer[j] != i) {
+								player.getPrayer().prayerActive[magePrayer[j]] = false;
+								player.getPacketSender().sendConfig(player.getPrayer().PRAYER_GLOW[magePrayer[j]], 0);
+							}
+						}
+						for (int j = 0; j < defencePrayer.length; j++) {
+							if (defencePrayer[j] != i) {
+								player.getPrayer().prayerActive[defencePrayer[j]] = false;
+								player.getPacketSender().sendConfig(player.getPrayer().PRAYER_GLOW[defencePrayer[j]], 0);
+							}
+						}
+					}
+					break;
 				case 23:
 					headIcon = true;
 					for (int p = 16; p < 24; p++) {

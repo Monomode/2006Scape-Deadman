@@ -19,11 +19,13 @@ public class MeleeData {
 	public static int calculateMeleeAttack(Player c) {
 		int attackLevel = c.playerLevel[GameConstants.ATTACK];
 		// 2, 5, 11, 18, 19
-		if (c.getPrayer().prayerActive[2]) {
+		if (c.getPrayer().prayerActive[1]) {
 			attackLevel += c.getLevelForXP(c.playerXP[GameConstants.ATTACK]) * 0.05;
-		} else if (c.getPrayer().prayerActive[7]) {
+		} else if (c.getPrayer().prayerActive[6]) {
 			attackLevel += c.getLevelForXP(c.playerXP[GameConstants.ATTACK]) * 0.1;
-		} else if (c.getPrayer().prayerActive[15]) {
+		} else if (c.getPrayer().prayerActive[14]) {
+			attackLevel += c.getLevelForXP(c.playerXP[GameConstants.ATTACK]) * 0.15;
+		} else if (c.getPrayer().prayerActive[21]) {
 			attackLevel += c.getLevelForXP(c.playerXP[GameConstants.ATTACK]) * 0.15;
 		} else if (c.getPrayer().prayerActive[24]) {
 			attackLevel += c.getLevelForXP(c.playerXP[GameConstants.ATTACK]) * 0.15;
