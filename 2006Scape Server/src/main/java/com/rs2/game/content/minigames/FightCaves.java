@@ -325,7 +325,7 @@ public class FightCaves {
 		Client c = (Client) PlayerHandler.players[NpcHandler.npcs[i].spawnedBy];
 		if (c.inFightCaves()) {
 			c.getItemAssistant().addItem(6570, 1);
-			c.getItemAssistant().addItem(6529, 8032);
+			c.getItemAssistant().addItem(6529, 16064); //8032
 			c.getDialogueHandler().sendDialogues(103, 2617);
 			c.getPacketSender().sendMessage("You were victorious!");
 			c.getPlayerAssistant().resetTzhaar();
