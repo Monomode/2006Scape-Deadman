@@ -45,9 +45,10 @@ public class MagicTeleports {
 			player.getPacketSender().sendMessage("You don't have the required runes to cast this spell.");
 			return;
 		}
-		RandomEventHandler.addRandom(player);
+		/*RandomEventHandler.addRandom(player);*/
 		CastRequirements.deleteRunes(player, teleport.getRequiredRunes());
 		player.getPlayerAssistant().startTeleport(teleport.getDestX(), teleport.getDestY(), teleport.getDestZ(), teleport.getType());
 		player.getPlayerAssistant().addSkillXP(teleport.getExperienceGained(), GameConstants.MAGIC);
+		RandomEventHandler.addRandom(player);
 	}
 }
