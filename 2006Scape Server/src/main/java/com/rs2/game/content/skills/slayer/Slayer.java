@@ -19,23 +19,23 @@ public class Slayer {
 			DRAGON_TASK = 5,
 			BOSS_TASK = 6;
 	public static final int[]
-			VERY_EASY_AMOUNT = new int[]{11, 21}, //15, 40
-			EASY_AMOUNT =  new int[]{13, 23}, //25, 50
-			MEDIUM_AMOUNT =  new int[]{15, 28}, //50, 75
-			HARD_AMOUNT =  new int[]{16, 32}, //100, 150
-			VERY_HARD_AMOUNT =  new int[]{21, 45}, //130, 200
+			VERY_EASY_AMOUNT = new int[]{11, 15}, //15, 19
+			EASY_AMOUNT =  new int[]{11, 15}, //25, 29
+			MEDIUM_AMOUNT =  new int[]{15, 21}, //25, 29
+			HARD_AMOUNT =  new int[]{16, 28}, //40, 60
+			VERY_HARD_AMOUNT =  new int[]{17, 29}, //40, 60
 
+			DRAGON_AMOUNT = new int[]{21, 29}, //15, 29
 			WILDERNESS_AMOUNT = new int[]{21, 45}, //
-			DRAGON_AMOUNT = new int[]{21, 35}, //20, 60
-			BOSS_AMOUNT = new int[]{5, 9};
+			BOSS_AMOUNT = new int[]{5, 9}; //
 
 	public static ArrayList<Integer> veryEasyTask = new ArrayList<Integer>();
 	public static ArrayList<Integer> easyTask = new ArrayList<Integer>();
 	public static ArrayList<Integer> mediumTask = new ArrayList<Integer>();
 	public static ArrayList<Integer> hardTask = new ArrayList<Integer>();
 	public static ArrayList<Integer> veryHardTask = new ArrayList<Integer>();
-	public static ArrayList<Integer> wildernessTask = new ArrayList<Integer>();
 	public static ArrayList<Integer> dragonTask = new ArrayList<Integer>();
+	public static ArrayList<Integer> wildernessTask = new ArrayList<Integer>();
 	public static ArrayList<Integer> bossTask = new ArrayList<Integer>();
 
 	private final Player c;
@@ -107,8 +107,8 @@ public class Slayer {
 		CAVE_CRAWLER(1600, 10, 22, EASY_TASK, "Fremennik Slayer Dungeon"),
 		COCKATRICE(1620, 25, 37, MEDIUM_TASK, "Fremennik Slayer Dungeon"),
 		CRAWLING_HAND(1648, 5, 16 + r(3), EASY_TASK + r(1), "Slayer Tower"),
-		DAGANNOTH_74(1338, 1, 70 + r(50), HARD_TASK, "Lighthouse Basement"),
-		DAGANNOTH_92(1342, 1, 80 + r(50), HARD_TASK, "Lighthouse Basement"),
+		DAGANNOTH74(1338, 1, 70 + r(50), HARD_TASK, "Lighthouse Basement"),
+		DAGANNOTH92(1342, 1, 80 + r(50), HARD_TASK, "Lighthouse Basement"),
 		DARK_BEAST(2783, 90, 180, VERY_HARD_TASK, "Slayer Tower"),
 		DUST_DEVIL(1624, 65, 105, MEDIUM_TASK, "Slayer Tower"),
 		SMOKE_DEVIL(1625, 93, 185, HARD_TASK, "Castle Wars"),
@@ -230,7 +230,7 @@ public class Slayer {
 		}
 	}
 	
-	public static boolean getMasterRequirment(Player player, int id) {
+	public static boolean getMasterRequirement(Player player, int id) {
 		for (SlayerMasters slayermasters : SlayerMasters.values()) {
 			if (player.combatLevel < slayermasters.getCombatRequirement()
 					&& slayermasters.getId() == id) {
@@ -380,7 +380,7 @@ public class Slayer {
 						c.needsNewTask = false;
 					}
 					c.getDialogueHandler().sendDialogues(1237, c.npcType);// assign task
-					c.getPacketSender().sendMessage("You have been assigned " + c.taskAmount + " " + getTaskName(c.slayerTask) + ", good luck " + c.playerName + ".");
+					c.getPacketSender().sendMessage("You have been assigned " + c.taskAmount + " " + getTaskName(c.slayerTask) + "."); //+ ", good luck " + c.playerName + ".")
 					return;
 				}
 			}
@@ -454,8 +454,8 @@ public class Slayer {
 			return;
 		}
 		if (c.slayerPoints < 0) { //if (c.slayerPoints < 30) {
-			c.getPacketSender().sendMessage("This requires atleast 30 slayer points, which you don't have.");
-			c.getDialogueHandler().sendNpcChat1("This requires atleast 30 slayer points, which you don't have.", c.npcType,	NpcHandler.getNpcListName(c.talkingNpc));
+			c.getPacketSender().sendMessage("You need more slayer points to cancel task.");
+			c.getDialogueHandler().sendNpcChat1("You need more slayer points to cancel task.", c.npcType,	NpcHandler.getNpcListName(c.talkingNpc));
 			c.nextChat = 0;
 			return;
 		}
@@ -472,8 +472,8 @@ public class Slayer {
 			return;
 		}
 		if (c.slayerPoints < 100) {
-			c.getPacketSender().sendMessage("This requires atleast 100 slayer points, which you don't have.");
-			c.getDialogueHandler().sendNpcChat1("This requires atleast 100 slayer points, which you don't have.", c.npcType, NpcHandler.getNpcListName(c.talkingNpc));
+			c.getPacketSender().sendMessage("You need more slayer points to remove task.");
+			c.getDialogueHandler().sendNpcChat1("You need more slayer points to remove task.", c.npcType, NpcHandler.getNpcListName(c.talkingNpc));
 			c.nextChat = 0;
 			return;
 		}
@@ -491,6 +491,7 @@ public class Slayer {
 				c.slayerTask = -1;
 				c.taskAmount = 0;
 				c.getPacketSender().sendMessage("Your current slayer task has been removed, you can't obtain this task again.");
+				c.getPacketSender().sendMessage("You are allowed up to 5 removed tasks. @red@ATTN: This feature is a work in progress.");
 				updateCurrentlyRemoved();
 				return;
 			}
@@ -519,7 +520,7 @@ public class Slayer {
 			return;
 		}
 		if (c.slayerPoints < 50) {
-			c.getPacketSender().sendMessage( "You need at least 50 slayer points to gain 32,500 Experience.");
+			c.getPacketSender().sendMessage( "You need at least 50 slayer points to exchange for 32,500 experience in slayer.");
 			return;
 		}
 		c.buySlayerTimer = System.currentTimeMillis();
@@ -538,13 +539,13 @@ public class Slayer {
 			return;
 		}
 		if (c.getItemAssistant().freeSlots() < 2 && !c.getItemAssistant().playerHasItem(560) && !c.getItemAssistant().playerHasItem(558)) {
-			c.getPacketSender().sendMessage("You need at least 2 free lots to purchase this.");
+			c.getPacketSender().sendMessage("You need at least 2 inventory slots to purchase Slayer darts.");
 			return;
 		}
 
 		c.buySlayerTimer = System.currentTimeMillis();
 		c.slayerPoints -= 35;
-		c.getPacketSender().sendMessage("You spend 35 slayer points and aquire 250 casts of Slayer darts.");
+		c.getPacketSender().sendMessage("You spend 35 slayer points and acquire 250 casts of Slayer darts.");
 		c.getItemAssistant().addItem(558, 1000);
 		c.getItemAssistant().addItem(560, 250);
 		updatePoints();
@@ -559,12 +560,12 @@ public class Slayer {
 			return;
 		}
 		if (c.getItemAssistant().freeSlots() < 1 && !c.getItemAssistant().playerHasItem(4160)) {
-			c.getPacketSender().sendMessage("You need at least 1 free lot to purchase this.");
+			c.getPacketSender().sendMessage("You need at least 1 inventory slot to purchase Broad arrows.");
 			return;
 		}
 		c.buySlayerTimer = System.currentTimeMillis();
 		c.slayerPoints -= 25;
-		c.getPacketSender().sendMessage("You spend 35 slayer points and aquire 250 Broad arrows.");
+		c.getPacketSender().sendMessage("You spend 35 slayer points and acquire 250 Broad arrows.");
 		c.getItemAssistant().addItem(4160, 250);
 		updatePoints();
 	}
