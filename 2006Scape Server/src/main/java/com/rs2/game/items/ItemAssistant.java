@@ -701,10 +701,11 @@ public class ItemAssistant {
 			return;
 		}
 		if (itemName.contains("black d'hide")) {
+			player.rangeLevelReq = 70;
 			if (itemName.contains("body")) {
 				player.defenceLevelReq = 70;
 			}
-			player.rangeLevelReq = 70;
+			return;
 		}
 		if (itemName.contains("bronze")) {
 			if (!itemName.contains("knife") && !itemName.contains("dart")
@@ -806,9 +807,13 @@ public class ItemAssistant {
 			}
 		if (itemId == 767) { //phoenix crossbow "rune crossbow"
 			player.rangeLevelReq = 61;
-			//player.slayerLevelReq = 55;
-			//player.fletchingLevelReq = 69;
-			//player.woodcuttingLevelReq = 60;
+			player.slayerLevelReq = 55;
+			player.fletchingLevelReq = 69;
+			player.woodcuttingLevelReq = 60;
+		}
+		if (itemId == 6585) { // amulet of fury
+			player.craftingLevelReq = 90;
+			player.magicLevelReq = 87;
 		}
 		if (itemName.contains("godsword")) {
 			player.attackLevelReq = 75;
@@ -1408,6 +1413,12 @@ public class ItemAssistant {
 					if (player.fletchingLevelReq > 0) {
 						if (player.getPlayerAssistant().getLevelForXP(player.playerXP[GameConstants.FLETCHING]) < player.fletchingLevelReq) {
 							player.getPacketSender().sendMessage("You need a fletching level of " + player.fletchingLevelReq + " to wield this weapon.");
+							canWearItem = false;
+						}
+					}
+					if (player.craftingLevelReq > 0) {
+						if (player.getPlayerAssistant().getLevelForXP(player.playerXP[GameConstants.CRAFTING]) < player.fletchingLevelReq) {
+							player.getPacketSender().sendMessage("You need a crafting level of " + player.craftingLevelReq + " to wield this weapon.");
 							canWearItem = false;
 						}
 					}
