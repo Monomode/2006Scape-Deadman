@@ -227,7 +227,7 @@ public class Commands implements PacketType {
             /*case "shop":
                 player.getDialogueHandler().sendDialogues(10000, 0);
                 break;*/
-            case "withdrawshop":
+            /*case "withdrawshop":
                 player.getPacketSender().sendMessage("Shorter version: ::wshop");
             case "wshop":
                 BotHandler.takeCoins(player);
@@ -236,7 +236,7 @@ public class Commands implements PacketType {
                 player.getPacketSender().sendMessage("Shorter version: ::cshop");
             case "cshop":
                 BotHandler.closeShop(player);
-                break;
+                break; */
             case "wealth":
                 int totalWealth = player.getPlayerAssistant().totalGold();
                 player.getPacketSender().sendMessage("You currently have " + totalWealth + "gp.");
@@ -280,20 +280,20 @@ public class Commands implements PacketType {
                         "::players",
                         "Show a list of active players",
                         "",
-                        "::changepassword",
-                        "Change your password",
+                        "::randomtoggle",
+                        "Enable/Disable random events",
                         "",
                         "::highscores",
                         "Get a list of current highscores",
                         "",
-                        "::home, ::stuck",
-                        "Return to spawn position",
+                        "::home",
+                        "Return to home",
                         "",
                         "::loc, ::pos, ::coord",
                         "Get your current world position",
                         "",
-                        "::randomtoggle",
-                        "Enable/Disable random events",
+                        "::changepassword",
+                        "Change your password",
                         "",
                         "::debug",
                         "Enable/Disable debug information",
@@ -301,7 +301,7 @@ public class Commands implements PacketType {
                         "::togglegfx",
                         "Enable/Disable graphics rendering",
                         "",
-                        "::shop",
+                        /*"::shop",
                         "Open/Move player owned shop to your location",
                         "",
                         "::closeshop(::cshop)",
@@ -309,7 +309,7 @@ public class Commands implements PacketType {
                         "",
                         "::withdrawshop(::wshop)",
                         "Withdraw profits from player owned shop",
-                        "",
+                        "", */
                         "::snow",
                         "Add some snow in your mainscreen(works only in december)",
                         (GameConstants.VARIABLE_XP_RATE ? "\\n" + "::xprate\\n" + "Opens dialogue for the player to set/increase their XP rate." : ""),
@@ -342,6 +342,85 @@ public class Commands implements PacketType {
             case "debugmode":
                 player.debugMode = !player.debugMode;
                 player.getPacketSender().sendMessage("You will " + (player.debugMode ? "now" : "no longer") + " receive additional debug information when doing things.");
+                break;
+            case "highscores":
+            case "highscore":
+            case "hiscores":
+            case "hiscore":
+            case "leaderboard":
+            case "leaderboards":
+            case "leader":
+            case "leaders":
+                for (Player p : PlayerHandler.players) {
+                    if (p == null) {
+                        continue;
+                    }
+                    PlayerSave.saveGame(p);
+                    System.out.println("Saved game for " + p.playerName + ".");
+                    GameEngine.lastMassSave = System.currentTimeMillis();
+                }
+                HighscoresHandler hs = new HighscoresHandler();
+                String[] highscores = new String[]{
+                        "Top 10 Total Level:",
+                        hs.getRank(player, 0, "level"),
+                        hs.getRank(player, 1, "level"),
+                        hs.getRank(player, 2, "level"),
+                        hs.getRank(player, 3, "level"),
+                        hs.getRank(player, 4, "level"),
+                        hs.getRank(player, 5, "level"),
+                        hs.getRank(player, 6, "level"),
+                        hs.getRank(player, 7, "level"),
+                        hs.getRank(player, 8, "level"),
+                        hs.getRank(player, 9, "level"),
+                        "",
+                        /* "Top 10 Slayer Level:",
+                        hs.getRank(player, 0, "slayer level"),
+                        hs.getRank(player, 1, "slayer level"),
+                        hs.getRank(player, 2, "slayer level"),
+                        hs.getRank(player, 3, "slayer level"),
+                        hs.getRank(player, 4, "slayer level"),
+                        hs.getRank(player, 5, "slayer level"),
+                        hs.getRank(player, 6, "slayer level"),
+                        hs.getRank(player, 7, "slayer level"),
+                        hs.getRank(player, 8, "slayer level"),
+                        hs.getRank(player, 9, "slayer level"),
+                        "", */
+                        "Top 10 Wealthiest Players:",
+                        hs.getRank(player, 0, "gold"),
+                        hs.getRank(player, 1, "gold"),
+                        hs.getRank(player, 2, "gold"),
+                        hs.getRank(player, 3, "gold"),
+                        hs.getRank(player, 4, "gold"),
+                        hs.getRank(player, 5, "gold"),
+                        hs.getRank(player, 6, "gold"),
+                        hs.getRank(player, 7, "gold"),
+                        hs.getRank(player, 8, "gold"),
+                        hs.getRank(player, 9, "gold"),
+                        "",
+                        /* "Top 10 Highest Total Damage:",
+                        hs.getRank(player, 0, "damage"),
+                        hs.getRank(player, 1, "damage"),
+                        hs.getRank(player, 2, "damage"),
+                        hs.getRank(player, 3, "damage"),
+                        hs.getRank(player, 4, "damage"),
+                        hs.getRank(player, 5, "damage"),
+                        hs.getRank(player, 6, "damage"),
+                        hs.getRank(player, 7, "damage"),
+                        hs.getRank(player, 8, "damage"),
+                        hs.getRank(player, 9, "damage"),*/
+                };
+
+                // Clear all lines
+                for (int i = 8144; i < 8195; i++) player.getPacketSender().sendString("", i);
+
+                player.getPacketSender().sendString("@dre@Highscores", 8144);
+
+                int highscoresLineNumber = 8147;
+                for (String line : highscores) {
+                    player.getPacketSender().sendString(line, highscoresLineNumber++);
+                }
+                player.getPacketSender().showInterface(8134);
+
                 break;
         }
 
@@ -964,69 +1043,6 @@ public class Commands implements PacketType {
                     player.getPlayerAssistant().refreshSkill(i);
                 }
                 player.getPlayerAssistant().requestUpdates();
-                break;
-            case "highscores":
-            case "highscore":
-            case "hiscores":
-            case "hiscore":
-                for (Player p : PlayerHandler.players) {
-                    if (p == null) {
-                        continue;
-                    }
-                    PlayerSave.saveGame(p);
-                    System.out.println("Saved game for " + p.playerName + ".");
-                    GameEngine.lastMassSave = System.currentTimeMillis();
-                }
-                HighscoresHandler hs = new HighscoresHandler();
-                String[] highscores = new String[]{
-                        "Top 10 Total Level:",
-                        hs.getRank(player, 0, "level"),
-                        hs.getRank(player, 1, "level"),
-                        hs.getRank(player, 2, "level"),
-                        hs.getRank(player, 3, "level"),
-                        hs.getRank(player, 4, "level"),
-                        hs.getRank(player, 5, "level"),
-                        hs.getRank(player, 6, "level"),
-                        hs.getRank(player, 7, "level"),
-                        hs.getRank(player, 8, "level"),
-                        hs.getRank(player, 9, "level"),
-                        "",
-                        "Top 10 Wealthiest Players:",
-                        hs.getRank(player, 0, "gold"),
-                        hs.getRank(player, 1, "gold"),
-                        hs.getRank(player, 2, "gold"),
-                        hs.getRank(player, 3, "gold"),
-                        hs.getRank(player, 4, "gold"),
-                        hs.getRank(player, 5, "gold"),
-                        hs.getRank(player, 6, "gold"),
-                        hs.getRank(player, 7, "gold"),
-                        hs.getRank(player, 8, "gold"),
-                        hs.getRank(player, 9, "gold"),
-                        "",
-                        "Top 10 Highest Total Damage:",
-                        hs.getRank(player, 0, "damage"),
-                        hs.getRank(player, 1, "damage"),
-                        hs.getRank(player, 2, "damage"),
-                        hs.getRank(player, 3, "damage"),
-                        hs.getRank(player, 4, "damage"),
-                        hs.getRank(player, 5, "damage"),
-                        hs.getRank(player, 6, "damage"),
-                        hs.getRank(player, 7, "damage"),
-                        hs.getRank(player, 8, "damage"),
-                        hs.getRank(player, 9, "damage"),
-                };
-
-                // Clear all lines
-                for (int i = 8144; i < 8195; i++) player.getPacketSender().sendString("", i);
-
-                player.getPacketSender().sendString("@dre@Highscores", 8144);
-
-                int highscoresLineNumber = 8147;
-                for (String line : highscores) {
-                    player.getPacketSender().sendString(line, highscoresLineNumber++);
-                }
-                player.getPacketSender().showInterface(8134);
-
                 break;
         }
     }
