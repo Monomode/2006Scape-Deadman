@@ -49,7 +49,7 @@ public class PyramidAgility {
 						c.getAgility().lapFinished();
 						c.getPacketSender()
 								.sendMessage(
-										"Congratulations you completed the pyramid course!");
+										"You completed the pyramid course!");
 						c.getPacketSender()
 								.sendMessage(
 										"Simon Templeton buys the pyramid top for 10,000 coins!");
