@@ -35,9 +35,9 @@ public class Woodcutting {
 		MAPLE(new int[] {1307}, 1343, 45, 100, 1517, 48, 8),
 		YEW(new int[] {1309}, 7402, 60, 175, 1515, 79, 5),
 		MAGIC(new int[] {1306}, 7401, 75, 250, 1513, 150, 3),
-		EVERGREEN(new int[] {1319, 1318, 1315, 1316, 1332}, 1341, 1, 25, 1511, 11, 100),
+		EVERGREEN(new int[] {1319, 1318, 1315, 1316, 1332}, 1341, 1, 25, 1511, 11, 20),
 		ACHEY(new int[] {2023}, 3371, 1, 25, 1511, 11, 100),
-		DRAMEN(new int[] {1292}, 1341, 36, 0, 771, 45, 100);
+		DRAMEN(new int[] {1292}, 1341, 36, 0, 771, 45, 0);
 		
 		private int[] treeId;
 		private int stumpId, levelReq, xpRecieved, logRecieved, respawnTime, cutChance;
@@ -109,7 +109,7 @@ public class Woodcutting {
 						try {
 							p.startAnimation(Axe_Settings[p.woodcuttingAxe][3]);
 						} catch (ArrayIndexOutOfBoundsException exception) {
-							System.out.println("LOL this happend again: " + exception);
+							System.out.println("LOL this happened again: " + exception);
 						}
 						p.getPacketSender().sendSound(SoundList.TREE_CUTTING, 100, 0);
 					}
@@ -305,11 +305,11 @@ public class Woodcutting {
 					}
 					if (p.isWoodcutting) {
 						p.startAnimation(Axe_Settings[p.woodcuttingAxe][3]);
-					}
+					} /*
 					if (p.getItemAssistant().freeSlots() < 1) {
 						p.getPacketSender().sendMessage("You have ran out of inventory slots.");
 						container.stop();
-					}
+					} */
 					int XP = tree.getXpReceived();
 					if (p.isWoodcutting) {
 						p.getItemAssistant().addItem(tree.getLogRecieved(), 1);
