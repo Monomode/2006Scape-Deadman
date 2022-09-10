@@ -20,7 +20,7 @@ public class GertrudesCat {
 			client.getPacketSender().sendString(
 					"I can start this quest by speaking to Gertrude in", 8147);
 			client.getPacketSender().sendString("Varrock.", 8148);
-			client.getPacketSender().sendString("Minimum Requirments:", 8149);
+			client.getPacketSender().sendString("Minimum Requirements:", 8149);
 			client.getPacketSender().sendString("5 Fishing.", 8150);
 		} else if (client.gertCat == 1) {
 			client.getPacketSender().sendString("Gertrudes Cat", 8144);

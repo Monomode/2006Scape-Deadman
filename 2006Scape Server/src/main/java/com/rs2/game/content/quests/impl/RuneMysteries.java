@@ -24,7 +24,7 @@ public class RuneMysteries {
 					8148);
 			client.getPacketSender().sendString("", 8149);
 			client.getPacketSender().sendString(
-					"There are no minimum requirments.", 8150);
+					"There are no minimum requirements.", 8150);
 		} else if (client.runeMist == 1) {
 			client.getPacketSender().sendString("Rune Mysteries", 8144);
 			client.getPacketSender().sendString(

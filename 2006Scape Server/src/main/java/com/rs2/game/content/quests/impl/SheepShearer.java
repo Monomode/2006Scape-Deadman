@@ -20,7 +20,7 @@ public class SheepShearer {
 			client.getPacketSender().sendString(
 					"I can start this quest by speaking to Fred in", 8147);
 			client.getPacketSender().sendString("Lumbridge.", 8148);
-			client.getPacketSender().sendString("Minimum Requirments:", 8149);
+			client.getPacketSender().sendString("Minimum Requirements:", 8149);
 			client.getPacketSender().sendString("None.", 8150);
 		} else if (client.sheepShear == 1) {
 			client.getPacketSender().sendString("Sheep Shearer", 8144);
