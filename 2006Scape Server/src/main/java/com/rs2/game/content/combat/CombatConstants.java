@@ -22,7 +22,7 @@ public class CombatConstants {
 	
 	public final static boolean CRYSTAL_BOW_DEGRADES = true;
 	
-	public final static int SKULL_TIMER = 1000; //default 1200
+	public final static int SKULL_TIMER = 6000000; //default 1200
 	
 	public final static int TELEBLOCK_DELAY = 20000;
 	
