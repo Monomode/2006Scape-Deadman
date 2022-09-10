@@ -27,12 +27,14 @@ public class RangeMaxHit {
 		if (RangeData.fullVoidRange(c)) {
 			rangeLevel += c.getLevelForXP(c.playerXP[GameConstants.RANGED]) * 0.1;
 		}
-		if (c.getPrayer().prayerActive[3]) {
+		if (c.getPrayer().prayerActive[2]) {
 			rangeLevel *= 1.05;
-		} else if (c.getPrayer().prayerActive[11]) {
+		} else if (c.getPrayer().prayerActive[7]) {
 			rangeLevel *= 1.10;
-		} else if (c.getPrayer().prayerActive[19]) {
+		} else if (c.getPrayer().prayerActive[15]) {
 			rangeLevel *= 1.15;
+		} else if (c.getPrayer().prayerActive[22]) {
+			rangeLevel *= 1.20;
 		}
 		// dbow spec
 		if (RangeData.fullVoidRange(c) && c.specAccuracy > 1.15) {
@@ -45,11 +47,13 @@ public class RangeMaxHit {
 		int rangeLevel = c.playerLevel[GameConstants.RANGED];
 		int itemUsed = getRangeStr(c.usingBow ? c.lastArrowUsed : c.lastWeaponUsed);
 		double modifier = 1.00;
-		if (c.getPrayer().prayerActive[3]) {
+		if (c.getPrayer().prayerActive[2]) {
 			modifier *= 1.05;
-		} else if (c.getPrayer().prayerActive[11]) {
+		} else if (c.getPrayer().prayerActive[7]) {
 			modifier *= 1.10;
-		} else if (c.getPrayer().prayerActive[19]) {
+		} else if (c.getPrayer().prayerActive[15]) {
+			modifier *= 1.15;
+		} else if (c.getPrayer().prayerActive[22]) {
 			modifier *= 1.15;
 		}
 		if (RangeData.fullVoidRange(c)) {
