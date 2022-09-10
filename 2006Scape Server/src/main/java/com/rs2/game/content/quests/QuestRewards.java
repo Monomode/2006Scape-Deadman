@@ -25,7 +25,7 @@ public class QuestRewards {
 			player.getPacketSender().sendFrame246(12145, 250, itemID);
 		}
 		player.getPacketSender().showInterface(12140);
-		player.getPacketSender().sendMessage("You completed " + questName + "!");
+		player.getPacketSender().sendMessage("@red@You completed " + questName + "!");
 		QuestAssistant.sendStages(player);
 		player.getPacketSender().sendQuickSong(93, 0);
 	}
