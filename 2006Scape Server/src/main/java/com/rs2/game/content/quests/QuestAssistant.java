@@ -84,6 +84,13 @@ public class QuestAssistant {
 		} else if (player.impsC == 2) {
 			player.getPacketSender().sendString("@gre@Imp Catcher", 7340);
 		}
+		if (player.desertT == 0) {
+			player.getPacketSender().sendString("Imp Catcher", 12852);
+		} else if (player.desertT == 1) {
+			player.getPacketSender().sendString("@yel@Imp Catcher", 12852);
+		} else if (player.desertT == 2) {
+			player.getPacketSender().sendString("@gre@Imp Catcher", 12852);
+		}
 		if (player.gertCat == 0) {
 			player.getPacketSender().sendString("Gertrudes Cat", 7360);
 		} else if (player.gertCat == 7) {
@@ -147,7 +154,7 @@ public class QuestAssistant {
 		COOKS_ASSISTANT(28165, 7333, "Cook's Assistant", true), 
 		DEMON_SLAYER(28166, 7334, "Demon Slayer", false), 
 		DORICS_QUEST(28168, 7336, "Doric's Quest", true), 
-		DRAGON_SLAYER(28215, 7383, "Dragon Slayer", false),
+		DRAGON_SLAYER(28215, 7383, "Dragon Slayer", true), //false
 		ERNEST(28171, 7339, "Ernest the Chicken", false), 
 		GOBLIN(28170, 7338, "Goblin Diplomacy", false), 
 		IMP_CATCHER(28172, 7340, "Imp Catcher", true), 
@@ -166,9 +173,9 @@ public class QuestAssistant {
 		BIOHAZARD(28124, 7352, "Biohazard", false), 
 		CABIN(68102, 17510, "Cabin Fever", false), 
 		CLOCK(28185, 7353, "Clock Tower", false), 
-		DEATH(32246, 8438, "Death Plateau", false), 
+		DEATH(32246, 8438, "Death Plateau", true), //false
 		CREATURE(47097, 12129, "Creature of Fenkenstrain", false), 
-		DESERT_TREASURE(50052, 12852, "Desert Treasure", false), 
+		DESERT_TREASURE(50052, 12852, "Desert Treasure", true), //false
 		DRUDIC_RITUAL(28187, 7355, "Drudic Ritual", false), 
 		DWARF_CANNON(28188, 7356, "Dwarf Cannon", false), 
 		EADGARS_RUSE(33231, 8679, "Eadgars Ruse", false), 
@@ -194,16 +201,16 @@ public class QuestAssistant {
 		HAZEEL(28194, 7362, "Hazeel Cult", false), 
 		HEROES(28195, 7363, "Heroes Quest", false), 
 		HOLY(28196, 7364, "Holy Grail", false), 
-		HORROR(39151, 10135, "Horror from the Deep", false), 
+		HORROR(39151, 10135, "Horror from the Deep", true), //false
 		ITCHLARIN(17156, 4508, "Itchlarin's Little Helper", false), 
 		AID_OF_MYREQUE(72085, 18517, "In Aid of the Myreque", false), 
 		SEARCH_OF_MYREQUE(46131, 11907, "In Search of the Myreque", false), 
 		JUNGLE_POTION(28197, 7365, "Jungle Potion", false), 
-		LEGENDS_QUEST(28198, 7366, "Legends Quest", false), 
+		LEGENDS_QUEST(28198, 7366, "Legends Quest", true), //false
 		LOST_CITY(28199, 7367, "Lost City", true), 
 		LOST_TRIBE(52077, 13389, "The Lost Tribe", false), 
 		MAKING_HISTORY(60127, 15487, "Making History", false), 
-		MONKEY_MADNESS(43124, 11132, "Monkey Madness", false), 
+		MONKEY_MADNESS(43124, 11132, "Monkey Madness", true), //false
 		MERLINS_CRYSTAL(28200, 7368, "Merlins Crystal", false), 
 		MONKS_FRIEND(28201, 7369, "Monks Friend", false), 
 		MOUNTAIN_DAUGHTER(48101, 12389, "Mountain Daughter", false), 
@@ -220,7 +227,7 @@ public class QuestAssistant {
 		RECIPE(71130, 18306, "Recipe for Disaster", false), 
 		RECRUITMENT_DRIVE(2156, 668, "Recruitment Drive", false), 
 		REGICIDE(33128, 8576, "Regicide", false),
-		ROVING_ELVES(47017, 12139, "Roving Elves", false), 
+		ROVING_ELVES(47017, 12139, "Roving Elves", true), //false
 		RUM_DEAL(58064, 14912, "Rum Deal", false), 
 		SCORPION_CATCHER(28205, 7373, "Scorpion Catcher", false), 
 		SEA_SLUG(28206, 7374, "Sea Slug Quest", false), 
@@ -240,7 +247,7 @@ public class QuestAssistant {
 		TREE_GNOME_VILLAGE(28212, 7380, "Tree Gnome Village", false), 
 		TRIBAL_TOTEM(28213, 7381, "Tribal Totem", false), 
 		TROLL_ROMANCE(46082, 11858, "Troll Romance", false), 
-		TROLL_STRONGHOLD(191, 191, "Troll Stronghold", false), 
+		TROLL_STRONGHOLD(191, 191, "Troll Stronghold", true), //false
 		UNDERGROUND_PASS(38199, 9927, "Underground Pass", false), 
 		WANTED(23136, 6024, "Wanted", false), 
 		WATCHTOWER(28181, 7349, "Watch Tower", false), 
