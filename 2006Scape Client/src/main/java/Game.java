@@ -5608,7 +5608,7 @@ public class Game extends RSApplet {
 
 	int customTabAction = 0;
 	boolean customSettingVisiblePlayerNames = true;
-	int customSettingMinItemValue = 1000;
+	int customSettingMinItemValue = 0; //items on
 	boolean customSettingShowExperiencePerHour = false;
 	long customSettingShowExperiencePerHourStartExp = 0;
 	long customSettingShowExperiencePerHourStart = System.currentTimeMillis();
