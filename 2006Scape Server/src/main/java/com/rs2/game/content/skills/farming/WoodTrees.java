@@ -106,7 +106,7 @@ public class WoodTrees {
 			this.diseaseChance = diseaseChance;
 			this.plantingXp = plantingXp;
 			this.checkHealthXp = checkHealthXp;
-			this.startingState = startingState;
+			this.startingState = endingState;
 			this.endingState = endingState;
 			this.chopDownState = chopDownState;
 			this.stumpState = stumpState;

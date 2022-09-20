@@ -59,20 +59,22 @@ public class Herbs {
 	/* This is the enum holding the seeds info */
 
 	public enum HerbData {
-		GUAM(5291, 199, 9, 80, 0.25, 11, 12.5, 0x04, 0x08), MARRENTILL(5292,
-				201, 14, 80, 0.25, 13.5, 15, 0x0b, 0x0f), TARROMIN(5293, 203,
-				19, 80, 0.25, 16, 18, 0x12, 0x16), HARRALANDER(5294, 205, 26,
-				80, 0.25, 21.5, 24, 0x19, 0x1d), GOUT_TUBER(6311, 3261, 29, 80,
-				0.25, 105, 45, 0xc0, 0xc4), RANARR(5295, 207, 32, 80, 0.20, 27,
-				30.5, 0x20, 0x24), TOADFLAX(5296, 3049, 38, 80, 0.20, 34, 38.5,
-				0x27, 0x2b), IRIT(5297, 209, 44, 80, 0.20, 43, 48.5, 0x2e, 0x32), AVANTOE(
-				5298, 211, 50, 80, 0.20, 54.5, 61.5, 0x35, 0x39), KUARM(5299,
-				213, 56, 80, 0.20, 69, 78, 0x44, 0x48), SNAPDRAGON(5300, 3051,
-				62, 80, 0.15, 87.5, 98.5, 0x4b, 0x4f), CADANTINE(5301, 215, 67,
-				80, 0.15, 106.5, 120, 0x52, 0x56), LANTADYME(5302, 2485, 73,
-				80, 0.15, 134.5, 151.5, 0x59, 0x5d), DWARF(5303, 217, 79, 80,
-				0.15, 170.5, 192, 0x60, 0x64), TORSOL(5304, 219, 85, 80, 0.15,
-				199.5, 224.5, 0x67, 0x6b)
+		//default growth time 80
+		GUAM(5291, 199, 9, 1, 0.25, 11, 12.5, 0x04, 0x08), //0x04
+		MARRENTILL(5292, 201, 14, 1, 0.25, 13.5, 15, 0x0b, 0x0f), //0x0b
+		TARROMIN(5293, 203,19, 1, 0.25, 16, 18, 0x12, 0x16), //0x12
+		HARRALANDER(5294, 205, 26,1, 0.25, 21.5, 24, 0x19, 0x1d), //0x19
+		GOUT_TUBER(6311, 3261, 29, 1,0.25, 105, 45, 0xc0, 0xc4), //0xc0
+		RANARR(5295, 207, 32, 1, 0.20, 27,30.5, 0x20, 0x24), //0x20
+		TOADFLAX(5296, 3049, 38, 1, 0.20, 34, 38.5,0x27, 0x2b), //0x27
+		IRIT(5297, 209, 44, 1, 0.20, 43, 48.5, 0x2e, 0x32), //0x2e
+		AVANTOE(5298, 211, 50, 1, 0.20, 54.5, 61.5, 0x35, 0x39), //0x35
+		KUARM(5299,213, 56, 1, 0.20, 69, 78, 0x44, 0x48), //0x44
+		SNAPDRAGON(5300, 3051,62, 1, 0.15, 87.5, 98.5, 0x4b, 0x4f), //0x4b
+		CADANTINE(5301, 215, 67,1, 0.15, 106.5, 120, 0x52, 0x56), //0x52
+		LANTADYME(5302, 2485, 73,1, 0.15, 134.5, 151.5, 0x59, 0x5d), //0x59
+		DWARF(5303, 217, 79, 1,0.15, 170.5, 192, 0x60, 0x64), //0x60
+		TORSOL(5304, 219, 85, 1, 0.15,199.5, 224.5, 0x67, 0x6b) //0x67
 
 		;
 
@@ -104,7 +106,7 @@ public class Herbs {
 			this.diseaseChance = diseaseChance;
 			this.plantingXp = plantingXp;
 			this.harvestXp = harvestXp;
-			this.startingState = startingState;
+			this.startingState = endingState; //todo fix herb timer so startingState can not be endingState
 			this.endingState = endingState;
 		}
 
@@ -152,11 +154,10 @@ public class Herbs {
 	/* This is the enum data about the different patches */
 
 	public enum HerbFieldsData {
-		ARDOUGNE(0,
-				new Point[] { new Point(2670, 3374), new Point(2671, 3375) }), PHASMATYS(
-				1, new Point[] { new Point(3605, 3529), new Point(3606, 3530) }), FALADOR(
-				2, new Point[] { new Point(3058, 3311), new Point(3059, 3312) }), CATHERBY(
-				3, new Point[] { new Point(2813, 3463), new Point(2814, 3464) });
+		ARDOUGNE(0, new Point[] { new Point(2670, 3374), new Point(2671, 3375) }),
+		PHASMATYS(1, new Point[] { new Point(3605, 3529), new Point(3606, 3530) }),
+		FALADOR(2, new Point[] { new Point(3058, 3311), new Point(3059, 3312) }),
+		CATHERBY(3, new Point[] { new Point(2813, 3463), new Point(2814, 3464) });
 		private int herbIndex;
 		private Point[] herbPosition;
 

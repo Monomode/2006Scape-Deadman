@@ -117,7 +117,7 @@ public class Allotments {
 			this.diseaseChance = diseaseChance;
 			this.plantingXp = plantingXp;
 			this.harvestXp = harvestXp;
-			this.startingState = startingState;
+			this.startingState = endingState;
 			this.endingState = endingState;
 		}
 

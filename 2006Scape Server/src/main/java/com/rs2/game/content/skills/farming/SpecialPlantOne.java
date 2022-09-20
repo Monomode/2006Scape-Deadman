@@ -93,7 +93,7 @@ public class SpecialPlantOne {
 			this.diseaseChance = diseaseChance;
 			this.plantingXp = plantingXp;
 			this.harvestXp = harvestXp;
-			this.startingState = startingState;
+			this.startingState = endingState;
 			this.endingState = endingState;
 			this.checkHealthState = checkHealthState;
 			this.checkHealthExperience = checkHealthExperience;
@@ -536,7 +536,6 @@ public class SpecialPlantOne {
 			player.getPacketSender().sendMessage(
 					"You already have a spirit tree planted somewhere else.");
 			return true;
-
 		}
 		if (specialPlantStages[specialPlantFieldData.getSpecialPlantsIndex()] != 3) {
 			player.getPacketSender().sendMessage("You can't plant a sapling here.");
