@@ -25,9 +25,9 @@ public class Barrows {
 	public static int Racks[] = {4740};
 	public static int Key[] = {989};
 	public static int Dmed[] = {1149};
-	public static int Clues[] = {2677};
+	public static int Clues[] = {2679};
 	public static int Coins[] = {995};
-	public static int Pots[] = {3024, 6685, 2430, 2434, 2444, 2450}; //{3024, 6685, 2430, 2434, 2444, 2450};
+	public static int Pots[] = {3024/*super-restore*/, 6685/*saradomin-brew*/, 2444/*ranging-potion*/, 2450/*zamorak-brew*/}; //{3024/*super-restore*/, 6685/*saradomin-brew*/, 2430/*restore-potion*/, 2434/*prayer-potion*/, 2444/*ranging-potion*/, 2450/*zamorak-brew*/};
 	public static int Herbs[] = {6694, 224, 246, 226, 240, 220};
 	//runes: mind558, chaos562, death560, blood565
 	//6694 crushed nest, 224 red spiders eggs, 246 wine of zamorak,
@@ -257,7 +257,7 @@ public class Barrows {
 	 * Grabs the reward based on random chance depending on what your killcount is.
 	 */
 	public void reward() {
-		if (Boundary.isIn(c, Boundary.BARROWS_UNDERGROUND)) {
+	if (Boundary.isIn(c, Boundary.BARROWS_UNDERGROUND)) {
 
 		c.getItemAssistant().addItem(randomCoins(), Misc.random(774) + 2);
 
@@ -273,17 +273,29 @@ public class Barrows {
 			if (Misc.random(2) == 1) {
 		c.getItemAssistant().addItem(randomBloods(), Misc.random(43) + 0); }
 
-		//c.getItemAssistant().addItem(randomRacks(), Misc.random(40) + 0);
-		//c.getItemAssistant().addItem(randomKey(), Misc.random(150) + 100);
-		//c.getItemAssistant().addItem(randomDmed(), Misc.random(150) + 100);
-		//c.getItemAssistant().addItem(randomClues(), Misc.random(150) + 100);
-		//c.getItemAssistant().addItem(randomPots(), 1);
+		c.getItemAssistant().addItem(randomRacks(), Misc.random(31) + 4);
 
-			if (Misc.random(2) == 1) {
+			if (Misc.random(5) == 5) { // 1 in 6 (5 == 5)
+		c.getItemAssistant().addItem(randomKey(), 1); }
+
+			if (Misc.random(7) == 7) {
+		c.getItemAssistant().addItem(randomDmed(), 1); }
+
+			if (Misc.random(8) == 8) {
+		c.getItemAssistant().addItem(randomClues(), 1); }
+
+			if (Misc.random(6) == 1) {
+		c.getItemAssistant().addItem(randomPots(), 1); }
+
+			if (Misc.random(3) == 1) {
 		c.getItemAssistant().addItem(randomHerbs(), Misc.random(4) + 3); }
 
-		if (c.barrowsKillCount >= 6 && c.barrowsKillCount <= 24) {
-			if (Misc.random(10) == 1) 
+			if (Misc.random(6) == 1) { //1 in 7 = (6 == 1), 1 in 8 = (7 == 1), 1 in 9 = (8 == 1), 1 in 11 = (10 == 1)
+		c.getItemAssistant().addItem(randomBarrows(), 2); }
+
+		//todo fix
+		/*if (c.barrowsKillCount >= 6 && c.barrowsKillCount <= 24) {
+			if (Misc.random(10) == 1) //1 in 11 = (10 == 1)
 				c.getItemAssistant().addItem(randomBarrows(), 2);
 		} else if (c.barrowsKillCount >= 25 && c.barrowsKillCount <= 49) {
 			if (Misc.random(8) == 1) 
@@ -296,7 +308,9 @@ public class Barrows {
 				c.getItemAssistant().addItem(randomBarrows(), 2);
 		} else if (c.barrowsKillCount >= 150) {
 				c.getItemAssistant().addItem(randomBarrows(), 2);
-			}
+			}*/
+		//todo fix
+
 		} else {
 			c.getPacketSender().sendMessage("You have to be in barrows to do this!");
 		}
@@ -353,12 +367,12 @@ public class Barrows {
 			boolean breakOut = false;
 			for (int i = 0; i < c.getItemAssistant().brokenBarrows.length; i++) {
 				if (c.playerItems[j] - 1 == c.getItemAssistant().brokenBarrows[i][1]) {
-					if (totalCost + 80000 > cashAmount) {
+					if (totalCost + 800000 > cashAmount) {
 						breakOut = true;
 						c.getPacketSender().sendMessage("You have run out of money.");
 						break;
 					} else {
-						totalCost += 80000;
+						totalCost += 800000;
 					}
 					c.playerItems[j] = c.getItemAssistant().brokenBarrows[i][0] + 1;
 				}
@@ -382,7 +396,7 @@ public class Barrows {
 		c.barrowsNpcs[4][1] = 0;
 		c.barrowsNpcs[5][1] = 0;
 		c.barrowsKillCount = 0;
-		c.getPlayerAssistant().movePlayer(3565, 3288, 0);
+		//c.getPlayerAssistant().movePlayer(3565, 3288, 0);
 	}
 	
 	
