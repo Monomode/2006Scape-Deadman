@@ -89,6 +89,14 @@ public class Guilds {
 				player.getPlayerAssistant().movePlayer(player.absX + 1, player.absY, 0);
 			}
 			break;
+		case 1516: // Warriors Guild
+		case 1519:
+			if (player.absY == 3558) {
+				player.getPlayerAssistant().movePlayer(player.absX, player.absY + 1, 0);
+			} else if (player.absY == 3559) {
+				player.getPlayerAssistant().movePlayer(player.absX, player.absY - 1, 0);
+			}
+			break;
 		case 2624: // Heroes Guild
 		case 2625:
 			if (player.absX == 2902) {
@@ -173,6 +181,14 @@ public class Guilds {
 				return false;
 			}
 			break;
+			case 1516:
+			case 1519: // Warriors Guild
+				if ((player.playerLevel[GameConstants.ATTACK] + player.playerLevel[GameConstants.STRENGTH]) < 130) {
+					player.getDialogueHandler().sendStatement("You need at least 130 Attack and Strength levels to enter this guild!");
+					player.nextChat = 0;
+					return false;
+				}
+				break;
 		case 2514:
 			if (player.playerLevel[GameConstants.RANGED] < 40) { // Ranging Guild
 				player.getDialogueHandler().sendStatement("You need 40 Range to enter this guild!");
