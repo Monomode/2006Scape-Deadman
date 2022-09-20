@@ -15,10 +15,9 @@ import java.awt.Point;
  * Created by IntelliJ IDEA. User: vayken Date: 25/02/12 Time: 16:39 To change
  * this template use File | Settings | File Templates.
  */
-public class FarmingConstants {// todo farmers watching crops
-								// payment to farmer
-								// todo sack making with jute, sack filling with
-								// items
+public class FarmingConstants {// todo - farmers watching crops
+								// todo - payment to farmer
+								// todo - sack making with jute, sack filling with items
 
 	public static final int WATERING_CAN_ANIM = 2293;
 	public static final int RAKING_ANIM = 2273;
