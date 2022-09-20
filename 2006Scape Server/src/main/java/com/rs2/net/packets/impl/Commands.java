@@ -1,5 +1,7 @@
 package com.rs2.net.packets.impl;
-
+import static com.rs2.GameConstants.MAGIC;
+import static com.rs2.GameConstants.FIREMAKING;
+import static com.rs2.GameConstants.THIEVING;
 import static com.rs2.util.GameLogger.writeLog;
 
 import java.util.Arrays;
@@ -9,11 +11,15 @@ import com.rs2.GameConstants;
 import com.rs2.GameEngine;
 import com.rs2.game.bots.BotHandler;
 import com.rs2.game.npcs.NpcHandler;
+import com.rs2.game.npcs.drops.NPCDropsHandler;
 import com.rs2.game.players.*;
 import com.rs2.game.players.antimacro.AntiSpam;
 import com.rs2.net.packets.PacketType;
 import com.rs2.util.Misc;
 import com.rs2.world.clip.Region;
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -253,40 +259,25 @@ public class Commands implements PacketType {
                 else
                     player.gfx0(Integer.parseInt(arguments[0]));
                 break;
-            case "tele":
-                if (player.connectedFrom.equals("127.0.0.1")) {
-                    try {
-                        if (arguments.length < 2) {
-                            player.getPacketSender().sendMessage("Must specify x, y and optionally z coordinates: ::tele 3222 3218 0");
-                            return;
-                        }
-                        if (arguments.length == 3)
-                            player.getPlayerAssistant().movePlayer(Integer.parseInt(arguments[0]), Integer.parseInt(arguments[1]), Integer.parseInt(arguments[2]));
-                        else
-                            player.getPlayerAssistant().movePlayer(Integer.parseInt(arguments[0]), Integer.parseInt(arguments[1]), player.heightLevel);
-                    } catch (Exception e) {
-                        player.getPacketSender().sendMessage("Invalid coordinates");
-                    }
-                } else {
-                    player.getPacketSender().sendMessage("Can't tele with ip " + player.connectedFrom);
-                }
-                break;
             case "close_interface":
                 player.getPacketSender().closeAllWindows();
                 break;
             case "commands":
             case "cmd":
                 String[] commands = new String[]{
-                        "::players",
+                        /*"::players",
                         "Show a list of active players",
-                        "",
+                        "",*/
                         "::randomtoggle",
                         "Enable/Disable random events",
+                        "",
+                        "::spellbook",
+                        "Swap spellbook with 99 Magic and Desert Treasure",
                         "",
                         "::highscores",
                         "Get a list of current highscores",
                         "",
-                        "::home",
+                        "::home, ::stuck",
                         "Return to home",
                         "",
                         "::loc, ::pos, ::coord",
@@ -328,8 +319,54 @@ public class Commands implements PacketType {
                 }
                 player.getPacketSender().showInterface(8134);
                 break;
+            case "spellbook":
+                if (player.desertT < 2) {
+                    player.getDialogueHandler().sendStatement("You need to complete Desert Treasure first to do this.");
+                    player.nextChat = 0;
+                    return;
+                }
+                if (player.getPlayerAssistant().getTotalLevel()<= 999) {
+                    player.getDialogueHandler().sendStatement("You need 1000 Total Level first to do this.");
+                    player.nextChat = 0;
+                    return;
+                }
+                if (player.getPlayerAssistant().getLevelForXP(MAGIC)<= 98) {
+                    player.getDialogueHandler().sendStatement("You need 99 Magic Level first to do this.");
+                    player.nextChat = 0;
+                    return;
+                }
+                if (player.getPlayerAssistant().getLevelForXP(FIREMAKING)<= 49) {
+                    player.getDialogueHandler().sendStatement("You need 50 Firemaking Level first to do this.");
+                    player.nextChat = 0;
+                    return;
+                }
+                if (player.getPlayerAssistant().getLevelForXP(THIEVING)<= 52) {
+                    player.getDialogueHandler().sendStatement("You need 53 Thieving Level first to do this.");
+                    player.nextChat = 0;
+                    return;
+                }
+                //if (player.inWild()) {
+                //return;
+                //}
+                if (player.playerMagicBook == 0) {
+                    player.playerMagicBook = 1;
+                    player.getPacketSender().setSidebarInterface(6, 12855);
+                    player.getPacketSender().sendMessage("An ancient wisdomin fills your mind.");
+                    player.getPlayerAssistant().resetAutocast();
+                } else if (player.playerMagicBook == 1) {
+                    player.getPacketSender().setSidebarInterface(6, 1151); // modern
+                    player.playerMagicBook = 0;
+                    player.getPacketSender().sendMessage("You feel a drain on your memory.");
+                    player.autocastId = -1;
+                    player.getPlayerAssistant().resetAutocast();
+                }
+                break;
             case "home":
             case "stuck":
+                if (player.underAttackBy != 0 && System.currentTimeMillis() - player.singleCombatDelay < 7200 || player.underAttackBy2 != 0){
+                    player.getPacketSender().sendMessage("You can't teleport while in combat.");
+                    return;
+                }
                 player.getPlayerAssistant().startTeleport(3222, 3218, 0, "modern"); // RESPAWN_X = 3222, RESPAWN_Y = 3218;
                 break;
             case "randomtoggle":
@@ -428,7 +465,7 @@ public class Commands implements PacketType {
 
     public static void moderatorCommands(Player player, String playerCommand, String[] arguments) {
         switch (playerCommand.toLowerCase()) {
-            /*case "kick":
+            case "kick":
                 try {
                     if (arguments.length == 0) {
                         player.getPacketSender().sendMessage("You must specify a player name: ::kick playername");
@@ -451,7 +488,7 @@ public class Commands implements PacketType {
                 }
                 break;
 
-            case "mute":
+            /*case "mute":
                 try {
                     if (arguments.length == 0) {
                         player.getPacketSender().sendMessage("You must specify a player name: ::mute playername");
@@ -722,6 +759,24 @@ public class Commands implements PacketType {
             case "down2":
                 player.getPlayerAssistant().movePlayer(player.absX, player.absY + 6400, player.heightLevel);
                 player.getPacketSender().sendMessage("You are now on height level " + player.heightLevel + ".");
+                break;
+            case "tele":
+                if (player.connectedFrom.equals("127.0.0.1")) {
+                    try {
+                        if (arguments.length < 2) {
+                            player.getPacketSender().sendMessage("Must specify x, y and optionally z coordinates: ::tele 3222 3218 0");
+                            return;
+                        }
+                        if (arguments.length == 3)
+                            player.getPlayerAssistant().movePlayer(Integer.parseInt(arguments[0]), Integer.parseInt(arguments[1]), Integer.parseInt(arguments[2]));
+                        else
+                            player.getPlayerAssistant().movePlayer(Integer.parseInt(arguments[0]), Integer.parseInt(arguments[1]), player.heightLevel);
+                    } catch (Exception e) {
+                        player.getPacketSender().sendMessage("Invalid coordinates");
+                    }
+                } else {
+                    player.getPacketSender().sendMessage("Can't tele with ip " + player.connectedFrom);
+                }
                 break;
             case "quicksong":
                 try {
@@ -999,23 +1054,6 @@ public class Commands implements PacketType {
                 } catch (Exception e) {
                 }
                 break;
-            case "spellbook":
-                //if (player.inWild()) {
-                    //return;
-                //}
-                if (player.playerMagicBook == 0) {
-                    player.playerMagicBook = 1;
-                    player.getPacketSender().setSidebarInterface(6, 12855);
-                    player.getPacketSender().sendMessage("An ancient wisdomin fills your mind.");
-                    player.getPlayerAssistant().resetAutocast();
-                } else if (player.playerMagicBook == 1) {
-                    player.getPacketSender().setSidebarInterface(6, 1151); // modern
-                    player.playerMagicBook = 0;
-                    player.getPacketSender().sendMessage("You feel a drain on your memory.");
-                    player.autocastId = -1;
-                    player.getPlayerAssistant().resetAutocast();
-                }
-                break;
             case "item":
                 try {
                     if (arguments.length == 0) {
@@ -1082,11 +1120,114 @@ public class Commands implements PacketType {
             case "camerareset":
                 player.getPlayerAssistant().sendCameraReset(); //Resets the camera to the normal player view
                 break;
-            /*case "clicktotele":
-            case "ctt": // alias
+           case "clicktele":
                 player.clickToTele = !player.clickToTele;
-                player.getPacketSender().sendMessage("Click to teleport: " + (player.clickToTele ? "Enabled" : "Disabled"));
-                break;*/
+                player.getPacketSender().sendMessage("Click teleporting is: "+ (!player.clickToTele ? "Disabled" : "Enabled"));
+                break;
+            case "north":
+                try {
+                    if (arguments.length == 1){
+                        player.getPlayerAssistant().movePlayer(player.getX(), player.getY()+Integer.parseInt(arguments[0]), player.heightLevel);
+                    }else{
+                        player.getPacketSender().sendMessage("use ::north X");
+                    }
+                } catch (Exception e) {
+                    player.getPacketSender().sendMessage("wrong use");
+                }
+                break;
+            case "south":
+                try {
+                    if (arguments.length == 1){
+                        player.getPlayerAssistant().movePlayer(player.getX(), player.getY()-Integer.parseInt(arguments[0]), player.heightLevel);
+                    }else{
+                        player.getPacketSender().sendMessage("use ::north X");
+                    }
+                } catch (Exception e) {
+                    player.getPacketSender().sendMessage("wrong use");
+                }
+                break;
+            case "west":
+                try {
+                    if (arguments.length == 1){
+                        player.getPlayerAssistant().movePlayer(player.getX()-Integer.parseInt(arguments[0]), player.getY(), player.heightLevel);
+                    }else{
+                        player.getPacketSender().sendMessage("use ::north X");
+                    }
+                } catch (Exception e) {
+                    player.getPacketSender().sendMessage("wrong use");
+                }
+                break;
+            case "east":
+                try {
+                    if (arguments.length == 1){
+                        player.getPlayerAssistant().movePlayer(player.getX()+Integer.parseInt(arguments[0]), player.getY(), player.heightLevel);
+                    }else{
+                        player.getPacketSender().sendMessage("use ::north X");
+                    }
+                } catch (Exception e) {
+                    player.getPacketSender().sendMessage("wrong use");
+                }
+                break;
+            case "teletome":
+                try {
+                    if (arguments.length == 0) {
+                        player.getPacketSender().sendMessage("You must specify a player name: ::teletome playername");
+                        return;
+                    }
+                    String teleToMe = String.join(" ", arguments);
+                    for (int i = 0; i < PlayerHandler.players.length; i++) {
+                        if (PlayerHandler.players[i] != null) {
+                            if (PlayerHandler.players[i].playerName.equalsIgnoreCase(teleToMe)) {
+                                Client p = (Client) PlayerHandler.players[i];
+                                player.getPacketSender().sendMessage(p.playerName + " has been teleported to you.");
+                                p.getPlayerAssistant().movePlayer(player.absX, player.absY, player.heightLevel);
+                            }
+                        }
+                    }
+                } catch (Exception e) {
+                    player.getPacketSender().sendMessage("Player is not online.");
+                }
+                break;
+            case "teleto":
+                if (arguments.length == 0) {
+                    player.getPacketSender().sendMessage("You must specify a player name: ::teleto playername");
+                    return;
+                }
+                String teleTo = String.join(" ", arguments);
+                for (int i = 0; i < PlayerHandler.players.length; i++) {
+                    if (PlayerHandler.players[i] != null) {
+                        if (PlayerHandler.players[i].playerName.equalsIgnoreCase(teleTo)) {
+                            player.getPlayerAssistant().movePlayer(PlayerHandler.players[i].getX(), PlayerHandler.players[i].getY(), PlayerHandler.players[i].heightLevel);
+                            return;
+                        }
+                    }
+                }
+                player.getPacketSender().sendMessage("Could not find " + teleTo + " they must be online!");
+                break;
+            case "tp":
+            case "teleport":
+            case "to":
+                if (arguments.length <= 2)
+                    player.getPlayerAssistant().movePlayer(Integer.parseInt(arguments[0]), Integer.parseInt(arguments[1]), 0);
+                else
+                    player.getPlayerAssistant().movePlayer(Integer.parseInt(arguments[0]), Integer.parseInt(arguments[1]), Integer.parseInt(arguments[2]));
+                break;
+            case "up":
+                player.getPacketSender().sendMessage("You are now on height level " + (player.heightLevel + 1) + ".");
+                player.getPlayerAssistant().movePlayer(player.absX, player.absY, player.heightLevel + 1);
+                break;
+            case "up2":
+                player.getPlayerAssistant().movePlayer(player.absX, player.absY - 6400, player.heightLevel);
+                player.getPacketSender().sendMessage("You are now on height level " + player.heightLevel + ".");
+                break;
+            case "down":
+                player.getPacketSender().sendMessage("You are now on height level " + (player.heightLevel - 1) + ".");
+                player.getPlayerAssistant().movePlayer(player.absX, player.absY, player.heightLevel - 1);
+                break;
+            case "down2":
+                player.getPlayerAssistant().movePlayer(player.absX, player.absY + 6400, player.heightLevel);
+                player.getPacketSender().sendMessage("You are now on height level " + player.heightLevel + ".");
+                break;
             case "giveadmin":
                 try {
                     if (arguments.length == 0) {
