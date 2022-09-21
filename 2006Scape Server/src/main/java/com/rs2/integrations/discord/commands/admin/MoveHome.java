@@ -19,7 +19,7 @@ public class MoveHome implements MessageCreateListener {
                         if (PlayerHandler.players[i].playerName.equalsIgnoreCase(teleToMe)) {
                             Client p = (Client) PlayerHandler.players[i];
                             event.getChannel().sendMessage(p.playerName + " has been moved to Lumbridge.");
-                            p.getPlayerAssistant().movePlayer(GameConstants.RESPAWN_X, GameConstants.RESPAWN_Y, 0);
+                            p.getPlayerAssistant().movePlayer(3222, 3218, 0); //GameConstants.RESPAWN_X, GameConstants.RESPAWN_Y, 0
                         }
                     }
                 }
