@@ -1132,7 +1132,8 @@ public class ItemAssistant {
 				specialAmount(weapon, player.specAmount, 7561);
 				break;
 
-			case 4587: // dscimmy
+			case 7142: // rapier
+			case 4587: // dragon scimitar
 				player.getPacketSender().sendHideInterfaceLayer(7599, false);
 				specialAmount(weapon, player.specAmount, 7611);
 				break;
@@ -1448,6 +1449,8 @@ public class ItemAssistant {
 						canWearItem = false;
 					} break;
 				case 877: targetSlot = 13;
+					break;
+				case 878: targetSlot = 13;
 					break;
 				case 1033: targetSlot = 7;
 					break;
