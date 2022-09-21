@@ -144,6 +144,10 @@ public class ShopAssistant {
 			player.getPacketSender().sendMessage(ItemAssistant.getItemName(itemID)+": currently costs " + getCastleItemValue(itemID) + " castle wars tickets.");
 			return;
 		}
+		if (player.shopId == 355) {
+			player.getPacketSender().sendMessage(ItemAssistant.getItemName(itemID)+": currently costs " + getSkullMoneyItemValue(itemID) + " skull money.");
+			return;
+		}
 		if (player.shopId == RANGE_SHOP) {
 			player.getPacketSender().sendMessage(ItemAssistant.getItemName(itemID)+": currently costs " + getRGItemValue(itemID) + " archery tickets.");
 			return;
@@ -205,6 +209,83 @@ public class ShopAssistant {
 		return 0;
 	}
 
+	public int getSkullMoneyItemValue(int id) {
+		switch (id) {
+			case 4587: //dragon scimitar
+				return 30000;
+			case 1305: //dragon longsword
+				return 30000;
+			case 1215: //dragon dagger
+				return 9000;
+			case 1377: //dragon battleaxe
+				return 60000;
+			case 1434: //dragon mace
+				return 15000;
+			case 3204: //dragon halberd
+				return 90000;
+			case 3751: //berserker helm
+				return 15000;
+			case 3749: //archer helm
+				return 15000;
+			case 3755: //farseer helm
+				return 15000;
+			case 4091: //mystic robe top
+				return 36000;
+			case 4093: //mystic robe bottom
+				return 24000;
+			case 4089: //mystic hat
+				return 45000;
+			case 4095: //mystic gloves
+			case 4097: //mystic boots
+				return 3000;
+			case 1127: //rune platebody
+				return 25500;
+			case 1079: //rune platelegs
+				return 19200;
+			case 4207: //crystal seed
+				return 54000;
+			case 4740: //bolt rack
+				return 36;
+			case 78: //ice arrow
+				return 110;
+			case 892: //rune arrow
+				return 60;
+			case 890: //adamant arrow
+				return 24;
+			case 879: //opal bolts
+				return 780;
+			case 880: //pearl bolts
+				return 780;
+			case 878: //bolts(p)
+				return 390;
+			case 405: //casket
+				return 10000;
+			case 3105: //climbing boots
+				return 540;
+			case 7946: //monkfish (cooked)
+				return 280;
+			case 2434: //prayer potion (4)
+				return 3500;
+			case 565: //blood
+				return 25;
+			case 561: //nature
+				return 25;
+			case 563: //law
+				return 35;
+			case 566: //soul
+				return 35;
+			case 7142: //rapier
+				return 350000;
+			case 3748: //fremennik helm
+				return 15000;
+			case 3757: //fremennik blade
+				return 30000;
+			case 3758: //fremennik shield
+				return 350000;
+		}
+		return 0;
+	}
+
 	public int getRGItemValue(int id) {
 		switch (id) {
 		case 47:
@@ -232,10 +313,12 @@ public class ShopAssistant {
 		case 453:
 			return 25;
 		case 1623:
-			return 37;
+			return 74; //37
 		case 1621:
-			return 75;
+			return 150; //75
 		case 6571:
+			return 300000;
+		case 6585:
 			return 300000;
 		case 554:
 		case 555:
@@ -306,7 +389,7 @@ public class ShopAssistant {
 			player.getPacketSender().sendMessage("You can't sell " + ItemAssistant.getItemName(removeId).toLowerCase() + " to this store.");
 		} else {
 			int ShopValue = (int) Math.floor(getItemShopValue(unNotedItemID, 1, true));
-			int tokkulValue = (int) Math.floor(getTokkulValue(unNotedItemID) *.85);
+			int tokkulValue = (int) Math.floor(getTokkulValue(unNotedItemID) *.15); //*.85
 			String ShopAdd = "";
 			if (ShopValue >= 1000 && ShopValue < 1000000) {
 				ShopAdd = " (" + (ShopValue / 1000) + "K)";
@@ -341,10 +424,10 @@ public class ShopAssistant {
 				return false;
 			}
 		}
-		if (player.playerRights == 2 && !GameConstants.ADMIN_CAN_SELL_ITEMS) {
+		/* if (player.playerRights == 2 && !GameConstants.ADMIN_CAN_SELL_ITEMS) {
 			player.getPacketSender().sendMessage("Selling items as an admin has been disabled.");
 			return false;
-		}
+		} */
 		if(!player.isShopping) {
 	        return false;
 		}
@@ -430,7 +513,7 @@ public class ShopAssistant {
 			}
 
 			// Add item to the shop
-			//addShopItem(unNotedItemID, amount); //ironman mode shops dont show items added by players
+			//addShopItem(unNotedItemID, amount); //ironman mode shops dont show items added/sold by players (player-stock items)
 			player.getItemAssistant().resetItems(3823);
 			resetShop(player.shopId);
 			updatePlayerShop();
@@ -536,6 +619,9 @@ public class ShopAssistant {
 			} else if (player.shopId == 138 || player.shopId == 58 || player.shopId == 139) {
 				value = getTokkulValue(itemID);
 				currency = 6529; // Tokkul
+			} else if (player.shopId == 355) {
+				value = getSkullMoneyItemValue(itemID);
+				currency = 964; // Skull money shop
 			} else if (player.shopId == RANGE_SHOP) {
 				value = getRGItemValue(itemID);
 				currency = 1464; // Archery tickets
