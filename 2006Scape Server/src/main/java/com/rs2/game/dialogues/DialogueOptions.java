@@ -60,13 +60,21 @@ public class DialogueOptions {
 				player.getDialogueHandler().sendDialogues(1302, 598);
 				return;
 			case 53:
-				if (player.objectId == 1293 || player.objectId == 1317) {
+				if (player.objectId == 1293 || player.objectId == 1317 || player.objectId == 8383) {
 					player.getPlayerAssistant().startTeleport(2542, 3169, 0, "modern");
 				} else {
 					player.getPacketSender().sendMessage("You can't teleport there, because you are already there!");
 					player.getPacketSender().closeAllWindows();
 				}
 				return;
+			case 54:
+					if (player.objectId == 1294) {
+						player.getPlayerAssistant().startTeleport(2555, 3259, 0, "modern"); //Battlefield of Khazard
+					} /*else {
+						player.getPacketSender().sendMessage("You can't teleport there, because you are already there!");
+						player.getPacketSender().closeAllWindows();
+					}*/
+					return;
 			case 159:
 				player.getDialogueHandler().sendDialogues(3161, player.npcType);
 				return;
@@ -158,7 +166,7 @@ public class DialogueOptions {
 				player.getDialogueHandler().sendDialogues(1315, player.npcType);
 				return;
 			case 53:
-				if (player.objectId == 1294 || player.objectId == 1317) {
+				if (player.objectId == 1317 || player.objectId == 8383) {
 					player.getPlayerAssistant().startTeleport(2461, 3444, 0,
 							"modern");
 				} else {
@@ -166,6 +174,15 @@ public class DialogueOptions {
 					player.getPacketSender().closeAllWindows();
 				}
 				return;
+			case 54:
+				if (player.getPlayerAssistant().getLevelForXP(player.playerXP[GameConstants.FARMING]) < 83) {
+					player.getPacketSender().sendMessage("You need a farming level of 83 to use this teleport.");
+					player.getPacketSender().closeAllWindows();
+				} else if (player.objectId == 1294) {
+						player.getPlayerAssistant().startTeleport(3060, 3256, 0,"modern"); //Port Sarim
+						player.getPacketSender().closeAllWindows();
+					}
+					return;
 			case 159:
 				player.getDialogueHandler().sendDialogues(3195, player.npcType);
 				return;
@@ -224,7 +241,7 @@ public class DialogueOptions {
 				player.getDialogueHandler().sendDialogues(296, player.npcType);
 				return;
 			case 53:
-				if (player.objectId == 1294 || player.objectId == 1293) {
+				if (player.objectId == 1293 || player.objectId == 1317 || player.objectId == 8383) {
 					player.getPlayerAssistant().startTeleport(3179, 3507, 0,
 							"modern");
 				} else {
@@ -232,6 +249,15 @@ public class DialogueOptions {
 					player.getPacketSender().closeAllWindows();
 				}
 				return;
+			case 54:
+				if (player.getPlayerAssistant().getLevelForXP(player.playerXP[GameConstants.FARMING]) < 83) {
+					player.getPacketSender().sendMessage("You need a farming level of 83 to use this teleport.");
+					player.getPacketSender().closeAllWindows();
+				} else if (player.objectId == 1294) {
+						player.getPlayerAssistant().startTeleport(2802, 3201, 0,"modern"); //Brimhaven
+						player.getPacketSender().closeAllWindows();
+					}
+					return;
 			case 129:
 				player.getDialogueHandler().sendDialogues(232, player.npcType);
 				return;
@@ -384,7 +410,7 @@ public class DialogueOptions {
 				player.getDialogueHandler().sendDialogues(361, player.npcType);
 				return;
 			} else if (player.dialogueAction == 50) {
-				player.getPlayerAssistant().startTeleport(2898, 3562, 0, "modern");
+				player.getPlayerAssistant().startTeleport(2898, 3553, 0, "modern");
 				Teles.necklaces(player);
 				return;
 			} else if (player.dialogueAction == 55) {
