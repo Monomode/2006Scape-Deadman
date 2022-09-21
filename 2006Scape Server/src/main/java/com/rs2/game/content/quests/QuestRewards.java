@@ -134,6 +134,15 @@ public class QuestRewards {
 		player.impsC = 2;
 	}
 
+	public static void desertFinish(Player player) {
+		questReward(player, "Desert Treasure", "3 Quest Points", "20,000 Magic XP", "Ability to use", "Ancient Magicks", "", "", 0); //4675 ancient staff
+		QUEST_NAME = "Desert Treasure";
+		player.getPacketSender().sendString("@gre@" + QUEST_NAME + "", 7366);
+		player.getPlayerAssistant().addSkillXP(20000, GameConstants.MAGIC);
+		player.questPoints+=3;
+		player.desertT = 2;
+	}
+
 	public static void cookReward(Player player) {
 		questReward(player, "Cook's Assistant", "1 Quest Point", "500 Coins", "300 Cooking XP", "", "", "", 326);
 		QUEST_NAME = "Cook's Assistant";
