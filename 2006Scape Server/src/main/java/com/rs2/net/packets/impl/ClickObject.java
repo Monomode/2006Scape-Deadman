@@ -152,7 +152,8 @@ public class ClickObject implements PacketType {
 					return;
 				}
 				if (player.spiritTree == false && player.clickedTree == false) {
-					player.getPacketSender().sendMessage("You attempt to chop the tree, and a tree spirit appears !");
+					player.getPacketSender().sendMessage("You attempt to chop the tree.");
+					player.getPacketSender().sendMessage("@red@A tree spirit appears!");
 					player.getPacketSender().sendSound(300, 100, 1);
 					NpcHandler.spawnNpc(player, 655, player.getX(), player.getY(), 0, 0, 225, 20, 80, 80, true, true);
 					player.clickedTree = true;
@@ -184,8 +185,11 @@ public class ClickObject implements PacketType {
 				break;
 
 			case 1294:
+				player.getPlayerAssistant().spiritTreeGnomeVillage();
+				break;
 			case 1293:
 			case 1317:
+			case 8383:
 				player.getPlayerAssistant().spiritTree();
 				break;
 
