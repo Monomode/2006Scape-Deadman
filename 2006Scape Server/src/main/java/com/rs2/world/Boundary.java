@@ -204,6 +204,7 @@ public class Boundary {
 	public static final Boundary[] BANK_AREA = new Boundary[] {
 		new Boundary(3205, 3212, 3217, 3224, 2), //Lumbridge
 		new Boundary(3264, 3273, 3160, 3174),//Al Kharid
+		new Boundary(3427, 3427, 2889, 2894),//Nardah
 		new Boundary(2436, 2453, 5174, 5186),//TzHaar
 		new Boundary(2842, 2860, 2950, 2957),//Shilo
 		new Boundary(3456, 3492, 3200, 3215),//Burgh d rott
@@ -224,7 +225,7 @@ public class Boundary {
 		new Boundary(2324, 2334, 3685, 3694),//Piscatoris
 		new Boundary(2442, 2448, 3420, 3430),//Tree Gnome Stronghold
 		new Boundary(2440, 2453, 3478, 3491, 1),//Grand Tree Area
-		new Boundary(3113, 3131, 3118, 3131),//Tut
+		new Boundary(3113, 3131, 3118, 3131),//Tutorial Island
 		new Boundary(2885, 2895, 3422, 3433),//Nardah
 		new Boundary(3685, 3694, 3461, 3473),//Phasmatys
 		new Boundary(2530, 2550, 4705, 4725),//Mage Bank
@@ -312,6 +313,7 @@ public class Boundary {
 	public static final Boundary FIGHT_CAVES = new Boundary(2360, 2445, 5045, 5125);
 	public static final Boundary PIRATE_HOUSE = new Boundary(3038, 3044, 3949, 3959);
 	public static final Boundary[] FIGHT_PITS = new Boundary[] { new Boundary(2378, 3415, 5133, 5167), new Boundary(2394, 2404, 5169, 5174) };
+	public static final Boundary Tournament = new Boundary(3205, 3270, 2752, 2809);
 	public static final Boundary PARTY_ROOM = new Boundary(2727, 2746, 3460, 3479);
 	public static final Boundary PARTY_ROOM_TABLE = new Boundary(2735, 2740, 3467, 3468);
 	public static final Boundary MAGE_TRAINING_ARENA = new Boundary(3330, 3388, 9614, 9727);
