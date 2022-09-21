@@ -22,7 +22,7 @@ public class Teles {
 	}
 
 	public static void useGN(Player player) {
-		player.getDialogueHandler().sendOption("Burthrope Games Room", "Barbarian Outpost");
+		player.getDialogueHandler().sendOption("Burthorpe Warriors' Guild", "Barbarian Outpost");
 		player.dialogueAction = 50;
 		player.getPacketSender().sendMessage("You rub the Games Necklace...");
 	}
@@ -38,7 +38,7 @@ public class Teles {
 			if (player.itemUsing == element[0]) {
 				if (player.isOperate) {
 					player.playerEquipment[player.playerAmulet] = element[1];
-				} else {
+				} /*else {
 					player.getItemAssistant().deleteItem(element[0], 1);
 					player.getItemAssistant().addItem(element[1], 1);
 				}
@@ -46,7 +46,7 @@ public class Teles {
 					player.getPacketSender().sendMessage("You have " + element[2] + " charges left.");
 				} else {
 					player.getPacketSender().sendMessage("You have " + element[2] + " charge left.");
-				}
+				}*/
 			}
 		}
 		player.getItemAssistant().updateSlot(player.playerAmulet);
