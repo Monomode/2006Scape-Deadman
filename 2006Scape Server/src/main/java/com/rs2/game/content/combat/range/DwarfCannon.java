@@ -369,6 +369,7 @@ public class DwarfCannon {
 				player.getItemAssistant().addItem(ITEM_PARTS[3], 1);
 			} else {
 				player.getPacketSender().sendMessage("You don't have enough free inventory slots to do that.");
+				return;
 			}
 			if (myBalls > 0) {
 				player.getItemAssistant().addItem(ballsID, myBalls);
