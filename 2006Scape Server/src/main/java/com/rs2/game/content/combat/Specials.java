@@ -33,9 +33,10 @@ public class Specials {
 		DRAGON_MACE(1434, 1.55, 1.25, 2.5, 1060, -1, 251, false, 0),
 		DRAGON_SCIMITAR(4587, 1, 1.25, 5.5, 1872, -1, 347, false, 1),
 		DRAGON_HALBERD(3204, 1.25, .85, 3, 1203, -1, 282, true, 0),
-		GRANITE_MAUL(4153, 1.10, .85, 5, 1667, -1, 337, false, 0),
-		MAGIC_SHORTBOW(861, 1.05, .95, 5.5, 1074, -1, -1, true, 0), 
-		MAGIC_LONGBOW(859, 1.20, 1.05, 5.5, 426, -1, -1, false, 0);
+		GRANITE_MAUL(4153, 1.10, .85, 5, 1667, -1, 337, true, 0),
+		MAGIC_SHORTBOW(861, 1.05, .95, 5, 1074, -1, -1, true, 0),
+		MAGIC_LONGBOW(859, 1.20, 1.05, 3.5, 426, -1, -1, false, 0);
+		/*RAPIER(7142, 1, 1, 2.5, 1058, -1, -1, false, 0);*/
 		
 		private int weapon, anim, gfx1, gfx2, specEffect;
 		private double specDamage, specAccuracy, specAmount;
@@ -304,7 +305,7 @@ public class Specials {
 			break;
 
 		case 29163:
-			if (player2.playerEquipment[player2.playerWeapon] == 4587) {
+			if (player2.playerEquipment[player2.playerWeapon] == 4587 || player2.playerEquipment[player2.playerWeapon] == 7142) {
 				player2.specBarId = 7611;
 				player2.usingSpecial = !player2.usingSpecial;
 				player2.getItemAssistant().updateSpecialBar();
