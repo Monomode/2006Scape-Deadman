@@ -78,12 +78,12 @@ public class AgilityShortcut {
 						"You squeeze past the jutted wall.");
 			}
 			break;
-		case 3933:
+		case 3933: //tirawann log crossing Tirannwn
 			if (player.absY == 3232) {
-				handleAgility(player, 0, 7, 85, 762, WALK,
+				handleAgility(player, 0, 7, 56, 762, WALK,
 						"You pass through the agility shortcut.");
 			} else if (player.absY == 3239) {
-				handleAgility(player, 0, -7, 85, 762, WALK,
+				handleAgility(player, 0, -7, 56, 762, WALK,
 						"You pass through the agility shortcut.");
 			}
 			break;
