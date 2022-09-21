@@ -16,7 +16,7 @@ public class HighscoresHandler {
             Client player = new Client(null, -1);
             player.playerName = child.getName().split("\\.")[0];
             loadPlayerInfo(player, child.getName().split("\\.")[0], "", false);
-            if (player.playerRights >= 1 || // admin or dev   //  if (player.playerRights >= 2 || // admin or dev
+            if (player.playerRights >= 3 || // (1 doesn't show mods, 2 doesn't show admin, 3 doesn't show developer) admin or dev   //  if (player.playerRights >= 2 || // admin or dev
                 player.isBot || player.playerName.startsWith("♥")) { // ignore bots
                 continue;
             }
@@ -33,6 +33,9 @@ public class HighscoresHandler {
             case "level":
                 players.sort(new totalLevelComparator());
                 return players.get(i).playerName + ": " + players.get(i).getPlayerAssistant().getTotalLevel();
+            /* case "slayer level":
+                players.sort(new slayerLevelComparator());
+                return players.get(i).playerName + ": " + players.get(i).getPlayerAssistant().getSlayerLevel();  */
             case "gold":
                 players.sort(new totalGoldComparator());
                 return players.get(i).playerName + ": " + players.get(i).getPlayerAssistant().totalGold() + "gp";
@@ -49,6 +52,13 @@ public class HighscoresHandler {
             return - client.getPlayerAssistant().getTotalLevel() + t1.getPlayerAssistant().getTotalLevel();
         }
     }
+
+    /* private class slayerLevelComparator implements Comparator<Client> {
+        @Override
+        public int compare(Client client, Client t1) {
+            return - client.getPlayerAssistant().getSlayerLevel() + t1.getPlayerAssistant().getSlayerLevel();
+        }
+    } */
 
     private class totalGoldComparator implements Comparator<Client> {
         @Override
