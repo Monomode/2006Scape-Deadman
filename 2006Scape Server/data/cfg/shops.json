@@ -2,6 +2,202 @@
   {
     "buyModifier": 2,
     "sellModifier": 2,
+    "name": "Velorina's Store",
+    "id": 356,
+    "items": [
+      {
+        "itemId": 4251,
+        "itemAmount": 1
+      }
+    ]
+  },
+  {
+    "buyModifier": 2,
+    "sellModifier": 2,
+    "name": "Skull Money Reward Shop",
+    "id": 355,
+    "items": [
+      {
+        "itemId": 4587,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 1305,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 1215,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 1377,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 1434,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 3204,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 3751,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 3749,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 3755,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 4091,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 4093,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 4089,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 4095,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 4097,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 1127,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 1079,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 4207,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 4740,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 78,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 892,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 890,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 879,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 880,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 878,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 405,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 3105,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 7946,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 2434,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 565,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 561,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 563,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 566,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 7142,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 3748,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 3757,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 3758,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 732,
+        "itemAmount": 0
+      }
+    ]
+  },
+  {
+    "buyModifier": 2,
+    "sellModifier": 2,
+    "name": "Splitbark Store",
+    "id": 354,
+    "items": [
+      {
+        "itemId": 3385,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 3387,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 3389,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 3391,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 3393,
+        "itemAmount": 1
+      }
+    ]
+  },
+  {
+    "buyModifier": 2,
+    "sellModifier": 2,
     "name": "Crystal Store",
     "id": 353,
     "items": [
@@ -58,7 +254,11 @@
         "itemAmount": 5000
       },
       {
-        "itemId": 7142,
+        "itemId": 1333,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 7451,
         "itemAmount": 1
       },
       {
@@ -5406,10 +5606,6 @@
         "itemAmount": 10
       },
       {
-        "itemId": 4551,
-        "itemAmount": 10
-      },
-      {
         "itemId": 7159,
         "itemAmount": 10
       },
@@ -6643,6 +6839,10 @@
       },
       {
         "itemId": 6571,
+        "itemAmount": 0
+      },
+      {
+        "itemId": 6585,
         "itemAmount": 1
       }
     ]
@@ -6936,11 +7136,11 @@
         "itemAmount": 5
       },
       {
-        "itemId": 4,
+        "itemId": 5,
         "itemAmount": 5
       },
       {
-        "itemId": 5,
+        "itemId": 4,
         "itemAmount": 5
       }
     ]
