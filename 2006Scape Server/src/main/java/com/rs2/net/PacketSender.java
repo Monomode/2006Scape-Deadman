@@ -116,11 +116,10 @@ public class PacketSender {
 		if (player.tutorialProgress > 35) {
 			player.getPlayerAssistant().sendSidebars();
 			Weight.updateWeight(player);
-			player.getPacketSender().sendMessage("Welcome to @blu@" + GameConstants.SERVER_NAME + " World: " + GameConstants.WORLD  /*+ "@bla@ - we are currently in Server Stage v@blu@" + GameConstants.TEST_VERSION + "@bla@."*/);
+			player.getPacketSender().sendMessage("Welcome to @blu@" + GameConstants.SERVER_NAME + "@bla@."/* World: " + GameConstants.WORLD  + "@bla@ - we are currently in Server Stage v@blu@" + GameConstants.TEST_VERSION + "@bla@."*/);
 			player.getPacketSender().sendMessage("@red@Did you know?@bla@ We're open source!"); // Pull requests are welcome
 			player.getPacketSender().sendMessage("Source code at github.com/2006-Scape/2006Scape");
-			player.getPacketSender().sendMessage("2006Scape Discord: https://discord.gg/hZ6VfWG");
-			player.getPacketSender().sendMessage("Our Discord: https://discord.gg/Vhh4ySRGnp");
+			player.getPacketSender().sendMessage("Join our Discord: https://discord.gg/Vhh4ySRGnp");
 			/*if (!hasBankpin) { //Kind of annoying. Maybe add Random % 10 or something.
 				getActionSender().sendMessage("You do not have a bank pin it is highly recommended you set one.");
 			}*/
