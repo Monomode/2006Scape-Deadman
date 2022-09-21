@@ -331,7 +331,7 @@ public class Climbing {
 				}
 				break;
 			case 7257:
-				client.getPlayerAssistant().movePlayer(3044, 4973, 1);
+				client.getPlayerAssistant().movePlayer(3061, 4985, 1);
 				client.startAnimation(827);
 				client.getPacketSender().sendMessage("You climb down.");
 				client.resetWalkingQueue();
