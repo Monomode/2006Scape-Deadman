@@ -51,6 +51,9 @@ import com.rs2.util.Misc;
 import com.rs2.world.Boundary;
 import com.rs2.world.clip.Region;
 
+import static com.rs2.GameConstants.FIREMAKING;
+import static com.rs2.GameConstants.THIEVING;
+
 public class ObjectsActions {
 
     private final Player player;
@@ -143,13 +146,52 @@ public class ObjectsActions {
                 break;
             case 5055: //Canifis bar trapdoor Myreque
                 if (player.objectX == 3494 && player.objectY == 3464 || System.currentTimeMillis() - player.logoutDelay > 7200) {
-                    player.getPlayerAssistant().movePlayer(3522, 3284, 0);
+                    player.getPlayerAssistant().movePlayer(3478, 9842, 0);
                 }
                     else {
                         player.getPacketSender().sendMessage("You can't travel while in combat.");
                     }
                 break;
+            case 5052: //Myreque hideout 'Search' Wall
+                if (player.absY == 9837 || System.currentTimeMillis() - player.logoutDelay > 7200) {
+                    player.getPacketSender().sendMessage("You can't search the wall while in combat.");
+                    player.getPlayerAssistant().movePlayer(3480, 9836, 0);
+                    break;
+                } else if (player.absY == 9836 || System.currentTimeMillis() - player.logoutDelay > 7200) {
+                    player.getPacketSender().sendMessage("You can't search the wall while in combat.");
+                    player.getPlayerAssistant().movePlayer(3480, 9837, 0);
+                    break;
+                } else {
+                player.getPacketSender().sendMessage("You can't search the wall while in combat.");
+                }
+                break;
 
+            case 5054: ///Myreque hideout, ladder to trapdoor behind Canifis bar
+                if (System.currentTimeMillis() - player.logoutDelay < 7200) {
+                        player.getPacketSender().sendMessage("You can't use the ladder while in combat.");
+                        return;
+                }
+                if (player.absX == 3477 && player.absY == 9845) { //Myreque hideout
+                    player.getPlayerAssistant().movePlayer(3494, 3465, 0);
+                }
+                else if (player.absX == 3547 && player.absY == 9698) { //Barrows chest
+                    player.getPlayerAssistant().movePlayer(3565, 3316, 0);
+                }
+
+            /*
+            if (player.playerLevel[GameConstants.AGILITY] < 35) {
+                player.getPacketSender().sendMessage(
+                        "You need 35 agility to enter here!");
+                return;
+            }
+            if (player.absX == 2552 && player.absY == 3561) {
+                player.getPlayerAssistant().movePlayer(2552, 3558, 0);
+                player.startAnimation(844);
+            } else if (player.absX == 2552 && player.absY == 3558) {
+                player.getPlayerAssistant().movePlayer(2552, 3561, 0);
+                player.startAnimation(844);
+            }
+            */
 
             /*case 6969: // Swamp Boaty
                 if (player.objectX == 3523 && player.objectY == 3284)
@@ -1087,8 +1129,15 @@ public class ObjectsActions {
                 } else if (player.tutorialProgress == 28 && player.absX == 3128) {
                     player.getPlayerAssistant().movePlayer(player.absX + 1,
                             player.absY, player.heightLevel);
-                }
+                } else if (player.absY == 3558) {
+                    Guilds.attemptGuild(player, objectType);
+                /*player.getPlayerAssistant().movePlayer(player.absX, player.absY + 1, 0);*/
+            } else if (player.absY == 3559) {
+                player.getPlayerAssistant().movePlayer(player.absX, player.absY - 1, 0);
+            }
                 break;
+
+
 
             case 3015:
             case 3016:
@@ -1699,6 +1748,7 @@ public class ObjectsActions {
             case 2625:
             case 2641:
             case 1805:
+
                 Guilds.attemptGuild(player, objectType);
                 break;
 
@@ -2110,8 +2160,17 @@ public class ObjectsActions {
                 break;
 
             case 2406:
-                if (player.playerEquipment[player.playerWeapon] != 772) {
+                /*if (player.playerEquipment[player.playerWeapon] != 772) {
                     player.getPacketSender().sendMessage("This door is locked.");
+                    return;
+                }*/
+                if (player.lostCity < 3) {
+                    player.getPacketSender().sendMessage("This door is locked.");
+                    return;
+                }
+                if (player.lostCity == 3) {
+                    player.getPlayerAssistant().startTeleport(2452, 4470, 0, "modern");
+                    player.getPacketSender().sendMessage("You are suddenly teleported away.");
                     return;
                 }
                 if (player.playerEquipment[player.playerWeapon] == 772) {
@@ -2468,10 +2527,30 @@ public class ObjectsActions {
                 break;
 
             case 6552:
+                if (player.desertT < 2) {
+                    player.getDialogueHandler().sendStatement("You need to complete Desert Treasure first to do this.");
+                    player.nextChat = 0;
+                    return;
+                }
+                if (player.getPlayerAssistant().getTotalLevel()<= 999) {
+                    player.getDialogueHandler().sendStatement("You need 1000 Total Level first to do this.");
+                    player.nextChat = 0;
+                    return;
+                }
+                if (player.getPlayerAssistant().getLevelForXP(FIREMAKING)<= 49) {
+                    player.getDialogueHandler().sendStatement("You need 50 Firemaking Level first to do this.");
+                    player.nextChat = 0;
+                    return;
+                }
+                if (player.getPlayerAssistant().getLevelForXP(THIEVING)<= 52) {
+                    player.getDialogueHandler().sendStatement("You need 53 Thieving Level first to do this.");
+                    player.nextChat = 0;
+                    return;
+                }
                 if (player.playerMagicBook == 0) {
                     player.playerMagicBook = 1;
                     player.getPacketSender().setSidebarInterface(6, 12855);
-                    player.getPacketSender().sendMessage("An ancient wisdomin fills your mind.");
+                    player.getPacketSender().sendMessage("An ancient wisdom fills your mind.");
                     player.getPlayerAssistant().resetAutocast();
                 } else {
                     player.getPacketSender().setSidebarInterface(6, 1151); // modern
