@@ -33,7 +33,7 @@ public class GlobalDropsHandler {
     /**
      * time in seconds it takes for the item to respawn
      */
-    private static final int TIME_TO_RESPAWN = 20;
+    private static final int TIME_TO_RESPAWN = 60;
 
     /**
      * holds all the objects
