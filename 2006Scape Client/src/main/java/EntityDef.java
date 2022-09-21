@@ -17,6 +17,11 @@ public final class EntityDef {
 		entityDef.type = i;
 		entityDef.readValues(stream);
 		switch(i) {
+			case 2862:
+				entityDef.actions = new String[5];
+				entityDef.actions[0] = "Talk-to";
+				entityDef.actions[2] = "Trade";
+				break;
 			case 2258 :
 				entityDef.actions = new String[5];
 				entityDef.actions[0] = "Talk-to";
