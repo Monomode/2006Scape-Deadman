@@ -696,7 +696,7 @@
     "id": 115
   },
   {
-    "hitpoints": 57,
+    "hitpoints": 55,
     "name": "Cyclops",
     "combat": 56,
     "id": 116
@@ -11490,19 +11490,19 @@
     "id": 1912
   },
   {
-    "hitpoints": 0,
+    "hitpoints": 255,
     "name": "Kamil",
     "combat": 154,
     "id": 1913
   },
   {
-    "hitpoints": 0,
+    "hitpoints": 255,
     "name": "Dessous",
     "combat": 139,
     "id": 1914
   },
   {
-    "hitpoints": 0,
+    "hitpoints": 255,
     "name": "Dessous",
     "combat": 139,
     "id": 1915
@@ -11856,13 +11856,13 @@
     "id": 1973
   },
   {
-    "hitpoints": 95,
+    "hitpoints": 255,
     "name": "Damis",
     "combat": 103,
     "id": 1974
   },
   {
-    "hitpoints": 160,
+    "hitpoints": 255,
     "name": "Damis",
     "combat": 174,
     "id": 1975
@@ -11874,7 +11874,7 @@
     "id": 1976
   },
   {
-    "hitpoints": 0,
+    "hitpoints": 255,
     "name": "Fareed",
     "combat": 167,
     "id": 1977
