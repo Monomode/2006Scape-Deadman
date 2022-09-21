@@ -3,6 +3,7 @@ package com.rs2.net.packets.impl;
 import com.rs2.GameConstants;
 import com.rs2.GameEngine;
 import com.rs2.event.impl.ItemFirstClickEvent;
+import com.rs2.game.content.combat.magic.CastRequirements;
 import com.rs2.game.content.consumables.Beverages;
 import com.rs2.game.content.consumables.Kebabs;
 import com.rs2.game.content.consumables.Beverages.beverageData;
@@ -79,8 +80,23 @@ public class ClickItem implements PacketType {
 		}
 		switch (itemId) {
 		case 4251:
-			player.getPlayerAssistant().movePlayer(3661, 3526, 0);
-			player.getItemAssistant().replaceItem(4251, 4252);
+			if (player.teleTimer > 0) {
+				return;
+			}
+			if (player.underAttackBy != 0 && System.currentTimeMillis() - player.singleCombatDelay < 7200 || player.underAttackBy2 != 0){
+				player.getPacketSender().sendMessage("You can't teleport while in combat.");
+				return;
+			}
+			/*if (player.playerLevel[GameConstants.MAGIC] < teleport.getRequiredLevel()) {
+				player.getPacketSender().sendMessage("You need a magic level of " + teleport.getRequiredLevel() + " to cast this spell.");
+				return;
+			}
+			if (!CastRequirements.hasRunes(player, teleport.getRequiredRunes())) {
+				player.getPacketSender().sendMessage("You don't have the required runes to cast this spell.");
+				return;
+			}*/
+			player.getPlayerAssistant().startTeleport(3661, 3526, 0, "modern");
+			//player.getItemAssistant().replaceItem(4251, 4252);
 			break;
 		case 4079:
 			player.startAnimation(1457);
@@ -166,8 +182,20 @@ public class ClickItem implements PacketType {
 				TreasureTrails.addClueReward(player, 2);
 			}
 			break;
+		case 2680:
+				if (GameConstants.CLUES_ENABLED) {
+					player.getItemAssistant().deleteItem(itemId, 1);
+					TreasureTrails.addClueReward(player, 3);
+				}
+				break;
+		case 2681:
+				if (GameConstants.CLUES_ENABLED) {
+					player.getItemAssistant().deleteItem(itemId, 1);
+					TreasureTrails.addClueReward(player, 4);
+				}
+				break;
 
-		case 299:
+			case 299:
 			new Flowers(player);
 			player.dialogueAction = 21;
 			break;
