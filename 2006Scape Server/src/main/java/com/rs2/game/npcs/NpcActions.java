@@ -49,13 +49,23 @@ public class NpcActions {
 		case 569: //Ardougne silver shop
 			player.getShopAssistant().openShop(214);
 			break;
-		case 945: //Recipe for disaster / crossbow shop
+		case 797: //Helemos
+			player.getShopAssistant().openShop(191);
+			break;
+		case 1683: //Velorina
+			player.getShopAssistant().openShop(356);
+			break;
+
+		case 945: //Recipe for disaster AND Crossbow shop (2006Scape Guide / Lumbridge Guide / Spawn area)
 			player.getShopAssistant().openShop(350);
 			break;
 		case 1001:	//Dark mage Iban's staff
 			player.getShopAssistant().openShop(352);
 			break;
-		case 1680 : // Islwyn Crystal Item Store
+		case 1263:	//Wizard Jalarast Splitbark store
+			player.getShopAssistant().openShop(354);
+			break;
+		case 1680 : // Islwyn Crystal Store
 			player.getShopAssistant().openShop(353);
 			break;
 		case 1686 : // Ghost Disciple
@@ -263,7 +273,7 @@ public class NpcActions {
 				player.getShopAssistant().openShop(118);
 			} else {
 				player.getPacketSender().sendMessage(
-						"You don't have the required skills to open this shop");
+						"You don't have the required skills to open this shop.");
 			}
 			break;
 
@@ -731,6 +741,22 @@ public class NpcActions {
 			}
 			break;
 
+		case 619:
+			if (player.desertT == 0) {
+				player.getDialogueHandler().sendDialogues(1412, npcType);
+			} else if (player.desertT == 1) {
+				player.getDialogueHandler().sendDialogues(1423, npcType);
+			}
+			if (player.desertT == 1 && player.getItemAssistant().playerHasItem(4670, 1)
+					&& player.getItemAssistant().playerHasItem(4671, 1)
+					&& player.getItemAssistant().playerHasItem(4672, 1)
+					&& player.getItemAssistant().playerHasItem(4673, 1)) {
+				player.getDialogueHandler().sendDialogues(1425, npcType);
+			} else if (player.desertT == 1) {
+				player.getDialogueHandler().sendDialogues(1424, npcType);
+			}
+			break;
+
 		case 706:
 			if (player.impsC == 0) {
 				player.getDialogueHandler().sendDialogues(145, npcType);
@@ -1098,11 +1124,13 @@ public class NpcActions {
 			player.getFarmingTools().loadInterfaces();
 			break;
 			
-		 /*case 209:
-	        player.getShopAssistant().openShop(144);
-	        break;*/
-	        
-	        
+		 case 209: //nuludion multicannon parts for sale
+	        player.getShopAssistant().openShop(150); //144
+	        break;
+
+		case 2862: //Skull money trader
+			player.getShopAssistant().openShop(355);
+			break;
 		case 2437:
 		case 2438:
 		if (!player.getItemAssistant().playerHasItem(995, 1000)) {
