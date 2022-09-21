@@ -23,12 +23,12 @@ public class FightPits {
 	/**
 	 * @note Countdown for game to start
 	 */
-	private static int gameStartTimer = 80;
+	private static int gameStartTimer = 60;
 	/**
 	 * @note Elapsed Game start time
 	 */
 	private static int elapsedGameTime = 0;
-	private static final int END_GAME_TIME = 400;
+	private static final int END_GAME_TIME = 400; //400 5 minutes 50 seconds
 	/*
 	 * @note Game started or not?
 	 */
@@ -109,7 +109,7 @@ public class FightPits {
 		}
 
 		if (state.equals(PLAYING)) {
-			if (getListCount(PLAYING) - 1 == 0 && !forceRemove) {
+			if (getListCount(PLAYING) - 1 == 1 && !forceRemove) {
 				pitsChampion = player.playerName;
 				player.headIcon = 21;
 				player.updateRequired = true;
@@ -194,10 +194,10 @@ public class FightPits {
 			if (gameStartTimer > 0) {
 				gameStartTimer--;
 			} else if (gameStartTimer == 0) {
-				if (getListCount(WAITING) > 4) {
+				if (getListCount(WAITING) > 1) { //default 4
 					beginGame();
 				}
-				gameStartTimer = 80;
+				gameStartTimer = 30;
 			}
 		}
 		if (gameStarted) {
@@ -206,7 +206,7 @@ public class FightPits {
 				endGame();
 				elapsedGameTime = 0;
 				gameStarted = false;
-				gameStartTimer = 80;
+				gameStartTimer = 60;
 			}
 		}
 	}
