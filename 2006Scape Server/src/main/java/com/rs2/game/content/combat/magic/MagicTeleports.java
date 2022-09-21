@@ -49,6 +49,6 @@ public class MagicTeleports {
 		CastRequirements.deleteRunes(player, teleport.getRequiredRunes());
 		player.getPlayerAssistant().startTeleport(teleport.getDestX(), teleport.getDestY(), teleport.getDestZ(), teleport.getType());
 		player.getPlayerAssistant().addSkillXP(teleport.getExperienceGained(), GameConstants.MAGIC);
-		RandomEventHandler.addRandom(player);
+		/*RandomEventHandler.addRandom(player);*/
 	}
 }
