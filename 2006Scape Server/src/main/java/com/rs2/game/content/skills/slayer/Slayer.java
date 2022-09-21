@@ -19,15 +19,15 @@ public class Slayer {
 			DRAGON_TASK = 5,
 			BOSS_TASK = 6;
 	public static final int[]
-			VERY_EASY_AMOUNT = new int[]{11, 15}, //15, 19
-			EASY_AMOUNT =  new int[]{11, 15}, //25, 29
-			MEDIUM_AMOUNT =  new int[]{15, 21}, //25, 29
-			HARD_AMOUNT =  new int[]{16, 28}, //40, 60
-			VERY_HARD_AMOUNT =  new int[]{17, 29}, //40, 60
+			VERY_EASY_AMOUNT = new int[]{11, 14},
+			EASY_AMOUNT =  new int[]{11, 15},
+			MEDIUM_AMOUNT =  new int[]{14, 17},
+			HARD_AMOUNT =  new int[]{15, 25},
+			VERY_HARD_AMOUNT =  new int[]{16, 26},
 
-			DRAGON_AMOUNT = new int[]{21, 29}, //15, 29
-			WILDERNESS_AMOUNT = new int[]{21, 45}, //
-			BOSS_AMOUNT = new int[]{5, 9}; //
+			DRAGON_AMOUNT = new int[]{21, 29},
+			WILDERNESS_AMOUNT = new int[]{21, 45},
+			BOSS_AMOUNT = new int[]{5, 9};
 
 	public static ArrayList<Integer> veryEasyTask = new ArrayList<Integer>();
 	public static ArrayList<Integer> easyTask = new ArrayList<Integer>();
@@ -45,7 +45,7 @@ public class Slayer {
 	}
 
 	public enum SlayerMasters {
-		TURAEL(70, 1, VERY_EASY_TASK,"Burthrope and Draynor", "Turael"),
+		TURAEL(70, 1, VERY_EASY_TASK,"Burthorpe and Draynor", "Turael"),
 		KARDIA(992, 1, VERY_HARD_TASK,"Edgeville", "Kardia"),
 		MAZCHNA(1596, 20, EASY_TASK, "Canifis", "Mazchna"),
 		VANNAKA(1597, 40, MEDIUM_TASK, "Edgeville", "Vannaka"),
@@ -53,13 +53,13 @@ public class Slayer {
 		DURADEL(1599, 100, VERY_HARD_TASK, "Shilo Village", "Duradel");
 		//OZIACH DRAGON SLAYER MASTER
 
-		private int masterId, combatReq, diffuculty;
+		private int masterId, combatReq, difficulty;
 		private String masterLocation, masterName;
 
-		private SlayerMasters(int masterId, int combatReq, int diffuculty, String masterLocation, String masterName) {
+		private SlayerMasters(int masterId, int combatReq, int difficulty, String masterLocation, String masterName) {
 			this.masterId = masterId;
 			this.combatReq = combatReq;
-			this.diffuculty = diffuculty;
+			this.difficulty = difficulty;
 			this.masterLocation = masterLocation;
 			this.masterName = masterName;
 		}
@@ -81,7 +81,7 @@ public class Slayer {
 		}
 
 		public int getDifficulty() {
-			return diffuculty;
+			return difficulty;
 		}
 
 	}
@@ -94,6 +94,7 @@ public class Slayer {
 		KARIL_THE_TAINTED(2028, 1, 100, BOSS_TASK, "Barrows"),
 		TORAG_THE_CORRUPTED(2029, 1, 112, BOSS_TASK, "Barrows"),
 		VERAC_THE_DEFILED(2030, 1, 112, BOSS_TASK, "Barrows"),
+
 		ABERRANT_SPECTRE(1604, 60, 90, HARD_TASK, "Slayer Tower"),
 		ABYSSAL_DEMON(1615, 85, 150, VERY_HARD_TASK, "Slayer Tower"),
 		BANSHEE(1612, 15, 22, VERY_EASY_TASK + r(1), "Slayer Tower"),
@@ -107,8 +108,8 @@ public class Slayer {
 		CAVE_CRAWLER(1600, 10, 22, EASY_TASK, "Fremennik Slayer Dungeon"),
 		COCKATRICE(1620, 25, 37, MEDIUM_TASK, "Fremennik Slayer Dungeon"),
 		CRAWLING_HAND(1648, 5, 16 + r(3), EASY_TASK + r(1), "Slayer Tower"),
-		DAGANNOTH74(1338, 1, 70 + r(50), HARD_TASK, "Lighthouse Basement"),
-		DAGANNOTH92(1342, 1, 80 + r(50), HARD_TASK, "Lighthouse Basement"),
+		DAGANNOTH(1338, 58, 70 + r(50), HARD_TASK, "Lighthouse Basement"),
+		/*DAGANNOTH92(1342, 58, 80 + r(50), HARD_TASK, "Lighthouse Basement"),*/
 		DARK_BEAST(2783, 90, 180, VERY_HARD_TASK, "Slayer Tower"),
 		DUST_DEVIL(1624, 65, 105, MEDIUM_TASK, "Slayer Tower"),
 		SMOKE_DEVIL(1625, 93, 185, HARD_TASK, "Castle Wars"),
