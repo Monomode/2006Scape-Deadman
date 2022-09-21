@@ -31,19 +31,29 @@ public class GameConstants {
 	public static String SERVER_NAME = "Deadman Mode", WEBSITE_LINK = "https://2006Scape.org";
 	public static int WORLD = 1, MAX_PLAYERS = 20, TIMEOUT = 150, SAVE_TIMER = 15,
 			RESPAWN_X = 3222, RESPAWN_Y = 3218;
+	/*public static void main(String[] args) {
+		var spawns = new Coordinate[] { new Coordinate(3222, 3218, 0), new Coordinate(3213, 3464, 0), new Coordinate(2976, 3342, 0), new Coordinate(2757, 3487, 0),new Coordinate(2578, 3299, 0)};
+
+		for (int i = 0; i < 10; i++) {
+			var spawn = spawns[new Random().nextInt(spawns.length)];
+			System.out.println(spawn.toString());
+		}
+	}*/
+	/*private static int[][] RESPAWN = { { 3333, 3333 }, { 3196, 3193 },
+			{ 3084, 3549 }, { 2974, 3346 }, { 2781, 3506 }, { 2810, 3508 }, }; */
 	public static boolean FILE_SERVER = true, SERVER_DEBUG = false, MEMBERS_ONLY = false, TUTORIAL_ISLAND = false,
 			PARTY_ROOM_DISABLED = true, CLUES_ENABLED = true, ITEM_REQUIREMENTS = true,
 			ADMIN_CAN_TRADE = false, ADMIN_DROP_ITEMS = false, ADMIN_CAN_SELL_ITEMS = false, VARIABLE_XP_RATE = false,
 			WEBSITE_INTEGRATION = false;
 	public static int[] VARIABLE_XP_RATES = new int[] {5, 25, 50, 100};
-	public static double TEST_VERSION = 0.3, XP_RATE = 100.0;
+	public static double TEST_VERSION = 0.1, XP_RATE = 100.0;
 
 
 	/**
 	 * The Variables Below Should Only Be Changed If You Understand What You Are Doing
 	 */
 	public final static int ITEM_LIMIT = 15000, MAXITEM_AMOUNT = Integer.MAX_VALUE,
-			IPS_ALLOWED = 250, CONNECTION_DELAY = 100;
+			IPS_ALLOWED = 20, CONNECTION_DELAY = 100;
 	
 	public final static boolean sendServerPackets = false, SOUND = true, GUILDS = true;
 	
