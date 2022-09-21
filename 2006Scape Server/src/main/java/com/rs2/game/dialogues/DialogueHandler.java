@@ -603,7 +603,7 @@ public class DialogueHandler {
 						"These imps have now spread out all over the kingdom.",
 						"Could you get my beads back for me?", player.talkingNpc,
 						"Wizard Mizgog");
-				player.nextChat = 153;
+				player.nextChat = 154;
 				break;
 			case 153:
 				sendOption("I'll try.",
@@ -638,14 +638,15 @@ public class DialogueHandler {
 				player.nextChat = 159;
 				break;
 			case 159:
-				sendPlayerChat("I've got all four beads. It was hard work I can tell you.");
+				sendPlayerChat("I've got all four beads.",
+						"It was hard work I can tell you.");
 				player.nextChat = 160;
 				break;
 			case 160:
 				sendNpcChat3(
-						"Give them here and I'll check that really are MY",
-						"beads, before I give you your reward. You'll take it, it's",
-						"an amulet of accuracy.", player.talkingNpc,
+						"Give them here and I'll check if they really are MY",
+						"beads, before I give you your reward. You'll take it,",
+						" it's an amulet of accuracy.", player.talkingNpc,
 						"Wizard Mizgog");
 				player.nextChat = 161;
 				break;
@@ -3844,7 +3845,10 @@ public class DialogueHandler {
 				break;
 			case 797:	//helemos
 				player.getShopAssistant().openShop(191);
-				break;
+				break; // GO TO NPCACTIONS
+			case 1263: //splitbark wizard
+				player.getShopAssistant().openShop(354);
+				break; //GOTO NPCACTIONS
 			case 908:
 				sendPlayerChat("Hello there " + NpcHandler.getNpcListName(player.talkingNpc) + "!");
 				player.nextChat = 909;
@@ -4192,7 +4196,7 @@ public class DialogueHandler {
 				player.nextChat = 0;
 				break;
 			case 1228:
-				if (!Slayer.getMasterRequirment(player, player.talkingNpc)) {
+				if (!Slayer.getMasterRequirement(player, player.talkingNpc)) {
 					sendNpcChat1("Increase your combat level then come back.", player.talkingNpc, NpcHandler.getNpcListName(player.talkingNpc));
 					player.nextChat = 0;
 				} else {
@@ -4201,7 +4205,7 @@ public class DialogueHandler {
 				}
 				break;
 			case 1229:
-				sendOption("I need another assignement.",
+				sendOption("I need another assignment.",
 						"Where is the location of my task?",
 						"I would like to view your shop.",
 						"I would like to cancel or remove my task.");
@@ -4209,7 +4213,7 @@ public class DialogueHandler {
 				break;
 			case 1231:
 				sendOption("I want to cancel my current task.",
-						"I want to remove my task for ever.");
+						"I want to remove my current task.");
 				player.dialogueAction = 143;
 				break;
 			case 1232:
@@ -4409,6 +4413,16 @@ public class DialogueHandler {
 									player.slayerTask) + ".",
 							player.talkingNpc,
 							NpcHandler.getNpcListName(player.SlayerMaster));
+					/*
+					player.getPacketSender().sendMessage("You currently need to kill "
+									+ player.taskAmount
+									+ " more "
+									+ player.getSlayer().getTaskName(
+									player.slayerTask) + ".",
+							"in the "
+									+ player.getSlayer().getLocation(
+									player.slayerTask) + ".",);
+					*/
 					player.nextChat = 0;
 				} else {
 					sendNpcChat1("You don't have a slayer task.",
@@ -4978,6 +4992,120 @@ public class DialogueHandler {
 						"Yes please.",
 						"No thanks.");
 				player.dialogueAction = 186;
+				break;
+
+			case 1412:
+				sendPlayerChat("Give me a quest!");
+				player.nextChat = 1413;
+				break;
+			case 1413:
+				sendNpcChat1("Give me a quest what?", player.talkingNpc, "Archaeological expert");
+				player.nextChat = 1414;
+				break;
+			case 1414:
+				sendPlayerChat("Give me a quest please.");
+				player.nextChat = 1415;
+				break;
+			case 1415:
+				sendNpcChat2(
+						"Well seeing as you asked nicely... I could do with some",
+						"help.", player.talkingNpc, "Archaeological expert");
+				player.nextChat = 1416;
+				break;
+			case 1416:
+				sendNpcChat2("Find the four guardians of the Diamonds of Azzanadra,",
+						"and we'll split any wealth found on the journey.",
+						player.talkingNpc, "Archaeological expert");
+				player.nextChat = 1417;
+				break;
+			case 1417:
+				sendNpcChat3(
+						"These warriors stole all sorts of my things. Most of",
+						"these things I don't really care about; clue scrolls,",
+						"and ancient warrior equipment.", player.talkingNpc, "Archaeological expert");
+				player.nextChat = 1418;
+				break;
+			case 1418:
+				sendNpcChat2(
+						"But they stole my four magical diamonds. There was a",
+						"Blood one, a Shadow one, a Smoke one, and an Ice one.",
+						player.talkingNpc, "Archaeological expert");
+				player.nextChat = 1419;
+				break;
+			case 1419:
+				sendNpcChat2(
+						"These guardians have now spread out across the kingdom.",
+						"Could you get my diamonds back for me?", player.talkingNpc,
+						"Archaeological expert");
+				player.nextChat = 1421;
+				break;
+			case 1420:
+				sendOption("I'll try.");
+						/*"I've better things to do than chase diamonds.");*/
+				player.dialogueAction = 1421;
+				break;
+			case 1421:
+				sendPlayerChat("I'll try.");
+				player.desertT = 1;
+				QuestAssistant.sendStages(player);
+				player.nextChat = 1422;
+				break;
+			case 1422:
+				sendNpcChat1("That's great, thank you.", player.talkingNpc,
+						"Archaeological expert");
+				player.nextChat = 0;
+				break;
+
+			case 1423:
+				sendNpcChat1("So how are you doing finding my diamonds?",
+						player.talkingNpc, "Archaeological expert");
+				player.nextChat = 1424;
+				break;
+			case 1424:
+				sendPlayerChat("I am still working on it.");
+				player.nextChat = 0;
+				break;
+
+			case 1425:
+				sendNpcChat1("So how are you doing finding my diamonds?",
+						player.talkingNpc, "Archaeological expert");
+				player.nextChat = 1426;
+				break;
+			case 1426:
+				sendPlayerChat("I've got all four diamonds.",
+						"It was hard work I can tell you.");
+				player.nextChat = 1427;
+				break;
+			case 1427:
+				sendNpcChat3(
+						"Give them here and I'll check if they really are MY",
+						"diamonds, before I give you your reward. You'll take it,",
+						"it's access to Ancient Magicks.", player.talkingNpc,
+						"Archaeological expert");
+				player.nextChat = 1428;
+				break;
+			case 1428:
+				sendStatement("You give four Mahjarrat souls to the Archaeological expert.");
+				if (player.getItemAssistant().playerHasItem(4670, 1)
+						&& player.getItemAssistant().playerHasItem(4671, 1)
+						&& player.getItemAssistant().playerHasItem(4672, 1)
+						&& player.getItemAssistant().playerHasItem(4673, 1)) {
+					player.getItemAssistant().deleteItem(4670, 1);
+					player.getItemAssistant().deleteItem(4671, 1);
+					player.getItemAssistant().deleteItem(4672, 1);
+					player.getItemAssistant().deleteItem(4673, 1);
+					player.desertT = 2;
+					player.nextChat = 1429;
+				} else {
+					player.nextChat = 1424;
+				}
+				break;
+			case 1429:
+				QuestRewards.desertFinish(player);
+				break;
+			case 1430:
+				sendPlayerChat("I've better things to do than chase diamonds.");
+				player.nextChat = 0;
 				break;
 
 			case 2995:
