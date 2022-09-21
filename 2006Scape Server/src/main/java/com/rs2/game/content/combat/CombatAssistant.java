@@ -608,6 +608,7 @@ public class CombatAssistant {
 				 */
 				if (player.usingBow || player.usingMagic || player.usingRangeWeapon || player.goodDistance(player.getX(), player.getY(), NpcHandler.npcs[i].getX(), NpcHandler.npcs[i].getY(), 2) && RangeData.usingHally(player)) { //default distance 2
 					player.stopMovement();
+					//resetPlayerAttack();
 				}
 				if (!checkMagicReqs(player.spellId)) {
 					player.stopMovement();
@@ -627,13 +628,15 @@ public class CombatAssistant {
 						return;
 					} else {
 						player.mageFollow = false;
-						player.getPacketSender().sendMessage("You don't have the required special energy to use this attack.");
+						player.getPacketSender().sendMessage("You don't have the required special energy for this attack.");
 						player.usingSpecial = false;
 						player.getItemAssistant().updateSpecialBar();
 						if (CombatConstants.COMBAT_SOUNDS) {
 							player.getPacketSender().sendSound(CombatSounds.specialSounds(player.playerEquipment[player.playerWeapon]), 100, 0);
 						}
 						player.npcIndex = 0;
+						//player.stopMovement();
+						//resetPlayerAttack();
 						return;
 					}
 				}
@@ -919,6 +922,9 @@ public class CombatAssistant {
 				 */
 				if (player.usingBow || player.usingMagic || player.usingRangeWeapon || RangeData.usingHally(player)) {
 					player.stopMovement();
+					player.mageFollow = true;
+				} else {
+					player.mageFollow = false;
 				}
 
 				if (!checkMagicReqs(player.spellId)) {
@@ -955,9 +961,11 @@ public class CombatAssistant {
 					if (checkSpecAmount(equippedWeapon)) {
 						player.lastArrowUsed = player.playerEquipment[player.playerArrows];
 						player.getSpecials().activateSpecial(player.playerEquipment[player.playerWeapon], o, i);
+						//player.mageFollow = true; //didnt work
 						player.followId = player.playerIndex;
 						return;
 					} else {
+						//player.mageFollow = false; //didnt work
 						player.getPacketSender().sendMessage("You don't have the required special energy to use this attack.");
 						player.usingSpecial = false;
 						player.getItemAssistant().updateSpecialBar();
@@ -1507,7 +1515,7 @@ public class CombatAssistant {
 		case 3:
 			if (damage > 0) {
 				o.playerLevel[GameConstants.DEFENCE] -= damage;
-				o.getPacketSender().sendMessage("You feel weak.");
+				o.getPacketSender().sendMessage("You feel weakened.");
 				if (o.playerLevel[GameConstants.DEFENCE] < 1) {
 					o.playerLevel[GameConstants.DEFENCE] = 1;
 				}
@@ -1748,7 +1756,7 @@ public class CombatAssistant {
 		if (c2.recoilHits >= 400) {
 			c2.getItemAssistant().removeItem(2550, c2.playerRing);
 			c2.getItemAssistant().deleteItem(2550, c2.getItemAssistant().getItemSlot(2550), 1);
-			c2.getPacketSender().sendMessage("Your ring of recoil shaters!");
+			c2.getPacketSender().sendMessage("Your ring of recoil shatters!");
 			c2.recoilHits = 0;
 		} else {
 			c2.recoilHits++;
