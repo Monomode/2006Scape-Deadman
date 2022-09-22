@@ -123,37 +123,37 @@ public class SandwhichLady {
 		case 0:
 			c.getPacketSender().sendString("Please select the pie.",
 					16145);
-			itemType = 0;
+			itemType = 0; //0
 			break;
 		case 1:
 			c.getPacketSender().sendString("Please select the kebab.",
 					16145);
-			itemType = 1;
+			itemType = 1; //1
 			break;
 		case 2:
 			c.getPacketSender().sendString(
 					"Please select the chocolate.", 16145);
-			itemType = 2;
+			itemType = 2; //2
 			break;
 		case 3:
 			c.getPacketSender().sendString("Please select the bagel.",
 					16145);
-			itemType = 3;
+			itemType = 3; //3
 			break;
 		case 4:
 			c.getPacketSender().sendString(
 					"Please select the triangle sandwich.", 16145);
-			itemType = 4;
+			itemType = 4; //4
 			break;
 		case 5:
 			c.getPacketSender().sendString(
 					"Please select the square sandwich.", 16145);
-			itemType = 5;
+			itemType = 5; //5
 			break;
 		case 6:
 			c.getPacketSender().sendString("Please select the bread.",
 					16145);
-			itemType = 6;
+			itemType = 6; //6
 			break;
 		}
 	}
