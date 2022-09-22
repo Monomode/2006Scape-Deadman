@@ -661,16 +661,16 @@ public class NpcCombat {
 					case 0:// has no shield
 						//if (c.getPlayerAssistant().antiFire()) = true {
 						damage = Misc.random(45) + 10;
-						c.getPacketSender().sendMessage("@red@You are badly burnt by the dragon fire!");
+						c.getPacketSender().sendMessage("@red@You are badly burnt by the dragon-fire!");
 						break;
 					case 1:// has a shield
 						if (c.getItemAssistant().playerHasEquipped(5, 1540)) {
 							damage = Misc.random(4) + 1;
-							c.getPacketSender().sendMessage("Your shield protects you from the fire.");
+							c.getPacketSender().sendMessage("@yel@Your shield provides partial protection from the dragon-fire.");
 						} else {
 						if (c.getItemAssistant().playerHasEquipped(5, 1187)) {
 							damage = Misc.random(1) + 0; //damage = Misc.random(4) + 1;
-							c.getPacketSender().sendMessage("Your dragon sq shield protects you from the fire.");
+							c.getPacketSender().sendMessage("Your dragon sq shield protects you from the dragon-fire.");
 						}
 					}
 						break;
