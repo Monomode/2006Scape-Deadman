@@ -16,7 +16,7 @@ public class NpcData {
 			{ 3225, 6008 }, { 3226, 6009 } };
 	public static final int[] npcsCantKillYou = { 41, 951, 1017, 1401, 1402, 1692, 2313, 2314, 2315 };// done
 	public static final int[] npcCantAttack = { 1532, 1533, 1534, 1535 };
-	public static final int[] npcDontGiveXp = { 1265, 1267, 1912, 1913, 1975, 1977, 2459, 2460, 2461, 2462 };
+	public static final int[] npcDontGiveXp = { 1265, 1267, 1913, 1914, 1975, 1977, 2459, 2460, 2461, 2462 };
 
 	public static boolean cantKillYou(int npcType) {
 		for (int n : npcsCantKillYou) {
