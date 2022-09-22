@@ -94,7 +94,7 @@ public class PlayerAssistant {
 	
 	public void loginScreen() {
 		player.getPacketSender().showInterface(15244);
-		player.getPacketSender().sendString("Welcome to " + GameConstants.SERVER_NAME + "             World: " + GameConstants.WORLD + "\\n", 15257);
+		player.getPacketSender().sendString("@bla@Welcome to @red@" + GameConstants.SERVER_NAME + "@bla@!        ", 15257); //World: " + GameConstants.WORLD + "\\n", 15257);
 		   int currentDay = player.getLastLogin() - player.lastLoginDate;
 
 		if (player.playerLevel[GameConstants.HERBLORE] < 3) {
@@ -106,16 +106,16 @@ public class PlayerAssistant {
 	        if (player.lastLoginDate <= 0) {
 	            player.getPacketSender().sendString("This is your first time logging in!", 15258);
 	        } else if (player.lastLoginDate == 1) {
-	           player.getPacketSender().sendString("You last logged in @red@yesterday @bla@ from: @red@", 15258); // + player.lastConnectedFrom
+	           player.getPacketSender().sendString("You last logged in @red@yesterday@bla@. @red@", 15258); // + player.lastConnectedFrom
 	        } else {
-	        	player.getPacketSender().sendString("You last logged in @red@" + (currentDay > 1 ? (currentDay + " @bla@days ago") : ("earlier today")) + " @bla@ from: @red@", 15258); // + player.lastConnectedFrom
+	        	player.getPacketSender().sendString("You last logged in @red@" + (currentDay > 1 ? (currentDay + " @bla@days ago") : ("earlier today")) + "@bla@. @red@", 15258); // + player.lastConnectedFrom
 	        }
-		player.getPacketSender().sendString("" +GameConstants.SERVER_NAME + " will NEVER email you.\\n We use the forums or we \\nWill contact you through game.", 15260);
-		player.getPacketSender().sendString("You have 0 unread messages\\nin your message centre.", 15261);
-		player.getPacketSender().sendString("You have @gre@unlimited@yel@ days of member credit.", 15262);
+		player.getPacketSender().sendString("\\n  \\nYou have @gre@0 @yel@unread messages\\nin your message centre.", 15260); //" +GameConstants.SERVER_NAME + " will NEVER email you.
+		player.getPacketSender().sendString("", 15261);//You have @gre@0 @yel@unread messages\nin your message centre.
+		player.getPacketSender().sendString("\\nYou have @gre@unlimited@yel@ days of member credit.", 15262);
 		player.getPacketSender().sendString("CLICK HERE TO PLAY", 15263);
 		if (!player.hasBankpin) {
-			player.getPacketSender().sendString("You currently have no bank pin set!\\nWe strongly advise you to set\\n one.", 15270);
+			player.getPacketSender().sendString("\\nYou currently have no bank pin set!\\n", 15270);
 		} else {
 			player.getPacketSender().sendString("\\nYou currently have a bank pin set.\\nYour bank is secure!.", 15270);
 		}
@@ -125,9 +125,9 @@ public class PlayerAssistant {
 	}
 	
 	private String[][] welcomeMessages = {
-			{"Remember to vote daily to help " + GameConstants.SERVER_NAME + "", "Every vote counts! :)"}, 
-			{"Not a member of our discord community?", "Join our discord at: https://discord.gg/hZ6VfWG"},
-			{"Do you have any bugs that you would like to report?", "Report them on our discord or message a staff member. :)"},
+			{"Remember to vote daily to help " + GameConstants.SERVER_NAME + ",", "Every vote counts!"},
+			{"Are you a member of our discord community?", "Join our discord at: https://discord.gg/Vhh4ySRGnp"},
+			{"Do you have any bugs that you would like to report?", "Report them on our discord or message a staff member."},
 			{"Want to help the server grow?", "Remember to vote daily and invite your friends!"}
 		};
 	
@@ -585,8 +585,12 @@ public class PlayerAssistant {
 	}
 
 	public void spiritTree() {
-		player.getDialogueHandler().sendOption("The Tree Gnome Village", "The Gnome Stronghold", "Varrock");
+		player.getDialogueHandler().sendOption("Tree Gnome Village", "Gnome Stronghold", "Varrock");
 		player.dialogueAction = 53;
+	}
+	public void spiritTreeGnomeVillage() {
+		player.getDialogueHandler().sendOption("Battlefield of Khazard", "Port Sarim", "Brimhaven");
+		player.dialogueAction = 54;
 	}
 
 	public void handleCanoe() {
@@ -699,6 +703,12 @@ public class PlayerAssistant {
 				player.teleEndAnimation = 715;
 			}
 			if (teleportType.equalsIgnoreCase("spiritTree")) {
+				player.startAnimation(4731);
+				player.gfx0(1228);
+				player.teleTimer = 9;
+				player.teleEndAnimation = 715;
+			}
+			if (teleportType.equalsIgnoreCase("spiritTreeGnomeVillage")) {
 				player.startAnimation(4731);
 				player.gfx0(1228);
 				player.teleTimer = 9;
@@ -1499,8 +1509,8 @@ public class PlayerAssistant {
 		} else if (player.duelStatus != 5 && !player.lostDuel) { // if we are
 																	// not in a
 																	// duel
-																	// repawn to
-																	// wildy
+																	// respawn to
+																	// wilderness
 			movePlayer(GameConstants.RESPAWN_X, GameConstants.RESPAWN_Y, 0);
 			player.isSkulled = false;
 			player.skullTimer = 0;
@@ -1833,10 +1843,10 @@ public class PlayerAssistant {
 			player.getItemAssistant().clearBank();
 			player.getPlayerAssistant().addStarter();
 			player.getPlayerAssistant().movePlayer(3233, 3229, 0);
-			player.getPacketSender().sendMessage("Welcome to @blu@" + GameConstants.SERVER_NAME + " World: " + GameConstants.WORLD + "@bla@ - we are currently in Server Stage v@blu@" + GameConstants.TEST_VERSION + "@bla@.");
-			player.getPacketSender().sendMessage("@red@Did you know?@bla@ We're open source and pull requests are welcome!");
+			player.getPacketSender().sendMessage("Welcome to @blu@" + GameConstants.SERVER_NAME + "@bla@."/* World: " + GameConstants.WORLD + "@bla@ - we are currently in Server Stage v@blu@" + GameConstants.TEST_VERSION + "@bla@."*/);
+			player.getPacketSender().sendMessage("@red@Did you know?@bla@ We're open source!"); //and pull requests are welcome!
 			player.getPacketSender().sendMessage("Source code: github.com/2006-Scape/2006Scape");
-			player.getPacketSender().sendMessage("Discord: https://discord.gg/hZ6VfWG");
+			player.getPacketSender().sendMessage("Join our Discord: https://discord.gg/Vhh4ySRGnp");
 			player.getDialogueHandler().sendDialogues(3115, 2224);
 			player.isRunning2 = false;
 			player.autoRet = 1;
@@ -2358,5 +2368,5 @@ public class PlayerAssistant {
 			}
 		}
 	}
-	
+
 }
