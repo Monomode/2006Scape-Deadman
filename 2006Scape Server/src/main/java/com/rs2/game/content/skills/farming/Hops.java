@@ -715,6 +715,7 @@ public class Hops {
 				player.getItemAssistant()
 						.addItem(hopsData.getHarvestId(), 1);
 				player.getPlayerAssistant().addSkillXP(hopsData.getHarvestXp(), SkillConstants.FARMING.ordinal());
+				container.stop();
 			}
 
 			@Override

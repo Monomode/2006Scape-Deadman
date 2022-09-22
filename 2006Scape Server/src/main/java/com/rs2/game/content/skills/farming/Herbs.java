@@ -32,6 +32,7 @@ public class Herbs {
 
 	private static final int START_HARVEST_AMOUNT = 3;
 	private static final int END_HARVEST_AMOUNT = 18;
+	private static final int HARVEST_AMOUNT = 6;
 
 	private static final double COMPOST_CHANCE = 0.9;
 	private static final double SUPERCOMPOST_CHANCE = 0.7;
@@ -586,15 +587,13 @@ public class Herbs {
 	            @Override
 	            public void execute(CycleEventContainer container) {
 				if (herbHarvest[herbFieldsData.getHerbIndex()] == 0) {
-					herbHarvest[herbFieldsData.getHerbIndex()] = 1 + (START_HARVEST_AMOUNT + Misc
-							.random(END_HARVEST_AMOUNT - START_HARVEST_AMOUNT)) * (1);
+					herbHarvest[herbFieldsData.getHerbIndex()] = 1 + (HARVEST_AMOUNT);
 				}
 
 				if (herbHarvest[herbFieldsData.getHerbIndex()] == 1) {
 					resetHerbs(herbFieldsData.getHerbIndex());
 					herbStages[herbFieldsData.getHerbIndex()] = 3;
-					herbTimer[herbFieldsData.getHerbIndex()] = GameEngine
-							.getMinutesCounter();
+					herbTimer[herbFieldsData.getHerbIndex()] = GameEngine.getMinutesCounter();
 					container.stop();
 					return;
 				}
@@ -609,6 +608,7 @@ public class Herbs {
 						"You harvest the crop, and get some herbs.");
 				player.getItemAssistant().addItem(herbData.getHarvestId(), 1);
 				player.getPlayerAssistant().addSkillXP(herbData.getHarvestXp(), SkillConstants.FARMING.ordinal());
+				container.stop();
 			}
 
 			@Override

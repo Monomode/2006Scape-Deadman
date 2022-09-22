@@ -778,6 +778,7 @@ public class Allotments {
 						"You harvest the crop, and get some vegetables.");
 				player.getItemAssistant().addItem(allotmentData.getHarvestId(), 1);
 				player.getPlayerAssistant().addSkillXP(allotmentData.getHarvestXp(), SkillConstants.FARMING.ordinal());
+					container.stop();
 			}
 
 			@Override
