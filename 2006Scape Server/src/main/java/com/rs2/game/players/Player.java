@@ -1456,12 +1456,12 @@ public abstract class Player {
 
 	public int votePoints, saveDelay, playerKilled, gertCat, restGhost,
 			romeojuliet, runeMist, lostCity, vampSlayer, cookAss, doricQuest, blackKnight, shieldArrav,
-			sheepShear, impsC, randomActions,
+			sheepShear, impsC, desertT, randomActions,
 			totalPlayerDamageDealt, killedBy, lastChatId = 1, privateChat,
 			dialogueId, randomCoffin, newLocation, specEffect,
 			specBarId, attackLevelReq, defenceLevelReq, strengthLevelReq,
 			rangeLevelReq, magicLevelReq, slayerLevelReq, agilityLevelReq, fletchingLevelReq,
-			woodcuttingLevelReq, miningLevelReq, thievingLevelReq,
+			farmingLevelReq, woodcuttingLevelReq, miningLevelReq, thievingLevelReq, craftingLevelReq,
 			followId, skullTimer, nextChat = 0, talkingNpc = -1,
 			dialogueAction = 0, autocastId, followDistance, followId2,
 			barrageCount = 0, delayedDamage = 0, delayedDamage2 = 0,
@@ -1717,7 +1717,7 @@ public abstract class Player {
 			spellId, hitDelay;
 	public int specMaxHitIncrease, freezeDelay, freezeTimer = -6, killerId,
 			playerIndex, oldPlayerIndex, lastWeaponUsed, projectileStage,
-			crystalBowArrowCount, playerMagicBook, teleGfx, teleEndAnimation,
+			crystalBowArrowCount, crystalShieldHitCount, playerMagicBook, teleGfx, teleEndAnimation,
 			teleHeight, teleX, teleY, rangeItemUsed, killingNpcIndex,
 			totalDamageDealt, globalDamageDealt, oldNpcIndex, fightMode, attackTimer,
 			bowSpecShot, ectofuntusWorshipped, graveyardPoints, alchemyPoints, enchantmentPoints,
