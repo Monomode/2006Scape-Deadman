@@ -184,6 +184,12 @@ public class ObjectManager {
 		c.getPacketSender().object(6970,3490, 3460, 0,0,10);//swamp boaty canifis tavern
 		Region.addObject(6970,3490, 3460, 0,0,10, false);
 
+		c.getPacketSender().object(5054,3547, 9699, 0,0,10);//ladder from barrows chest
+		Region.addObject(5054,3547, 9699, 0,0,10, false);
+
+		c.getPacketSender().object(6440,2891, 3705, 0,0,10);//godwars entrance - trollheim
+		Region.addObject(6440,2891, 3705, 0,0,10, false);
+
 		c.getPacketSender().object(170,3018, 3955, 1,0,10);//larran's big chest
 		Region.addObject(170,3018, 3955, 0,0,10, false);
 
