@@ -41,25 +41,25 @@ public class Tournament {
 			.synchronizedMap(new HashMap<Player, String>());
 
 	/**
-	 * @note Where to spawn when pits game starts
+	 * @note Where to spawn when Tournament starts
 	 */
-	private static final int MINIGAME_START_POINT_X = 2392;
-	private static final int MINIGAME_START_POINT_Y = 5139;
+	private static final int MINIGAME_START_POINT_X = 3237;
+	private static final int MINIGAME_START_POINT_Y = 2775;
 	/**
 	 * @note Exit game area
 	 */
-	private static final int EXIT_GAME_X = 2399;
-	private static final int EXIT_GAME_Y = 5169;
+	private static final int EXIT_GAME_X = 3283;
+	private static final int EXIT_GAME_Y = 2785;
 	/**
 	 * @note Exit waiting room
 	 */
-	public static final int EXIT_WAITING_X = 2399;
-	public static final int EXIT_WAITING_Y = 5177;
+	/*public static final int EXIT_WAITING_X = 2399;
+	public static final int EXIT_WAITING_Y = 5177;*/
 	/**
 	 * @note Waiting room coordinates
 	 */
-	private static final int WAITING_ROOM_X = 2399;
-	private static final int WAITING_ROOM_Y = 5175;
+	/*private static final int WAITING_ROOM_X = 2399;
+	private static final int WAITING_ROOM_Y = 5175;*/
 
 	/**
 	 * @return HashMap Value
@@ -75,7 +75,7 @@ public class Tournament {
 	 */
 	public static void addPlayer(Player c) {
 		playerMap.put(c, WAITING);
-		c.getPlayerAssistant().movePlayer(WAITING_ROOM_X, WAITING_ROOM_Y, 0);
+		/*c.getPlayerAssistant().movePlayer(WAITING_ROOM_X, WAITING_ROOM_Y, 0);*/
 	}
 
 	/**
@@ -92,20 +92,20 @@ public class Tournament {
 	}
 
 	/**
-	 * @note Removes player from pits if there in waiting or in game
+	 * @note Removes player from tournament if they're in waiting or in game
 	 */
 	public static void removePlayer(Player player, boolean forceRemove) {
 		player.inPits = false;
 		if (forceRemove) {
 			player.getPlayerAssistant()
-					.movePlayer(EXIT_WAITING_X, EXIT_WAITING_Y, 0);
+					.movePlayer(EXIT_GAME_X, EXIT_GAME_Y, 0);
 			playerMap.remove(player);
 			return;
 		}
 		String state = playerMap.get(player);
 		if (state == null) {
 			player.getPlayerAssistant()
-					.movePlayer(EXIT_WAITING_X, EXIT_WAITING_Y, 0);
+					.movePlayer(EXIT_GAME_X, EXIT_GAME_Y, 0);
 			return;
 		}
 
@@ -121,7 +121,7 @@ public class Tournament {
 			player.getPlayerAssistant().movePlayer(EXIT_GAME_X, EXIT_GAME_Y, 0);
 		} else if (state.equals(WAITING)) {
 			player.getPlayerAssistant()
-					.movePlayer(EXIT_WAITING_X, EXIT_WAITING_Y, 0);
+					.movePlayer(EXIT_GAME_X, EXIT_GAME_Y, 0);
 			player.getPacketSender().walkableInterface(-1);
 		}
 		playerMap.remove(player);
@@ -195,10 +195,10 @@ public class Tournament {
 			if (gameStartTimer > 0) {
 				gameStartTimer--;
 			} else if (gameStartTimer == 0) {
-				if (getListCount(WAITING) > 0) { //default 4
+				if (getListCount(WAITING) > 1) { //default 4
 					beginGame();
 				}
-				gameStartTimer = 60;
+				gameStartTimer = 30;
 			}
 		}
 		if (gameStarted) {
