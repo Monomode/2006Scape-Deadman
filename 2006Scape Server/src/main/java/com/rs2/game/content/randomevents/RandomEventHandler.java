@@ -10,7 +10,7 @@ import com.rs2.util.Misc;
 
 public class RandomEventHandler {
 
-	public static int CALL_RANDOM = 350 + Misc.random(100);
+	public static int CALL_RANDOM = 35 + Misc.random(10); // default 350 + 100
 
 	public static void resetEvent(Player c) {
 		c.randomActions = 0;
