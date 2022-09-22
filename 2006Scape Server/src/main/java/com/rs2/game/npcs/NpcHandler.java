@@ -33,7 +33,7 @@ import org.json.JSONObject;
 import java.io.*;
 import java.lang.reflect.Type;
 
-// Facetypes: 1-Walk, 2-North, 3-South, 4-East, 5-West
+// Facetypes: 0-Stand, 1-Walk, 2-North, 3-South, 4-East, 5-West
 
 public class NpcHandler {
 
@@ -1089,32 +1089,63 @@ public class NpcHandler {
                     break;
             }
             int level = getNpcListCombat(npcs[i].npcType);
-            // higher level monsters have a better drop rate (max of 1/128)
-            int chance = Math.max(128, 512 - (level * 2));
+            int chance = Math.max(16, 64 - (level * 2));
             if (Misc.random(1, chance) == 1) {
                 int scroll = -1;
-				if (level <= 1) // none
-				{
-					scroll = -1;
-				} else if (level <= 24) // easy
+				if (level <= 40) // easy 2677
 				{
 					scroll = 2677;
-				} else if (level <= 40) // easy → medium
-				{
-					scroll = 2677 + Misc.random(0, 1);
-				} else if (level <= 80) // medium
+				} else if (level <= 99) // medium 2678
 				{
 					scroll = 2678;
-				} else if (level <= 150) // medium → hard
+				} else if (level <= 150) // hard 2679
 				{
 					scroll = 2678 + Misc.random(0, 1);
-				} else if (level > 150)// hard
+				} else if (level <= 306)// elite 2680
 				{
-					scroll = 2679;
-				}
+					scroll = 2679 + Misc.random(0, 1);
+				} else if (level <= 334) // master 2681
+                {
+                    scroll = 2680 + Misc.random(0, 1);
+                }
 				if (scroll >= 0 && GameConstants.CLUES_ENABLED) {
 					GameEngine.itemHandler.createGroundItem(c, scroll, npcs[i].absX, npcs[i].absY, 1, c.playerId);
+                    c.getPacketSender().sendMessage("@yel@A clue scroll falls to the ground.@yel@");
 				}
+            }
+
+            int level2 = getNpcListCombat(npcs[i].npcType);
+            int chance2 = Math.max(16, 64 - (level * 2));
+            if (Misc.random(1, chance2) == 1) {
+                int skulls = -1;
+                if (level2 <= 99) // tier 1
+                {
+                    skulls = 964;
+                } else if (level2 > 99)
+                {
+                    skulls = -1;
+                }
+                if (skulls >= 0 && GameConstants.CLUES_ENABLED) {
+                    GameEngine.itemHandler.createGroundItem(c, skulls, npcs[i].absX, npcs[i].absY, 2500, c.playerId);
+                    c.getPacketSender().sendMessage("@red@Skull money appears on the ground.@red@");
+                }
+            }
+
+            int level3 = getNpcListCombat(npcs[i].npcType);
+            int chance3 = Math.max(16, 64 - (level * 2));
+            if (Misc.random(1, chance3) == 1) {
+                int skulls2 = -1;
+                if (level3 <= 99)
+                {
+                    skulls2 = -1;
+                } else if (level3 > 99) // tier 5
+                {
+                    skulls2 = 964;
+                }
+                if (skulls2 >= 0 && GameConstants.CLUES_ENABLED) {
+                    GameEngine.itemHandler.createGroundItem(c, skulls2, npcs[i].absX, npcs[i].absY, 20000, c.playerId);
+                    c.getPacketSender().sendMessage("@red@Skull money appears on the ground.@red@");
+                }
             }
         }
     }
@@ -1130,10 +1161,13 @@ public class NpcHandler {
                 c.taskAmount--;
                 c.getPlayerAssistant().addSkillXP(c.getSlayer().getTaskExp(c.slayerTask), 18);
                 if (c.taskAmount <= 0) {
-                    int points = c.getSlayer().getDifficulty(c.slayerTask) * 4;
+                    int points = c.getSlayer().getDifficulty(c.slayerTask) * 8; //int points = c.getSlayer().getDifficulty(c.slayerTask) * 4;
                     c.slayerTask = -1;
                     c.slayerPoints += points;
-                    c.getPacketSender().sendMessage("You completed your slayer task. You obtain " + points + " slayer points. Please talk to your slayer master.");
+                    c.getPacketSender().sendMessage("@red@Your slayer task is complete. You obtain " + points + " slayer points.");
+                    //c.getPlayerAssistant().addItem(); * c.getSlayer().getDifficulty(c.slayerTask)
+                    //int coins = c.getSlayer().getDifficulty(c.slayerTask)
+                    // REWARD COINS FOR LOW LEVEL SLAYER TASK COMPLETION (Turael = 10,000)
                 }
             }
         }
@@ -1284,7 +1318,7 @@ public class NpcHandler {
             case 2743:
             case 2631:
             case 2745://jad
-                return 8;
+                return 9;
             case 2883:// rex
                 return 1;
             case 2552:
@@ -1358,19 +1392,18 @@ public class NpcHandler {
             case 55:
             case 54:
             case 53:
-                return 2;
+                return 1; //2
             case 2881:
             case 2882:
-                return 1;
+                return 1; //1
             case 2745:
             case 2743:
-                return 1;
+                return 1; //1
         }
-        return 0;
+        return 0; //0
     }
 
-    public boolean specialCase(Player c, int i) { // responsible for npcs that
-        // much
+    public boolean specialCase(Player c, int i) { // responsible for npcs that much
         if (goodDistance(npcs[i].getX(), npcs[i].getY(), c.getX(), c.getY(), 8)
                 && !goodDistance(npcs[i].getX(), npcs[i].getY(), c.getX(),
                 c.getY(), distanceRequired(i))) {
