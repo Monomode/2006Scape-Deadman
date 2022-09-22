@@ -354,7 +354,7 @@ public class CombatSounds {
 					|| c.playerEquipment[c.playerWeapon] == 1319) { // 2h
 				return 425;
 			}
-			if (wep.contains("scimitar") || wep.contains("longsword")) {
+			if (wep.contains("scimitar") || wep.contains("rapier") || wep.contains("longsword")) {
 				return 396;
 			}
 			if (wep.contains("halberd")) {
