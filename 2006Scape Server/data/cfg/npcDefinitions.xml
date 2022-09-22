@@ -42098,9 +42098,9 @@
    <attackAnim>422</attackAnim>
    <defenceAnim>404</defenceAnim>
    <deathAnim>2304</deathAnim>
-   <attackBonus>169</attackBonus>
-   <defenceMelee>169</defenceMelee>
-   <defenceRange>169</defenceRange>
+   <attackBonus>325</attackBonus>
+   <defenceMelee>325</defenceMelee>
+   <defenceRange>325</defenceRange>
    <defenceMage>0</defenceMage>
   </npcDefinition>
  <npcDefinition>
@@ -42114,15 +42114,15 @@
    <retreats>true</retreats>
    <poisonous>false</poisonous>
    <respawn>10</respawn>
-   <maxHit>1</maxHit>
+   <maxHit>19</maxHit>
    <hitpoints>200</hitpoints>
-   <attackSpeed>4000</attackSpeed>
+   <attackSpeed>1200</attackSpeed>
    <attackAnim>422</attackAnim>
    <defenceAnim>404</defenceAnim>
    <deathAnim>2304</deathAnim>
-   <attackBonus>260</attackBonus>
-   <defenceMelee>260</defenceMelee>
-   <defenceRange>260</defenceRange>
+   <attackBonus>325</attackBonus>
+   <defenceMelee>325</defenceMelee>
+   <defenceRange>325</defenceRange>
    <defenceMage>0</defenceMage>
   </npcDefinition>
  <npcDefinition>
@@ -43462,9 +43462,9 @@
    <attackAnim>422</attackAnim>
    <defenceAnim>404</defenceAnim>
    <deathAnim>2304</deathAnim>
-   <attackBonus>260</attackBonus>
-   <defenceMelee>260</defenceMelee>
-   <defenceRange>260</defenceRange>
+   <attackBonus>325</attackBonus>
+   <defenceMelee>325</defenceMelee>
+   <defenceRange>325</defenceRange>
    <defenceMage>0</defenceMage>
   </npcDefinition>
  <npcDefinition>
@@ -43506,9 +43506,9 @@
    <attackAnim>422</attackAnim>
    <defenceAnim>404</defenceAnim>
    <deathAnim>2304</deathAnim>
-   <attackBonus>169</attackBonus>
-   <defenceMelee>169</defenceMelee>
-   <defenceRange>169</defenceRange>
+   <attackBonus>325</attackBonus>
+   <defenceMelee>325</defenceMelee>
+   <defenceRange>325</defenceRange>
    <defenceMage>0</defenceMage>
   </npcDefinition>
  <npcDefinition>
