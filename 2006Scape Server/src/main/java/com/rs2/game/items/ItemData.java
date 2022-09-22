@@ -211,8 +211,10 @@ public class ItemData {
 					itemStackable[counter] = false;
 					itemStackable[291] = true; //notes
 					// itemStackable[] = true; //
+
 					itemStackable[1777] = true; //bowstring
 					itemStackable[1779] = true; //flax
+					/*itemStackable[771] = true; //dramen branch*/
 
 					itemStackable[199] = true; //grimy guam
 					itemStackable[249] = true; //clean guam
@@ -244,6 +246,9 @@ public class ItemData {
 					itemStackable[239] = true; //white berries
 					itemStackable[243] = true; //blue dragon scale
 					// itemStackable[] = true; //
+
+					itemStackable[964] = true; //skull
+					//itemStackable[732] = false; //holy water
 
 					itemStackable[1739] = true; //cowhide
 					itemStackable[1741] = true; //soft leather
