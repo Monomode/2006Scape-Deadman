@@ -151,6 +151,9 @@ public class PlayerSave {
 							case "crystal-bow-shots":
 								player.crystalBowArrowCount = Integer.parseInt(token2);
 								break;
+							case "crystal-shield-hits":
+								player.crystalShieldHitCount = Integer.parseInt(token2);
+								break;
 							case "randomActions":
 								player.randomActions = Integer.parseInt(token2);
 								break;
@@ -301,6 +304,9 @@ public class PlayerSave {
 								break;
 							case "impsC":
 								player.impsC = Integer.parseInt(token2);
+								break;
+							case "desertT":
+								player.desertT = Integer.parseInt(token2);
 								break;
 							case "knightS":
 								player.knightS = Integer.parseInt(token2);
@@ -749,6 +755,8 @@ public class PlayerSave {
 			characterfile.write("doricQuest = " + player.doricQuest);
 			characterfile.newLine();
 			characterfile.write("impsC = " + player.impsC);
+			characterfile.newLine();
+			characterfile.write("desertT = " + player.desertT);
 			characterfile.newLine();
 			characterfile.write("knightS = " + player.knightS);
 			characterfile.newLine();
