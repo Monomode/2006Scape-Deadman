@@ -501,7 +501,7 @@ public class Agility {
 	public void lapFinished() {
 		if (agilityProgress[5]) {
 			c.getPlayerAssistant().addSkillXP(lapBonus, GameConstants.AGILITY);
-			c.getPacketSender().sendMessage("You received some bonus experience for completing the track!");
+			c.getPacketSender().sendMessage("You received some bonus experience for completing the course!");
 			resetAgilityProgress();
 		}
 	}
