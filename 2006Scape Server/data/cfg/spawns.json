@@ -3,6 +3,16 @@
     "maxHit": 0,
     "strength": 0,
     "attack": 0,
+    "x": 2623,
+    "y": 3294,
+    "id": 1216,
+    "walk": 1,
+    "height": 0
+  },
+  {
+    "maxHit": 0,
+    "strength": 0,
+    "attack": 0,
     "x": 2412,
     "y": 4434,
     "id": 3302,
@@ -93,10 +103,10 @@
     "maxHit": 0,
     "strength": 0,
     "attack": 0,
-    "x": 3217,
+    "x": 3218,
     "y": 3215,
     "id": 1990,
-    "walk": 0,
+    "walk": 4,
     "height": 0
   },
   {
@@ -134,7 +144,7 @@
     "strength": 0,
     "attack": 0,
     "x": 3217,
-    "y": 3222,
+    "y": 3212,
     "id": 3846,
     "walk": 4,
     "height": 0
@@ -143,10 +153,10 @@
     "maxHit": 0,
     "strength": 0,
     "attack": 0,
-    "x": 3217,
-    "y": 3225,
+    "x": 3218,
+    "y": 3210,
     "id": 3064,
-    "walk": 3,
+    "walk": 4,
     "height": 0
   },
   {
@@ -9096,6 +9106,86 @@
     "x": 3008,
     "y": 3308,
     "id": 708,
+    "walk": 1,
+    "height": 0
+  },
+  {
+    "maxHit": 1,
+    "strength": 2,
+    "attack": 2,
+    "x": 3220,
+    "y": 3232,
+    "id": 709,
+    "walk": 1,
+    "height": 0
+  },
+  {
+    "maxHit": 1,
+    "strength": 2,
+    "attack": 2,
+    "x": 3240,
+    "y": 3222,
+    "id": 709,
+    "walk": 1,
+    "height": 0
+  },
+  {
+    "maxHit": 1,
+    "strength": 2,
+    "attack": 2,
+    "x": 2999,
+    "y": 3293,
+    "id": 709,
+    "walk": 1,
+    "height": 0
+  },
+  {
+    "maxHit": 1,
+    "strength": 2,
+    "attack": 2,
+    "x": 3008,
+    "y": 3308,
+    "id": 709,
+    "walk": 1,
+    "height": 0
+  },
+  {
+    "maxHit": 1,
+    "strength": 2,
+    "attack": 2,
+    "x": 3220,
+    "y": 3232,
+    "id": 1531,
+    "walk": 1,
+    "height": 0
+  },
+  {
+    "maxHit": 1,
+    "strength": 2,
+    "attack": 2,
+    "x": 3240,
+    "y": 3222,
+    "id": 1531,
+    "walk": 1,
+    "height": 0
+  },
+  {
+    "maxHit": 1,
+    "strength": 2,
+    "attack": 2,
+    "x": 2999,
+    "y": 3293,
+    "id": 1531,
+    "walk": 1,
+    "height": 0
+  },
+  {
+    "maxHit": 1,
+    "strength": 2,
+    "attack": 2,
+    "x": 3008,
+    "y": 3308,
+    "id": 1531,
     "walk": 1,
     "height": 0
   },
