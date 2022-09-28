@@ -1511,7 +1511,7 @@ public class SkillInterfaces {
 			menuLine("20", "Rockslug", 4136, 5);
 			menuLine("25", "Cockatrice", 4137, 6);
 			menuLine("30", "Pyrefiend", 4138, 7);
-			menuLine("40", "Basalisk", 4139, 8);
+			menuLine("40", "Basilisk", 4139, 8);
 			menuLine("45", "Infernal Mage", 4140, 9);
 			menuLine("50", "Bloodveld", 4141, 10);
 			menuLine("52", "Jelly", 4142, 11);
