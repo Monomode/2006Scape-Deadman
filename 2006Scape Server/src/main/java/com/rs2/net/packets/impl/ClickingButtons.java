@@ -1158,12 +1158,15 @@ public class ClickingButtons implements PacketType {
 
 			if (System.currentTimeMillis() - player.godSpellDelay < CombatConstants.GOD_SPELL_CHARGE) {
 				player.getPacketSender().sendMessage("You still feel the charge in your body!");
+				player.getItemAssistant().addItem((565), 3);
+				//player.getItemAssistant().addItem((4697), 3);
 				break;
 			}
 			player.godSpellDelay = System.currentTimeMillis();
 			player.getPacketSender().sendMessage(	"You feel charged with a magical power!");
 			player.gfx100(MagicData.MAGIC_SPELLS[48][3]);
 			player.startAnimation(MagicData.MAGIC_SPELLS[48][2]);
+			player.getPlayerAssistant().addSkillXP((180), GameConstants.MAGIC);
 			player.usingMagic = false;
 			break;
 
