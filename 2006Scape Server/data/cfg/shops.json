@@ -1,4 +1,40 @@
 [
+y  {
+    "buyModifier": 2,
+    "sellModifier": 2,
+    "name": "Parroty Pete's Pet Store",
+    "id": 357,
+    "items": [
+      {
+        "itemId": 7583,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 7582,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 7581,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 7584,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 7585,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 1491,
+        "itemAmount": 1
+      },
+      {
+        "itemId": 6558,
+        "itemAmount": 1
+      }
+    ]
+  },
   {
     "buyModifier": 2,
     "sellModifier": 2,
