@@ -32,8 +32,8 @@ public class Specials {
 		DRAGON_LONG(1305, 1.20, 1.10, 2.5, 1058, -1, 248, false, 0),
 		DRAGON_MACE(1434, 1.55, 1.25, 2.5, 1060, -1, 251, false, 0),
 		DRAGON_SCIMITAR(4587, 1, 1.25, 5.5, 1872, -1, 347, false, 1),
-		DRAGON_HALBERD(3204, 1.25, .85, 3, 1203, -1, 282, true, 0),
-		GRANITE_MAUL(4153, 1.10, .85, 5, 1667, -1, 337, true, 0),
+		DRAGON_HALBERD(3204, 1.1, 1, 3, 1203, -1, 282, true, 0),
+		GRANITE_MAUL(4153, 1, 1, 5, 1667, -1, 337, true, 0),
 		MAGIC_SHORTBOW(861, 1.05, .95, 5, 1074, -1, -1, true, 0),
 		MAGIC_LONGBOW(859, 1.20, 1.05, 3.5, 426, -1, -1, false, 0);
 		/*RAPIER(7142, 1, 1, 2.5, 1058, -1, -1, false, 0);*/
