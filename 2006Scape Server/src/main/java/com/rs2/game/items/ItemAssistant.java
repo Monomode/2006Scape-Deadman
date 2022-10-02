@@ -662,7 +662,11 @@ public class ItemAssistant {
 	 **/
 
 	public void getRequirements(String itemName, int itemId) {
-		player.attackLevelReq = player.defenceLevelReq = player.strengthLevelReq = player.rangeLevelReq = player.magicLevelReq = player.agilityLevelReq = player.slayerLevelReq = 0;
+		player.attackLevelReq = player.defenceLevelReq = player.strengthLevelReq =
+				player.rangeLevelReq = player.magicLevelReq = player.agilityLevelReq =
+						player.slayerLevelReq = player.craftingLevelReq = player.woodcuttingLevelReq =
+								player.thievingLevelReq = player.fletchingLevelReq = player.farmingLevelReq =
+										player.miningLevelReq = 0;
 		if (itemName.contains("mystic") || itemName.contains("nchanted")) {
 			if (itemName.contains("staff")) {
 				player.magicLevelReq = 20;
@@ -789,6 +793,7 @@ public class ItemAssistant {
 				player.magicLevelReq = 70;
 				player.defenceLevelReq = 70;
 			}
+			return;
 		}
 		if (itemName.contains("karil")) {
 			if (itemName.contains("crossbow")) {
@@ -797,23 +802,33 @@ public class ItemAssistant {
 				player.rangeLevelReq = 70;
 				player.defenceLevelReq = 70;
 			}
+			return;
 		}
 		if (itemId == 837) { //crossbow "dorgeshuun crossbow"
+			if (itemName.contains("crossbow")) {
 				player.rangeLevelReq = 28;
 				//player.agilityLevelReq = 13;
 				//player.thievingLevelReq = 13;
 				//player.miningLevelReq = 17;
 				//player.runeMist = 3;
+				return;
 			}
+		}
 		if (itemId == 767) { //phoenix crossbow "rune crossbow"
-			player.rangeLevelReq = 61;
-			player.slayerLevelReq = 55;
-			player.fletchingLevelReq = 69;
-			player.woodcuttingLevelReq = 60;
+			if (itemName.contains("hoenix crossbow")) {
+				player.rangeLevelReq = 61;
+				player.slayerLevelReq = 55;
+				player.fletchingLevelReq = 69;
+				player.woodcuttingLevelReq = 60;
+				return;
+			}
 		}
 		if (itemId == 6585) { // amulet of fury
-			player.craftingLevelReq = 90;
-			player.magicLevelReq = 87;
+			if (itemName.contains("mulet of fury")) {
+				player.craftingLevelReq = 90;
+				player.magicLevelReq = 87;
+				return;
+			}
 		}
 		if (itemName.contains("godsword")) {
 			player.attackLevelReq = 75;
