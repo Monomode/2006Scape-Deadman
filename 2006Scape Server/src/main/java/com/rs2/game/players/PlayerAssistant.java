@@ -1845,7 +1845,7 @@ public class PlayerAssistant {
 			player.getPlayerAssistant().movePlayer(3233, 3229, 0);
 			player.getPacketSender().sendMessage("Welcome to @blu@" + GameConstants.SERVER_NAME + "@bla@."/* World: " + GameConstants.WORLD + "@bla@ - we are currently in Server Stage v@blu@" + GameConstants.TEST_VERSION + "@bla@."*/);
 			player.getPacketSender().sendMessage("@red@Did you know?@bla@ We're open source!"); //and pull requests are welcome!
-			player.getPacketSender().sendMessage("Source code: github.com/2006-Scape/2006Scape");
+			player.getPacketSender().sendMessage("Source code: github.com/2006-Scape/2006Scape-Deadman");
 			player.getPacketSender().sendMessage("Join our Discord: https://discord.gg/Vhh4ySRGnp");
 			player.getDialogueHandler().sendDialogues(3115, 2224);
 			player.isRunning2 = false;
