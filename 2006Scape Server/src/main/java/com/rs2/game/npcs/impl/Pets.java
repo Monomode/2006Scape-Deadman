@@ -12,11 +12,14 @@ public class Pets {
 	public static final int RATS_NEEDED_TO_GROW = 10;
 
 	//npc id, item id
-	private final static int[][] CATS = { 
-			{ 3504, 7583 }, //hell kitten
-			{ 3506, 7584 }, //lazy hell kitten
-			{ 766, 1560 }, //pet kitten
+	private final static int[][] CATS = {
+			{ 3505, 7583 }, //hell kitten
+			{ 3504, 7582 }, //hellcat
+			{ 3503, 7581 }, //overgrown hellcat
+			{ 3506, 7584 }, //lazy hellcat
 			{ 3507, 7585 }, //wily hellcat
+			{ 993, 1491 }, //witch's cat
+			{ 766, 1560 }, //pet kitten
 			{ 765, 1559 }, //pet kitten
 			{ 764, 1558 }, //pet kitten
 			{ 763, 1557 }, //pet kitten
@@ -26,13 +29,63 @@ public class Pets {
 			{ 769, 1562 }, //pet cat
 			{ 770, 1563 }, //pet cat
 			{ 771, 1564 }, //pet cat
-			{ 772, 1565 },//pet cat
-			{ 773, 1566 } //pet cat
+			{ 772, 1565 }, //pet cat
+			{ 773, 1566 }, //pet cat
+			//todo add Wily cats, Lazy cats, etc.
+			// customs
+			{2640, 6558}, //odysseus
+			//slayer pets
+			{2783, 6637}, //dark beast
+			{1615, 4149}, //abyssal demon
+			{1613, 4148}, //nechryael
+			{1610, 4147}, //gargoyle
+			{3068, 6811}, //skeletal wyvern
+			{4229, 4146}, //kurask
+			{1624, 4145}, //dust devil
+			{1604, 4144}, //aberrant spectre
+			{1626, 4143}, //turoth
+			{1637, 4142}, //jelly
+			{1618, 4141}, //bloodveld
+			{1643, 4140}, //infernal mage
+			{4228, 4139}, //basilisk
+			{1633, 4138}, //pyrefiend
+			{4227, 4137}, //cockatrice
+			{1622, 4136}, //rockslug
+			{1831, 4520}, //cave slime
+			{1612, 4135}, //banshee
+			{1600, 4134}, //cave crawler
+			{5750, 4521}, //cave bug
+			{1648, 4133} //crawling hand
 		};
 
 	public static final int[] CAT_ITEMS = { 
-			1555, 1556, 1557, 1558, 1559, 1560,
-			1561, 1562, 1563, 1564, 1565, 7585, 7583, 7584 
+			1555, 1556, 1557, 1558, 1559, 1560, 6558,
+			1561, 1562, 1563, 1564, 1565, 7585, 7581, 7582, 7583, 7584,
+			// customs
+			1491, //witch's cat
+			6558, //odysseus
+			//slayer pets
+			6637, //dark beast
+			4149, //abyssal demon
+			4148, //nechryael
+			4147, //gargoyle
+			6811, //skeletal wyvern
+			4146, //kurask
+			4145, //dust devil
+			4144, //aberrant spectre
+			4143, //turoth
+			4142, //jelly
+			4141, //bloodveld
+			4140, //infernal mage
+			4139, //basilisk
+			4138, //pyrefiend
+			4137, //cockatrice
+			4136, //rockslug
+			4520, //cave slime
+			4135, //banshee
+			4134, //cave crawler
+			4521, //cave bug
+			4133 //crawling hand
 		};
 	
 	public static boolean isCatItem(int itemId) {

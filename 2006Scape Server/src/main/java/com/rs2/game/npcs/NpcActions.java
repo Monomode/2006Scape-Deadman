@@ -40,13 +40,13 @@ public class NpcActions {
 			}
 		}
 		switch (npcType) {
-		case 219: //Fishing guild store
+		case 219: //Fishing Guild Store
 			player.getShopAssistant().openShop(190);
 			break;
 		case 389 : //Thormac
 			player.getDialogueHandler().sendDialogues(3574, npcType);
 			break;
-		case 569: //Ardougne silver shop
+		case 569: //Ardougne Silver Shop
 			player.getShopAssistant().openShop(214);
 			break;
 		case 797: //Helemos
@@ -54,6 +54,9 @@ public class NpcActions {
 			break;
 		case 1683: //Velorina
 			player.getShopAssistant().openShop(356);
+			break;
+		case 1216: //Parroty Pete's Pet Store
+			player.getShopAssistant().openShop(357);
 			break;
 
 		case 945: //Recipe for disaster AND Crossbow shop (2006Scape Guide / Lumbridge Guide / Spawn area)

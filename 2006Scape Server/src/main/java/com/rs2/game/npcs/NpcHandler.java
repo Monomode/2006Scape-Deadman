@@ -33,7 +33,7 @@ import org.json.JSONObject;
 import java.io.*;
 import java.lang.reflect.Type;
 
-// Facetypes: 0-Stand, 1-Walk, 2-North, 3-South, 4-East, 5-West
+// Facetypes: 0-Stand, 1-Walk, 2-North, 3-South, 4-East, 5-West // Faceposition, Facedirection
 
 public class NpcHandler {
 

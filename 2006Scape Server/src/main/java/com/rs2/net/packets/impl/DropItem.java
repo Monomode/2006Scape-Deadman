@@ -49,11 +49,11 @@ public class DropItem implements PacketType {
 					"You can't drop items while trading!");
 			return;
 		}
-		if (player.hasNpc) {
+		/*if (player.hasNpc) {
 			player.getPacketSender().sendMessage(
 					"You already have a pet dropped.");
-			return;
-		}
+			//return;
+		}*/ //todo bug testing
 		SkillHandler.resetSkills(player);
 		if (player.tutorialProgress < 36 && GameConstants.TUTORIAL_ISLAND) {
 			player.getPacketSender().sendMessage(

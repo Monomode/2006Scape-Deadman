@@ -15,7 +15,31 @@ public class NpcData {
 	public static final int[][] transformNpc = { { 1974, 1975 }, { 3223, 6006 }, { 3224, 6007 },
 			{ 3225, 6008 }, { 3226, 6009 } };
 	public static final int[] npcsCantKillYou = { 41, 951, 1017, 1401, 1402, 1692, 2313, 2314, 2315 };// done
-	public static final int[] npcCantAttack = { 1532, 1533, 1534, 1535 };
+	public static final int[] npcCantAttack = {
+			1532, //barricade
+			1533, //barricade
+			1534, //barricade
+			1535, //barricade
+
+			2640, //odysseus
+			3505, //hell kitten
+			3504, //hellcat
+			3503, //overgrown hellcat
+			3506, //lazy hellcat
+			3507, //wily hellcat
+			993, //witch's cat
+			766, //pet kitten
+			765, //pet kitten
+			764, //pet kitten
+			763, //pet kitten
+			762, //pet kitten
+			761, //pet kitten
+			768, //pet cat
+			769, //pet cat
+			770, //pet cat
+			771, //pet cat
+			772, //pet cat
+			773 }; //pet cat
 	public static final int[] npcDontGiveXp = { 1265, 1267, 1913, 1914, 1975, 1977, 2459, 2460, 2461, 2462 };
 
 	public static boolean cantKillYou(int npcType) {
