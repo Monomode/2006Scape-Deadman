@@ -6,6 +6,7 @@ https://i.imgur.com/WHnQz2W.png
 ## Discord Links: 
 
 2006Scape-Open Source: https://discord.gg/hZ6VfWG
+
 Ironman DMM Tournament: https://discord.gg/Vhh4ySRGnp (creators of 2006Scape-Deadman)
 
 ## How to Play
