@@ -1,4 +1,5 @@
-# 2006Scape - an open source, actively developed emulation server. Pull requests welcome! ![Gameplay Image](https://i.imgur.com/WHnQz2W.png)
+# 2006Scape - an open source, actively developed emulation server. Pull requests welcome! ![Gameplay Image](https://cdn.discordapp.com/attachments/953050049552719905/960296667280715836/attackoptionsred.png)
+https://i.imgur.com/WHnQz2W.png
 
 ## Discord Link: https://discord.gg/hZ6VfWG
 
