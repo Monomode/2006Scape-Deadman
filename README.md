@@ -3,11 +3,11 @@
 
 https://i.imgur.com/WHnQz2W.png
 
-## Discord Links: 
+## Discord Links:
+
+Our Discord: https://discord.gg/Vhh4ySRGnp (Monomode DMM RSPS, 2006Scape-Deadman)
 
 2006Scape-Open Source: https://discord.gg/hZ6VfWG
-
-Ironman DMM Tournament: https://discord.gg/Vhh4ySRGnp (creators of 2006Scape-Deadman)
 
 ## How to Play
 
